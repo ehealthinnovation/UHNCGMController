@@ -2,6 +2,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'UHNCGMController', :exclusive => true do
   pod "UHNCGMController", :path => "../"
+
+  # pull in just the pod using dependency after it is published
+  pod 'UHNBLEController', :git => 'git@github.ehealthinnovation.org:JDRF/UHNBLEController.git', :branch => 'task/13995-unit_tests'
 end
 
 target 'Tests', :exclusive => true do
