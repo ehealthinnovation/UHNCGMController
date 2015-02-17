@@ -71,8 +71,8 @@
     //setup the plot Scrolling Time Series Plot View[
     [self.plotView setupPlotWithXAxisMin: 0.
                                 xAxisMax: 60.
-                              xMinorStep: 0.
-                              xMajorStep: 0.
+                              xMinorStep: 100.
+                              xMajorStep: 100.
                               xAxisLabel: nil
                        xAxisFormatString: nil
                                 yAxisMin: 0.
@@ -220,7 +220,7 @@
 - (IBAction)connectButtonPressed:(id)sender;
 {
     self.connectButton.enabled = NO;
-    [self.cgmController connect];
+    [self.cgmController tryToReconnect];
 }
 
 - (IBAction)startSessionButtonPressed:(id)sender;

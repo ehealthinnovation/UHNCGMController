@@ -26,7 +26,7 @@
 
 @implementation UHNCGMController
 
-#pragma mark - lifecycle methods
+#pragma mark - initializing UHNCGMController methods
 
 - (id)init;
 {
@@ -35,13 +35,19 @@
     return nil;
 }
 
-- (id) initWithDelegate:(id<UHNCGMControllerDelegate>)newDelegate;
+- (id) initWithDelegate:(id<UHNCGMControllerDelegate>)delegate;
+{
+    DLog(@"%s", __PRETTY_FUNCTION__);
+    return [self initWithDelegate:delegate requiredServices:@[kCGMServiceUUID, kDEVICE_INFO_SERVICE_UUID]];
+}
+
+- (instancetype) initWithDelegate:(id<UHNCGMControllerDelegate>)delegate requiredServices:(NSArray*)serviceUUIDs;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     if ((self = [super init])) {
-        self.delegate = newDelegate;
+        self.delegate = delegate;
         self.bleController = [[UHNBLEController alloc] initWithDelegate: self
-                                                       requiredServices: @[kCGMServiceUUID, kDEVICE_INFO_SERVICE_UUID]];
+                                                       requiredServices: serviceUUIDs];
         self.shouldBlockReconnect = YES;
         self.crcPresent = NO;
     }
@@ -56,7 +62,7 @@
     return self.bleController.isPerpherialConnected;
 }
 
-- (void)connect;
+- (void)tryToReconnect;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     if (self.deviceIdentifier)
@@ -381,7 +387,7 @@
     // try to reconnect
     if (!self.shouldBlockReconnect)
     {
-        [self connect];
+        [self tryToReconnect];
     }
     self.shouldBlockReconnect = NO;
     

@@ -38,9 +38,10 @@
 
 @interface UHNCGMController : NSObject
 
-- (id) initWithDelegate:(id<UHNCGMControllerDelegate>)newDelegate;
+- (instancetype) initWithDelegate:(id<UHNCGMControllerDelegate>)delegate;
+- (instancetype) initWithDelegate:(id<UHNCGMControllerDelegate>)delegate requiredServices:(NSArray*)serviceUUIDs;
 - (BOOL) isConnected;
-- (void) connect;
+- (void) tryToReconnect;
 - (void) connectToDevice: (NSString*)deviceName;
 - (void) disconnect;
 
