@@ -3,12 +3,14 @@
 //  CGM_Collector
 //
 //  Created by Nathaniel Hamming on 2015-01-06.
-//  Copyright (c) 2015 eHealth. All rights reserved.
+//  Copyright (c) 2015 University Health Network.
 //
 
 #import "NSData+CGMParser.h"
 #import "NSData+ConversionExtensions.h"
 #import "UHNDebug.h"
+
+#define kFluidTypeBitMask 0xF
 
 @implementation NSData (CGMParser)
 
@@ -28,32 +30,32 @@
     NSUInteger flags = [self parseMeasurementCharacteristicFlags];
     NSNumber *glucoseConcentration = [self parseGlucoseConcentration];
     NSUInteger timeOffset = [self parseMeasurementTimeOffest];
-    NSMutableDictionary *measurementDetails = [NSMutableDictionary dictionaryWithObjectsAndKeys: glucoseConcentration, kCGMMeasurementKeyGlucoseConcentration, [NSNumber numberWithUnsignedInteger: timeOffset], kCGMKeyTimeOffset, nil];
+    NSMutableDictionary *measurementDetails = [NSMutableDictionary dictionaryWithObjectsAndKeys: glucoseConcentration, kCGMMeasurementKeyGlucoseConcentration, @(timeOffset), kCGMKeyTimeOffset, nil];
     NSUInteger currentByteIndex = (NSRange)kCGMMeasurementFieldRangeTimeOffset.location + (NSRange)kCGMMeasurementFieldRangeTimeOffset.length;
     
     NSDictionary *measurementStatusDict = [self parseStatusStartByte: currentByteIndex
-                                                 warningOctetPresent: (flags & kCGMMeasurementFlagsWarningOctetPresent)
-                                                 calTempOctetPresent: (flags & kCGMMeasurementFlagsCalTempOctetPresent)
-                                                  statusOctetPresent: (flags & kCGMMeasurementFlagsStatusOctetPresent)];
+                                                 warningOctetPresent: (flags & CGMMeasurementFlagsWarningOctetPresent)
+                                                 calTempOctetPresent: (flags & CGMMeasurementFlagsCalTempOctetPresent)
+                                                  statusOctetPresent: (flags & CGMMeasurementFlagsStatusOctetPresent)];
     if (measurementStatusDict && [measurementStatusDict count] != 0) {
-        [measurementDetails setObject: measurementStatusDict forKey: kCGMStatusKeySensorStatus];
+        measurementDetails[kCGMStatusKeySensorStatus] = measurementStatusDict;
     }
 
-    currentByteIndex += ((flags & kCGMMeasurementFlagsWarningOctetPresent) != 0) + ((flags & kCGMMeasurementFlagsCalTempOctetPresent) != 0) + ((flags & kCGMMeasurementFlagsStatusOctetPresent) != 0);
-    if (flags & kCGMMeasurementFlagsTrendInformationPresent) {
+    currentByteIndex += ((flags & CGMMeasurementFlagsWarningOctetPresent) != 0) + ((flags & CGMMeasurementFlagsCalTempOctetPresent) != 0) + ((flags & CGMMeasurementFlagsStatusOctetPresent) != 0);
+    if (flags & CGMMeasurementFlagsTrendInformationPresent) {
         NSNumber *trendInfo = [self parseMeasurementTrendInformation: currentByteIndex];
-        [measurementDetails setObject: trendInfo forKey: kCGMMeasurementKeyTrendInfo];
+        measurementDetails[kCGMMeasurementKeyTrendInfo] = trendInfo;
         currentByteIndex += kCGMMeasurementFieldSizeTrendInfo;
     }
     
-    if (flags & kCGMMeasurementFlagsQualityPresent) {
+    if (flags & CGMMeasurementFlagsQualityPresent) {
         NSNumber *measurementQuality = [self parseMeasurementQuality: currentByteIndex];
-        [measurementDetails setObject: measurementQuality forKey: kCGMMeasurementKeyQuality];
+        measurementDetails[kCGMMeasurementKeyQuality] = measurementQuality;
         currentByteIndex += kCGMMeasurementFieldSizeQuality;
     }
     
     if (crcPresent) {
-        [measurementDetails setObject: [NSNumber numberWithBool: crcFailed] forKey: kCGMMeasurementkeyCRCFailed];
+        measurementDetails[kCGMMeasurementkeyCRCFailed] = @(crcFailed);
     }
     
     return measurementDetails;
@@ -72,7 +74,7 @@
 - (NSNumber*)parseGlucoseConcentration;
 {
     float glucoseConcentration = [self shortFloatAtRange: (NSRange)kCGMMeasurementFieldRangeGlucoseConcentration];
-    return [NSNumber numberWithFloat: glucoseConcentration];
+    return @(glucoseConcentration);
 }
 
 - (NSUInteger)parseMeasurementTimeOffest;
@@ -85,14 +87,14 @@
     NSRange trendRange = {startByte, 2};
     float trend = [self shortFloatAtRange: trendRange];
     
-    return [NSNumber numberWithFloat: trend];
+    return @(trend);
 }
 - (NSNumber*)parseMeasurementQuality: (NSUInteger)startByte;
 {
     NSRange qualityRange = {startByte, 2};
     float quality = [self shortFloatAtRange: qualityRange];
     
-    return [NSNumber numberWithFloat: quality];
+    return @(quality);
 }
 
 #pragma mark - CGM Feature Characteristic
@@ -103,9 +105,9 @@
     NSUInteger feature = [self parseFeatures];
     NSUInteger fluidType = [self parseFluidTypeWithRange: (NSRange)kCGMFeatureFieldRangeTypeLocation];
     NSUInteger sampleLocation = [self parseSampleLocationWithRange: (NSRange)kCGMFeatureFieldRangeTypeLocation];
-    NSDictionary *featureDetails = @{kCGMFeatureKeyFeatures: [NSNumber numberWithUnsignedInteger: feature],
-                                     kCGMFeatureKeyFluidType: [NSNumber numberWithUnsignedInteger: fluidType],
-                                     kCGMFeatureKeySampleLocation: [NSNumber numberWithUnsignedInteger: sampleLocation]};
+    NSDictionary *featureDetails = @{kCGMFeatureKeyFeatures: @(feature),
+                                     kCGMFeatureKeyFluidType: @(fluidType),
+                                     kCGMFeatureKeySampleLocation: @(sampleLocation)};
     return featureDetails;
 }
 
@@ -118,7 +120,7 @@
 {
     NSUInteger typeAndLocation = [self unsignedIntegerAtRange: range];
     // Remove location using bit mask
-    NSUInteger fluidType = typeAndLocation & 15;
+    NSUInteger fluidType = typeAndLocation & kFluidTypeBitMask;
     
     return fluidType;
 }
@@ -143,7 +145,7 @@
                                   calTempOctetPresent: YES
                                    statusOctetPresent: YES];
     NSDictionary *statusDetails = @{kCGMStatusKeySensorStatus: status,
-                                    kCGMKeyTimeOffset: [NSNumber numberWithUnsignedInteger: timeOffset]};
+                                    kCGMKeyTimeOffset: @(timeOffset)};
     
     return statusDetails;
 }
@@ -157,19 +159,19 @@
     
     if (statusPresent) {
         NSUInteger statusOctet = [self unsignedIntegerAtRange: (NSRange){startByte,1}];
-        [statusDict setObject: [NSNumber numberWithInteger: statusOctet] forKey: kCGMStatusKeyOctetStatus];
+        statusDict[kCGMStatusKeyOctetStatus] = @(statusOctet);
         startByte++;
     }
     
     if (calTempPresent) {
         NSUInteger calTempOctet = [self unsignedIntegerAtRange: (NSRange){startByte,1}];
-        [statusDict setObject: [NSNumber numberWithInteger: calTempOctet] forKey: kCGMStatusKeyOctetCalTemp];
+        statusDict[kCGMStatusKeyOctetCalTemp] = @(calTempOctet);
         startByte++;
     }
     
     if (warningPresent) {
         NSUInteger warningOctet = [self unsignedIntegerAtRange: (NSRange){startByte,1}];
-        [statusDict setObject: [NSNumber numberWithInteger: warningOctet] forKey: kCGMStatusKeyOctetWarning];
+        statusDict[kCGMStatusKeyOctetWarning] = @(warningOctet);
     }
     
     return statusDict;
@@ -202,13 +204,13 @@
     NSInteger dstOffsetCode = [self unsignedIntegerAtRange: (NSRange)kCGMSessionStartTimeFieldRangeDSTOffset];
     
     NSTimeInterval dstOffsetInSeconds = 0.;
-    if ((dstOffsetCode == kDSTStandardTime) && ([timeZone daylightSavingTimeOffset] == 0)) {
+    if ((dstOffsetCode == DSTStandardTime) && ([timeZone daylightSavingTimeOffset] == 0)) {
         dstOffsetInSeconds = [timeZone daylightSavingTimeOffset];
-    } else if ((dstOffsetCode == kDSTPlusHourHalf) && ([timeZone daylightSavingTimeOffset] != (kSecondsInHour / 2.))) {
+    } else if ((dstOffsetCode == DSTPlusHourHalf) && ([timeZone daylightSavingTimeOffset] != (kSecondsInHour / 2.))) {
         dstOffsetInSeconds = [timeZone daylightSavingTimeOffset] - (kSecondsInHour / 2.);
-    } else if ((dstOffsetCode == kDSTPlusHourOne) && ([timeZone daylightSavingTimeOffset] != kSecondsInHour)) {
+    } else if ((dstOffsetCode == DSTPlusHourOne) && ([timeZone daylightSavingTimeOffset] != kSecondsInHour)) {
         dstOffsetInSeconds = [timeZone daylightSavingTimeOffset] - kSecondsInHour;
-    } else if ((dstOffsetCode == kDSTPlusHoursTwo) && ([timeZone daylightSavingTimeOffset] != (kSecondsInHour * 2))) {
+    } else if ((dstOffsetCode == DSTPlusHoursTwo) && ([timeZone daylightSavingTimeOffset] != (kSecondsInHour * 2))) {
         dstOffsetInSeconds = [timeZone daylightSavingTimeOffset] - (kSecondsInHour * 2);
     }
     
@@ -244,33 +246,34 @@
     CGMCPOpCode opCode = [self parseCGMCPOpCode];
     NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObject: [NSNumber numberWithUnsignedInteger: opCode] forKey: kCGMCPKeyOpCode];
     switch (opCode) {
-        case kCGMCPOpCodeResponse:
+        case CGMCPOpCodeResponse:
         {
             NSDictionary *responseDetails = [self parseCGMCPResponseDetails];
-            [responseDict setObject: responseDetails forKey: kCGMCPKeyResponseDetails];
+            responseDict[kCGMCPKeyResponseDetails] = responseDetails;
             break;
         }
-        case kCGMCPOpCodeCommIntervalResponse:
+        case CGMCPOpCodeCommIntervalResponse:
         {
             NSUInteger commInterval = [self parseCommInterval];
-            [responseDict setObject: [NSNumber numberWithUnsignedInteger: commInterval] forKey: kCGMCPKeyOperand];
+            responseDict[kCGMCPKeyOperand] = @(commInterval);
             break;
         }
-        case kCGMCPOpCodeAlertLevelPatientHighResponse:
-        case kCGMCPOpCodeAlertLevelPatientLowResponse:
-        case kCGMCPOpCodeAlertLevelHypoReponse:
-        case kCGMCPOpCodeAlertLevelHyperReponse:
-        case kCGMCPOpCodeAlertLevelRateDecreaseResponse:
-        case kCGMCPOpCodeAlertLevelRateIncreaseResponse:
+        case CGMCPOpCodeAlertLevelPatientHighResponse:
+        case CGMCPOpCodeAlertLevelPatientLowResponse:
+        case CGMCPOpCodeAlertLevelHypoReponse:
+        case CGMCPOpCodeAlertLevelHyperReponse:
+        case CGMCPOpCodeAlertLevelRateDecreaseResponse:
+        case CGMCPOpCodeAlertLevelRateIncreaseResponse:
         {
             float operand = [self parseCGMCPShortFloatOperand];
-            [responseDict setObject: [NSNumber numberWithFloat: operand] forKey: kCGMCPKeyOperand];
+            responseDict[kCGMCPKeyOperand] = @(operand);
             break;
         }
-        case kCGMCPOpCodeCalibrationValueResponse:
+        case CGMCPOpCodeCalibrationValueResponse:
         {
             NSDictionary *calibrationDetails = [self parseCalibrationDetails];
-            [responseDict setObject: calibrationDetails forKey: kCGMCPKeyResponseCalibration];
+            responseDict[kCGMCPKeyResponseCalibration] = calibrationDetails;
+            break;
         }
         default:
             DLog(@"Do not know about CGMCP operation with code %d", opCode);

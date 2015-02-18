@@ -175,96 +175,96 @@
 - (void) startSession;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    [self sendCGMCPOpCode: kCGMCPOpCodeSessionStart];
+    [self sendCGMCPOpCode: CGMCPOpCodeSessionStart];
 }
 
 - (void) stopSession;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    [self sendCGMCPOpCode: kCGMCPOpCodeSessionStop];
+    [self sendCGMCPOpCode: CGMCPOpCodeSessionStop];
 }
 
 - (void) resetDeviceSpecificAlert;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertDeviceSpecificReset];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertDeviceSpecificReset];
 }
 
 - (void) getCommunicationInterval;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    [self sendCGMCPOpCode: kCGMCPOpCodeCommIntervalGet];
+    [self sendCGMCPOpCode: CGMCPOpCodeCommIntervalGet];
 }
 
 - (void) getLastCalibrationValue;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     // write 0xFFFF to calibration get operation
-    [self getCalibrationValue: 65535];
+    [self getCalibrationValue: 0xFFFF];
 }
 
 - (void) getCalibrationValue: (uint16_t)recordNumber;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     NSData *operand = [NSData dataWithBytes: &recordNumber length: sizeof(uint16_t)];
-    [self sendCGMCPOpCode: kCGMCPOpCodeCalibrationValueGet operandData: operand];
+    [self sendCGMCPOpCode: CGMCPOpCodeCalibrationValueGet operandData: operand];
 }
 
 - (void) getPatientHighLevel;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelPatientHighGet];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelPatientHighGet];
 }
 
 - (void) getPatientLowLevel;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelPatientLowGet];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelPatientLowGet];
 }
 
 - (void) getHypoLevel;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelHypoGet];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelHypoGet];
 }
 
 - (void) getHyperLevel;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelHyperGet];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelHyperGet];
 }
 
 - (void) getRateDecreaseLevel;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelRateDecreaseGet];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelRateDecreaseGet];
 }
 
 - (void) getRateIncreaseLevel;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelRateIncreaseGet];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelRateIncreaseGet];
 }
 
 - (void) setCommunicationInterval: (uint8_t)intervalInMinutes;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     NSData *operand = [NSData dataWithBytes: &intervalInMinutes length: sizeof(uint8_t)];
-    [self sendCGMCPOpCode: kCGMCPOpCodeCalibrationValueGet operandData: operand];
+    [self sendCGMCPOpCode: CGMCPOpCodeCalibrationValueGet operandData: operand];
 }
 
 - (void) disableCommunication;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     // set communication interval to 0x00
-    [self setCommunicationInterval: 0];
+    [self setCommunicationInterval: 0x00];
 }
 
 - (void) setFastestCommunicationInterval;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     // set communication interval to 0xFF
-    [self setCommunicationInterval: 255];
+    [self setCommunicationInterval: 0xFF];
 }
 
 - (void) setCalibrationValue: (shortFloat)value
@@ -280,49 +280,49 @@
     char ignoredBytes[] = {0x00, 0x00, 0x00, 0x00, 0x00};
     [operand appendBytes: ignoredBytes length: sizeof(ignoredBytes)];
     NSLog(@"operand is %@", operand);
-    [self sendCGMCPOpCode: kCGMCPOpCodeCalibrationValueSet operandData: operand];
+    [self sendCGMCPOpCode: CGMCPOpCodeCalibrationValueSet operandData: operand];
 }
 
 - (void) setPatientHighLevel: (shortFloat)value;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     NSData *operand = [NSData dataWithBytes: &value length: sizeof(shortFloat)];
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelPatientHighSet operandData: operand];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelPatientHighSet operandData: operand];
 }
 
 - (void) setPatientLowLevel: (shortFloat)value;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     NSData *operand = [NSData dataWithBytes: &value length: sizeof(shortFloat)];
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelPatientLowSet operandData: operand];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelPatientLowSet operandData: operand];
 }
 
 - (void) setHypoLevel: (shortFloat)value;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     NSData *operand = [NSData dataWithBytes: &value length: sizeof(shortFloat)];
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelHypoSet operandData: operand];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelHypoSet operandData: operand];
 }
 
 - (void) setHyperLevel: (shortFloat)value;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     NSData *operand = [NSData dataWithBytes: &value length: sizeof(shortFloat)];
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelHyperSet operandData: operand];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelHyperSet operandData: operand];
 }
 
 - (void) setRateDecreaseLevel: (shortFloat)value;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     NSData *operand = [NSData dataWithBytes: &value length: sizeof(shortFloat)];
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelRateDecreaseSet operandData: operand];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelRateDecreaseSet operandData: operand];
 }
 
 - (void) setRateIncreaseLevel: (shortFloat)value;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     NSData *operand = [NSData dataWithBytes: &value length: sizeof(shortFloat)];
-    [self sendCGMCPOpCode: kCGMCPOpCodeAlertLevelRateIncreaseSet operandData: operand];
+    [self sendCGMCPOpCode: CGMCPOpCodeAlertLevelRateIncreaseSet operandData: operand];
 }
 
 #pragma mark - Record Access Control Point
@@ -449,7 +449,7 @@
         // for convenience, add the measurement date/time as native NSDate
         if (self.sessionStartTime) {
             NSDate *measurementDate = [self.sessionStartTime dateByAddingTimeInterval: [measurementDetails[kCGMKeyTimeOffset] doubleValue]];
-            [measurementDetails setObject: measurementDate forKey: kCGMMeasurementKeyDateTime];
+            measurementDetails[kCGMMeasurementKeyDateTime] = measurementDate;
         }
 
         NSLog(@"measurement details %@", measurementDetails);
@@ -460,7 +460,7 @@
         NSDictionary *cgmFeatures = [value parseFeatureCharacteristicDetails];
         
         // extract presence of CRC to use for future commands
-        self.crcPresent = [cgmFeatures[kCGMFeatureKeyFeatures] unsignedIntegerValue] & kCGMFeatureSupportedE2ECRC;
+        self.crcPresent = [cgmFeatures[kCGMFeatureKeyFeatures] unsignedIntegerValue] & CGMFeatureSupportedE2ECRC;
         
         if ([self.delegate respondsToSelector: @selector(cgmController:featuresDetails:)]) {
             [self.delegate cgmController: self featuresDetails: cgmFeatures];
@@ -486,12 +486,12 @@
         CGMCPOpCode responseOpCode = [responseDict[kCGMCPKeyOpCode] unsignedIntegerValue];
         
         switch (responseOpCode) {
-            case kCGMCPOpCodeResponse:
+            case CGMCPOpCodeResponse:
             {
                 NSDictionary *responseDetails = responseDict[kCGMCPKeyResponseDetails];
                 CGMCPResponseCode responseCode = [responseDetails[kCGMCPKeyResponseCodeValue] unsignedIntegerValue];
                 CGMCPOpCode requestOpCode = [responseDetails[kCGMCPKeyResponseRequestOpCode] unsignedIntegerValue];
-                if (responseCode == kCGMCPSuccess) {
+                if (responseCode == CGMCPSuccess) {
                     if ([self.delegate respondsToSelector:@selector(cgmController:CGMCPOperationSuccessful:)]) {
                         [self.delegate cgmController: self CGMCPOperationSuccessful: requestOpCode];
                     }
@@ -502,13 +502,13 @@
                 }
                 break;
             }
-            case kCGMCPOpCodeCommIntervalResponse:
-            case kCGMCPOpCodeAlertLevelPatientHighResponse:
-            case kCGMCPOpCodeAlertLevelPatientLowResponse:
-            case kCGMCPOpCodeAlertLevelHypoReponse:
-            case kCGMCPOpCodeAlertLevelHyperReponse:
-            case kCGMCPOpCodeAlertLevelRateDecreaseResponse:
-            case kCGMCPOpCodeAlertLevelRateIncreaseResponse:
+            case CGMCPOpCodeCommIntervalResponse:
+            case CGMCPOpCodeAlertLevelPatientHighResponse:
+            case CGMCPOpCodeAlertLevelPatientLowResponse:
+            case CGMCPOpCodeAlertLevelHypoReponse:
+            case CGMCPOpCodeAlertLevelHyperReponse:
+            case CGMCPOpCodeAlertLevelRateDecreaseResponse:
+            case CGMCPOpCodeAlertLevelRateIncreaseResponse:
             {
                 if ([self.delegate respondsToSelector:@selector(cgmController:didGetValue:CGMCPResponseOpCode:)]) {
                     NSNumber *value = responseDict[kCGMCPKeyOperand];
@@ -546,6 +546,7 @@
                     NSNumber *value = responseDict[kRACPKeyNumberOfRecords];
                     [self.delegate cgmController: self didGetNumberOfStoredRecords: value];
                 }
+                break;
             }
             default:
                 break;

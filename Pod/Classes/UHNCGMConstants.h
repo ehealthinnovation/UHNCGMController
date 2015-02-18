@@ -3,7 +3,25 @@
 //  CGM_Collector
 //
 //  Created by Nathaniel Hamming on 2015-01-27.
-//  Copyright (c) 2015 eHealth. All rights reserved.
+//  Copyright (c) 2015 University Health Network.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 //
 // CGMS UUIDs can be found here: https://developer.bluetooth.org/gatt/services/Pages/ServiceViewer.aspx?u=org.bluetooth.service.cgm.xml
 
@@ -137,14 +155,13 @@ typedef struct shortFloat {
 #define kCGMMeasurementFieldSizeQuality                 2
 #define kCGMMeasurementFieldSizeCRC                     2
 
-enum {
-    kCGMMeasurementFlagsTrendInformationPresent  = (1 << 0),
-    kCGMMeasurementFlagsQualityPresent           = (1 << 1),
-    kCGMMeasurementFlagsStatusOctetPresent       = (1 << 5),
-    kCGMMeasurementFlagsCalTempOctetPresent      = (1 << 6),
-    kCGMMeasurementFlagsWarningOctetPresent      = (1 << 7),
+typedef NS_ENUM (uint8_t, CGMMeasurementFlagOption) {
+    CGMMeasurementFlagsTrendInformationPresent  = (1 << 0),
+    CGMMeasurementFlagsQualityPresent           = (1 << 1),
+    CGMMeasurementFlagsStatusOctetPresent       = (1 << 5),
+    CGMMeasurementFlagsCalTempOctetPresent      = (1 << 6),
+    CGMMeasurementFlagsWarningOctetPresent      = (1 << 7),
 };
-typedef uint8_t CGMMeasurementFlagOption;
 
 
 #pragma mark - CGM Feature
@@ -207,51 +224,48 @@ typedef uint8_t CGMMeasurementFlagOption;
 #define kCGMFeatureFieldRangeTypeLocation   {3,1}
 #define kCGMFeatureFieldRangeCRC            {4,2}
 
-enum {
-    kCGMFeatureSupportedCalibration                     = (1 << 0),
-    kCGMFeatureSupportedAlertLowHighPatient             = (1 << 1),
-    kCGMFeatureSupportedAlertHypo                       = (1 << 2),
-    kCGMFeatureSupportedAlertHyper                      = (1 << 3),
-    kCGMFeatureSupportedAlertIncreaseDecreaseRate       = (1 << 4),
-    kCGMFeatureSupportedAlertDeviceSpecific             = (1 << 5),
-    kCGMFeatureSupportedSensorDetectionMalfunction      = (1 << 6),
-    kCGMFeatureSupportedSensorDetectionLowHighTemp      = (1 << 7),
-    kCGMFeatureSupportedSensorDetectionLowHighResult    = (1 << 8),
-    kCGMFeatureSupportedLowBattery                      = (1 << 9),
-    kCGMFeatureSupportedSensorDetectionTypeError        = (1 << 10),
-    kCGMFeatureSupportedGeneralDeviceFault              = (1 << 11),
-    kCGMFeatureSupportedE2ECRC                          = (1 << 12),
-    kCGMFeatureSupportedMultipleBond                    = (1 << 13),
-    kCGMFeatureSupportedMultipleSession                 = (1 << 14),
-    kCGMFeatureSupportedCGMTrend                        = (1 << 15),
-    kCGMFeatureSupportedCGMQuality                      = (1 << 16),
+typedef NS_ENUM (uint32_t, CGMFeatureOption) {
+    CGMFeatureSupportedCalibration                     = (1 << 0),
+    CGMFeatureSupportedAlertLowHighPatient             = (1 << 1),
+    CGMFeatureSupportedAlertHypo                       = (1 << 2),
+    CGMFeatureSupportedAlertHyper                      = (1 << 3),
+    CGMFeatureSupportedAlertIncreaseDecreaseRate       = (1 << 4),
+    CGMFeatureSupportedAlertDeviceSpecific             = (1 << 5),
+    CGMFeatureSupportedSensorDetectionMalfunction      = (1 << 6),
+    CGMFeatureSupportedSensorDetectionLowHighTemp      = (1 << 7),
+    CGMFeatureSupportedSensorDetectionLowHighResult    = (1 << 8),
+    CGMFeatureSupportedLowBattery                      = (1 << 9),
+    CGMFeatureSupportedSensorDetectionTypeError        = (1 << 10),
+    CGMFeatureSupportedGeneralDeviceFault              = (1 << 11),
+    CGMFeatureSupportedE2ECRC                          = (1 << 12),
+    CGMFeatureSupportedMultipleBond                    = (1 << 13),
+    CGMFeatureSupportedMultipleSession                 = (1 << 14),
+    CGMFeatureSupportedCGMTrend                        = (1 << 15),
+    CGMFeatureSupportedCGMQuality                      = (1 << 16),
 };
-typedef uint32_t CGMFeatureOption;
 
-enum {
-    kCGMTypeWholeBloodCapillary = 1,
-    kCGMTypePlasmaCapillary,
-    kCGMTypeWholeBloodVenous,
-    kCGMTypePlasmaVenous,
-    kCGMTypeWholeBloodArterial,
-    kCGMTypePlasmaArterial,
-    kCGMTypeWholeBloodUndetermined,
-    kCGMTypePlasmaUndetermined,
-    kCGMTypeISF,
-    kCGMTypeControlSolution,
+typedef NS_ENUM (uint8_t, CGMTypeOption) {
+    CGMTypeWholeBloodCapillary = 1,
+    CGMTypePlasmaCapillary,
+    CGMTypeWholeBloodVenous,
+    CGMTypePlasmaVenous,
+    CGMTypeWholeBloodArterial,
+    CGMTypePlasmaArterial,
+    CGMTypeWholeBloodUndetermined,
+    CGMTypePlasmaUndetermined,
+    CGMTypeISF,
+    CGMTypeControlSolution,
 };
-typedef uint8_t CGMTypeOption;
 
 
-enum {
-    kCGMSampleLocationFinger                = 1,
-    kCGMSampleLocationAlternativeSiteTest   = 2,
-    kCGMSampleLocationEarlobe               = 3,
-    kCGMSampleLocationControlSolution       = 4,
-    kCGMSampleLocationSubcutaneousTissue    = 5,
-    kCGMSampleLocationNotAvailable          = 15,
+typedef NS_ENUM (uint8_t, CGMLocationOption) {
+    CGMSampleLocationFinger                = 1,
+    CGMSampleLocationAlternativeSiteTest   = 2,
+    CGMSampleLocationEarlobe               = 3,
+    CGMSampleLocationControlSolution       = 4,
+    CGMSampleLocationSubcutaneousTissue    = 5,
+    CGMSampleLocationNotAvailable          = 15,
 };
-typedef uint8_t CGMLocationOption;
 
 
 #pragma mark - CGM Status
@@ -297,37 +311,34 @@ typedef uint8_t CGMLocationOption;
 #define kCGMStatusFieldRangeStatus      {2,3}
 #define kCGMStatusFieldRangeCRC         {5,2}
 
-enum {
-    kCGMMeasurementStatusSessionStopped                = (1 << 0),
-    kCGMMeasurementStatusDeviceBatteryLow              = (1 << 1),
-    kCGMMeasurementStatusSensorTypeIncorrect           = (1 << 2),
-    kCGMMeasurementStatusSensorMalfunction             = (1 << 3),
-    kCGMMeasurementStatusDeviceSpecificAlert           = (1 << 4),
-    kCGMMeasurementStatusGeneralDeviceFault            = (1 << 5),
+typedef NS_ENUM (uint8_t, CGMStatusStatusOptions) {
+    CGMMeasurementStatusSessionStopped                = (1 << 0),
+    CGMMeasurementStatusDeviceBatteryLow              = (1 << 1),
+    CGMMeasurementStatusSensorTypeIncorrect           = (1 << 2),
+    CGMMeasurementStatusSensorMalfunction             = (1 << 3),
+    CGMMeasurementStatusDeviceSpecificAlert           = (1 << 4),
+    CGMMeasurementStatusGeneralDeviceFault            = (1 << 5),
 };
-typedef uint8_t CGMStatusStatusOptions;
 
-enum {
-    kCGMMeasurementStatusTimeSynchronizationRequired   = (1 << 0),
-    kCGMMeasurementStatusCalibrationNotAllowed         = (1 << 1),
-    kCGMMeasurementStatusCalibrationRecommended        = (1 << 2),
-    kCGMMeasurementStatusCalibrationRequired           = (1 << 3),
-    kCGMMeasurementStatusSensorTooHighTemp             = (1 << 4),
-    kCGMMeasurementStatusSensorTooLowTemp              = (1 << 5),
+typedef NS_ENUM (uint8_t, CGMStatusCalTempOption) {
+    CGMMeasurementStatusTimeSynchronizationRequired   = (1 << 0),
+    CGMMeasurementStatusCalibrationNotAllowed         = (1 << 1),
+    CGMMeasurementStatusCalibrationRecommended        = (1 << 2),
+    CGMMeasurementStatusCalibrationRequired           = (1 << 3),
+    CGMMeasurementStatusSensorTooHighTemp             = (1 << 4),
+    CGMMeasurementStatusSensorTooLowTemp              = (1 << 5),
 };
-typedef uint8_t CGMStatusCalTempOption;
 
-enum {
-    kCGMMeasurementStatusResultLowerThanPatientLow     = (1 << 0),
-    kCGMMeasurementStatusResultHigherThanPatientHigh   = (1 << 1),
-    kCGMMeasurementStatusResultLowerThanHypo           = (1 << 2),
-    kCGMMeasurementStatusResultHigherThanHyper         = (1 << 3),
-    kCGMMeasurementStatusResultExceedRateDecrease      = (1 << 4),
-    kCGMMeasurementStatusResultExceedRateIncrease      = (1 << 5),
-    kCGMMeasurementStatusSensorTooLowResult            = (1 << 6),
-    kCGMMeasurementStatusSensorTooHighResult           = (1 << 7),
+typedef NS_ENUM (uint8_t, CGMStatusWarningOption) {
+    CGMMeasurementStatusResultLowerThanPatientLow     = (1 << 0),
+    CGMMeasurementStatusResultHigherThanPatientHigh   = (1 << 1),
+    CGMMeasurementStatusResultLowerThanHypo           = (1 << 2),
+    CGMMeasurementStatusResultHigherThanHyper         = (1 << 3),
+    CGMMeasurementStatusResultExceedRateDecrease      = (1 << 4),
+    CGMMeasurementStatusResultExceedRateIncrease      = (1 << 5),
+    CGMMeasurementStatusSensorTooLowResult            = (1 << 6),
+    CGMMeasurementStatusSensorTooHighResult           = (1 << 7),
 };
-typedef uint8_t CGMStatusWarningOption;
 
 
 #pragma mark - CGM Session Start Time
@@ -390,14 +401,13 @@ typedef uint8_t CGMStatusWarningOption;
 #define kCGMSessionStartTimeUnknownTimeZone -128
 #define kCGMTimeZoneStepSize                4.
 
-enum {
-    kDSTStandardTime   = 0,
-    kDSTPlusHourHalf   = 2,
-    kDSTPlusHourOne    = 4,
-    kDSTPlusHoursTwo   = 8,
-    kDSTUnknown        = 255,
+typedef NS_ENUM (uint8_t, DSTOffsetOption) {
+    DSTStandardTime   = 0,
+    DSTPlusHourHalf   = 2,
+    DSTPlusHourOne    = 4,
+    DSTPlusHoursTwo   = 8,
+    DSTUnknown        = 255,
 };
-typedef uint8_t kDSTOffsetOption;
 
 
 #pragma mark - CGM Session Run Time
@@ -426,43 +436,41 @@ typedef uint8_t kDSTOffsetOption;
 #define kCGMCPFieldRangeCalibrationRecordNumber           {8,2}
 #define kCGMCPFieldRangeCalibrationStatus                 {10,1}
 
-enum {
-    kCGMCPOpCodeCommIntervalSet = 1,
-    kCGMCPOpCodeCommIntervalGet,
-    kCGMCPOpCodeCommIntervalResponse,
-    kCGMCPOpCodeCalibrationValueSet,
-    kCGMCPOpCodeCalibrationValueGet,
-    kCGMCPOpCodeCalibrationValueResponse,
-    kCGMCPOpCodeAlertLevelPatientHighSet,
-    kCGMCPOpCodeAlertLevelPatientHighGet,
-    kCGMCPOpCodeAlertLevelPatientHighResponse,
-    kCGMCPOpCodeAlertLevelPatientLowSet,
-    kCGMCPOpCodeAlertLevelPatientLowGet,
-    kCGMCPOpCodeAlertLevelPatientLowResponse,
-    kCGMCPOpCodeAlertLevelHypoSet,
-    kCGMCPOpCodeAlertLevelHypoGet,
-    kCGMCPOpCodeAlertLevelHypoReponse,
-    kCGMCPOpCodeAlertLevelHyperSet,
-    kCGMCPOpCodeAlertLevelHyperGet,
-    kCGMCPOpCodeAlertLevelHyperReponse,
-    kCGMCPOpCodeAlertLevelRateDecreaseSet,
-    kCGMCPOpCodeAlertLevelRateDecreaseGet,
-    kCGMCPOpCodeAlertLevelRateDecreaseResponse,
-    kCGMCPOpCodeAlertLevelRateIncreaseSet,
-    kCGMCPOpCodeAlertLevelRateIncreaseGet,
-    kCGMCPOpCodeAlertLevelRateIncreaseResponse,
-    kCGMCPOpCodeAlertDeviceSpecificReset,
-    kCGMCPOpCodeSessionStart,
-    kCGMCPOpCodeSessionStop,
-    kCGMCPOpCodeResponse,
+typedef NS_ENUM (uint8_t, CGMCPOpCode) {
+    CGMCPOpCodeCommIntervalSet = 1,
+    CGMCPOpCodeCommIntervalGet,
+    CGMCPOpCodeCommIntervalResponse,
+    CGMCPOpCodeCalibrationValueSet,
+    CGMCPOpCodeCalibrationValueGet,
+    CGMCPOpCodeCalibrationValueResponse,
+    CGMCPOpCodeAlertLevelPatientHighSet,
+    CGMCPOpCodeAlertLevelPatientHighGet,
+    CGMCPOpCodeAlertLevelPatientHighResponse,
+    CGMCPOpCodeAlertLevelPatientLowSet,
+    CGMCPOpCodeAlertLevelPatientLowGet,
+    CGMCPOpCodeAlertLevelPatientLowResponse,
+    CGMCPOpCodeAlertLevelHypoSet,
+    CGMCPOpCodeAlertLevelHypoGet,
+    CGMCPOpCodeAlertLevelHypoReponse,
+    CGMCPOpCodeAlertLevelHyperSet,
+    CGMCPOpCodeAlertLevelHyperGet,
+    CGMCPOpCodeAlertLevelHyperReponse,
+    CGMCPOpCodeAlertLevelRateDecreaseSet,
+    CGMCPOpCodeAlertLevelRateDecreaseGet,
+    CGMCPOpCodeAlertLevelRateDecreaseResponse,
+    CGMCPOpCodeAlertLevelRateIncreaseSet,
+    CGMCPOpCodeAlertLevelRateIncreaseGet,
+    CGMCPOpCodeAlertLevelRateIncreaseResponse,
+    CGMCPOpCodeAlertDeviceSpecificReset,
+    CGMCPOpCodeSessionStart,
+    CGMCPOpCodeSessionStop,
+    CGMCPOpCodeResponse,
 };
-typedef uint8_t CGMCPOpCode;
 
-enum {
-    kCGMCPSuccess = 1,
-    kCGMCPOpCodeNotSupported,
-    kCGMCPInvalidOperand,
-    kCGMCPProcedureNotCompleted,
-    kCGMCPParameterOutOfRange,
+typedef NS_ENUM (uint8_t, CGMCPResponseCode) {
+    CGMCPSuccess = 1,
+    CGMCPOpCodeNotSupported,
+    CGMCPInvalidOperand,
+    CGMCPProcedureNotCompleted,
+    CGMCPParameterOutOfRange,
 };
-typedef uint8_t CGMCPResponseCode;

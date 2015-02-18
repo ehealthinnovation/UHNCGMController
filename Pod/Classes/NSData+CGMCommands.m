@@ -3,7 +3,7 @@
 //  CGM_Collector
 //
 //  Created by Nathaniel Hamming on 2015-01-08.
-//  Copyright (c) 2015 eHealth. All rights reserved.
+//  Copyright (c) 2015 University Health Network.
 //
 
 #import "NSData+CGMCommands.h"
@@ -13,7 +13,7 @@
 + (NSData*)cgmCurrentTimeValue;
 {
     NSDate *now = [NSDate date];
-    // TODO get start time components (year, month, day, hour, min, sec)
+
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSUInteger const kComponentBits = (NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
                                        | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitTimeZone);
@@ -27,15 +27,15 @@
     
     NSTimeZone *localTimeZone = [NSTimeZone localTimeZone];
     NSTimeInterval daylightOffset = [localTimeZone daylightSavingTimeOffset];
-    uint8_t dtsOffsetValue = kDSTUnknown;
+    uint8_t dtsOffsetValue = DSTUnknown;
     if (daylightOffset >= kSecondsInHour * 2) {
-        dtsOffsetValue = kDSTPlusHoursTwo;
+        dtsOffsetValue = DSTPlusHoursTwo;
     } else if (daylightOffset >= kSecondsInHour) {
-        dtsOffsetValue = kDSTPlusHourOne;
+        dtsOffsetValue = DSTPlusHourOne;
     } else if (daylightOffset >= kSecondsInHour / 2.) {
-        dtsOffsetValue = kDSTPlusHourHalf;
+        dtsOffsetValue = DSTPlusHourHalf;
     } else if (daylightOffset == 0.) {
-        dtsOffsetValue = kDSTStandardTime;
+        dtsOffsetValue = DSTStandardTime;
     }
     
     NSInteger secFromGMT = [localTimeZone secondsFromGMT];

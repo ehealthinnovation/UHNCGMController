@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		4882E4BD1A93C52000BD87F7 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4882E4C01A93C52000BD87F7 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				4882E4C11A93C52500BD87F7 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1206D53B0A4D98BDB16AC515 /* libPods-UHNCGMController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B642A964BC9CB56802FF11 /* libPods-UHNCGMController.a */; };
 		4882E4BA1A93707700BD87F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4882E4B91A93707700BD87F7 /* Main.storyboard */; };
@@ -247,6 +261,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Nathaniel Hamming";
 				TargetAttributes = {
+					4882E4BD1A93C52000BD87F7 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -267,6 +284,7 @@
 			targets = (
 				6003F589195388D20070C39A /* UHNCGMController */,
 				6003F5AD195388D20070C39A /* Tests */,
+				4882E4BD1A93C52000BD87F7 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -323,6 +341,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		4882E4C11A93C52500BD87F7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"Centre for Global eHealth Innovation\";\ncompanyID=\"org.ehealthinnovation\";\ncompanyURL=\"http://ehealthinnovation.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"../docs\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--output \"${outputPath}\" \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n--ignore .m \\\n--ignore FBSnapshotTestCase \\\n--ignore Expecta \\\n--ignore Specta \\\n--ignore NHArrowView \\\n--ignore UHNBLEController \\\n--ignore UHNDebug \\\n--ignore UHNTimeSeriesPlotView \\\n\"${PROJECT_DIR}\"";
 		};
 		71AF1208BC71B48B98DDCED6 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -405,6 +436,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4882E4BE1A93C52000BD87F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4882E4BF1A93C52000BD87F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		6003F5BD195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -486,7 +531,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UHNCGMController/UHNCGMController-Prefix.pch";
 				INFOPLIST_FILE = "UHNCGMController/UHNCGMController-Info.plist";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -551,6 +596,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4882E4C01A93C52000BD87F7 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4882E4BE1A93C52000BD87F7 /* Debug */,
+				4882E4BF1A93C52000BD87F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6003F585195388D10070C39A /* Build configuration list for PBXProject "UHNCGMController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

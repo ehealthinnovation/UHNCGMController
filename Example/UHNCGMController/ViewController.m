@@ -93,8 +93,6 @@
     self.plotView.windowMaxSize = 60;
     self.plotView.backgroundColor = [UIColor clearColor];
     
-    //    [self.plotView generateRandomData: YES];
-    
     // setup the temp ranges
     self.tempHypoValue = 40;
     self.tempHyperValue = 210;
@@ -129,10 +127,11 @@
 {
     if (glucoseValue) {
         self.glucoseValueLabel.text = [glucoseValue stringValue];
-        if ([glucoseValue floatValue] < self.tempHypoValue || [glucoseValue floatValue] > self.tempHyperValue) {
+        float glucoseValueFloat = [glucoseValue floatValue];
+        if (glucoseValueFloat < self.tempHypoValue || glucoseValueFloat > self.tempHyperValue) {
             self.glucoseValueLabel.textColor = [UIColor redColor];
             self.plotView.lineHeadColor = [UIColor redColor];
-        } else if ([glucoseValue floatValue] < self.tempPatientLowLevel || [glucoseValue floatValue] > self.tempPatientHighLevel) {
+        } else if (glucoseValueFloat < self.tempPatientLowLevel || glucoseValueFloat > self.tempPatientHighLevel) {
             self.glucoseValueLabel.textColor = [UIColor yellowColor];
             self.plotView.lineHeadColor = [UIColor yellowColor];
         } else {
@@ -325,12 +324,12 @@
 
 - (void) cgmController: (UHNCGMController*)controller CGMCPOperationSuccessful: (CGMCPOpCode)opCode;
 {
-    if (opCode == kCGMCPOpCodeSessionStop && self.shouldStartNewSession) {
+    if (opCode == CGMCPOpCodeSessionStop && self.shouldStartNewSession) {
         self.shouldStartNewSession = NO;
         [self.cgmController startSession];
-    } else if (opCode == kCGMCPOpCodeSessionStart) {
+    } else if (opCode == CGMCPOpCodeSessionStart) {
         [self.cgmController setCurrentTime];
-    } else if (opCode == kCGMCPOpCodeAlertLevelHypoSet) {
+    } else if (opCode == CGMCPOpCodeAlertLevelHypoSet) {
         self.tempHypoValue = [self.hypoThresholdTextField.text floatValue];
     }
 }

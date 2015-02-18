@@ -3,7 +3,7 @@
 //  CGM_Collector
 //
 //  Created by Nathaniel Hamming on 2015-01-27.
-//  Copyright (c) 2015 eHealth. All rights reserved.
+//  Copyright (c) 2015 University Health Network.
 //
 
 #import "NSDictionary+CGMExtensions.h"
@@ -23,32 +23,32 @@
 
 - (BOOL)hasExceededLevelHypo;
 {
-    return ([self[kCGMStatusKeyOctetWarning] integerValue] & kCGMMeasurementStatusResultLowerThanHypo);
+    return ([self[kCGMStatusKeyOctetWarning] integerValue] & CGMMeasurementStatusResultLowerThanHypo);
 }
 
 - (BOOL)hasExceededLevelHyper;
 {
-    return ([self[kCGMStatusKeyOctetWarning] integerValue] & kCGMMeasurementStatusResultHigherThanHyper);
+    return ([self[kCGMStatusKeyOctetWarning] integerValue] & CGMMeasurementStatusResultHigherThanHyper);
 }
 
 - (BOOL)hasExceededLevelPatientLow;
 {
-    return ([self[kCGMStatusKeyOctetWarning] integerValue] & kCGMMeasurementStatusResultLowerThanPatientLow);
+    return ([self[kCGMStatusKeyOctetWarning] integerValue] & CGMMeasurementStatusResultLowerThanPatientLow);
 }
 
 - (BOOL)hasExceededLevelPatientHigh;
 {
-    return ([self[kCGMStatusKeyOctetWarning] integerValue] & kCGMMeasurementStatusResultHigherThanPatientHigh);
+    return ([self[kCGMStatusKeyOctetWarning] integerValue] & CGMMeasurementStatusResultHigherThanPatientHigh);
 }
 
 - (BOOL)hasExceededRateDecrease;
 {
-    return ([self[kCGMStatusKeyOctetWarning] integerValue] & kCGMMeasurementStatusResultExceedRateDecrease);
+    return ([self[kCGMStatusKeyOctetWarning] integerValue] & CGMMeasurementStatusResultExceedRateDecrease);
 }
 
 - (BOOL)hasExceededRateIncrease;
 {
-    return ([self[kCGMStatusKeyOctetWarning] integerValue] & kCGMMeasurementStatusResultExceedRateIncrease);
+    return ([self[kCGMStatusKeyOctetWarning] integerValue] & CGMMeasurementStatusResultExceedRateIncrease);
 }
 
 @end
