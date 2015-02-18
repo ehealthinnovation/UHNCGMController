@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSData+CGMParser.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSData(CGMParser)</TokenIdentifier>
+			<Abstract type="html">NSData+CGMParser provides CGM response parsing</Abstract>
+			<DeclaredIn>NSData+CGMParser.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/parseMeasurementCharacteristicDetails:</TokenIdentifier>
+			<Abstract type="html">Returns a dictionary with all the data of the measurement characteristic minus the flags, size, and E2E-CRC (if present). Keys and enumerations are defined in the CGMConstants.h file, which is imported with this category.</Abstract>
+			<DeclaredIn>NSData+CGMParser.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)parseMeasurementCharacteristicDetails:(BOOL)crcPresent</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crcPresent</Name>
+					<Abstract type="html">Indicates whether the characteristic includes the E2E-CRC field</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">All the data of the measurement characteristic minus the flags, size, and E2E-CRC (if present). Keys and enumerations are defined in the CGMConstants.h file, which is imported with this category.</Abstract></ReturnValue>
+			<Anchor>//api/name/parseMeasurementCharacteristicDetails:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/parseFeatureCharacteristicDetails</TokenIdentifier>
+			<Abstract type="html">Returns a dictionary with the supported features and the glucose concentration fluid type and sample location. Keys, enumerations, and values are defined in the CGMConstants.h file, which is imported with this category.</Abstract>
+			<DeclaredIn>NSData+CGMParser.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)parseFeatureCharacteristicDetails</Declaration>
+			
+			<ReturnValue><Abstract type="html">All the supported features and the glucose concentration fluid type and sample locaiton.</Abstract></ReturnValue>
+			<Anchor>//api/name/parseFeatureCharacteristicDetails</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/parseStatusCharacteristicDetails:</TokenIdentifier>
+			<Abstract type="html">Returns a dictionary with the current status of the CGM sensor. Structure is the same as in the measurement characteristic. Keys and enumerations are defined in the CGMConstants.h file, which is imported with this category.</Abstract>
+			<DeclaredIn>NSData+CGMParser.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)parseStatusCharacteristicDetails:(BOOL)crcPresent</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crcPresent</Name>
+					<Abstract type="html">crcPresent Indicates whether the characteristic includes the E2E-CRC field</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The current status of the cgm sensor</Abstract></ReturnValue>
+			<Anchor>//api/name/parseStatusCharacteristicDetails:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/parseSessionStartTime:</TokenIdentifier>
+			<Abstract type="html">Session start time is the time the last session started</Abstract>
+			<DeclaredIn>NSData+CGMParser.h</DeclaredIn>
+			
+			<Declaration>- (NSDate *)parseSessionStartTime:(BOOL)crcPresent</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crcPresent</Name>
+					<Abstract type="html">crcPresent Indicates whether the characteristic includes the E2E-CRC field</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The date of the current CGM session start time</Abstract></ReturnValue>
+			<Anchor>//api/name/parseSessionStartTime:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/parseSessionRunTimeOffset:</TokenIdentifier>
+			<Abstract type="html">Session run time is the time offset from the session start time when the sensor should be replaced</Abstract>
+			<DeclaredIn>NSData+CGMParser.h</DeclaredIn>
+			
+			<Declaration>- (NSTimeInterval)parseSessionRunTimeOffset:(BOOL)crcPresent</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crcPresent</Name>
+					<Abstract type="html">crcPresent Indicates whether the characteristic includes the E2E-CRC field</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The time offset of the CGM sensor run time. Offset is from the CGM Session start time</Abstract></ReturnValue>
+			<Anchor>//api/name/parseSessionRunTimeOffset:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/parseCGMCPResponse:</TokenIdentifier>
+			<Abstract type="html">Specific Ops Control Point OpCode indicates which command was sent.</Abstract>
+			<DeclaredIn>NSData+CGMParser.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)parseCGMCPResponse:(BOOL)crcPresent</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crcPresent</Name>
+					<Abstract type="html">crcPresent Indicates whether the characteristic includes the E2E-CRC field</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The details of the response</Abstract></ReturnValue>
+			<Anchor>//api/name/parseCGMCPResponse:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

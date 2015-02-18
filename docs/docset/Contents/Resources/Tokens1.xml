@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSData+CGMCommands.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSData(CGMCommands)</TokenIdentifier>
+			<Abstract type="html">NSData+CGMCommands constructs CGM commands or values in NSDate format to be sent is a CGM sensor</Abstract>
+			<DeclaredIn>NSData+CGMCommands.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/cgmCurrentTimeValue</TokenIdentifier>
+			<Abstract type="html">Constructs the current time value to be sent to the CGM Session Start Time characteristic</Abstract>
+			<DeclaredIn>NSData+CGMCommands.h</DeclaredIn>
+			
+			<Declaration>+ (NSData *)cgmCurrentTimeValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">Current time value in NSData format</Abstract></ReturnValue>
+			<Anchor>//api/name/cgmCurrentTimeValue</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSData/joinFluidType:sampleLocation:</TokenIdentifier>
+			<Abstract type="html">Joins the sample type with the sample location</Abstract>
+			<DeclaredIn>NSData+CGMCommands.h</DeclaredIn>
+			
+			<Declaration>+ (NSData *)joinFluidType:(CGMTypeOption)type sampleLocation:(CGMLocationOption)location</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The sample type. See UHNCGMConstants for CGMTypeOption definition</Abstract>
+				</Parameter><Parameter>
+					<Name>location</Name>
+					<Abstract type="html">The sample location. See UHNCGMConstants for CGMLocationOption definition</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A sample type/location octet NSData format</Abstract></ReturnValue>
+			<Anchor>//api/name/joinFluidType:sampleLocation:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

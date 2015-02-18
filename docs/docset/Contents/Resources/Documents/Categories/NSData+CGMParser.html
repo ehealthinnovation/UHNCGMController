@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSData(CGMParser) Category Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">UHNCGMController </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Centre for Global eHealth Innovation</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/parseCGMCPResponse:">- parseCGMCPResponse:</option>
+		
+		<option value="//api/name/parseFeatureCharacteristicDetails">- parseFeatureCharacteristicDetails</option>
+		
+		<option value="//api/name/parseMeasurementCharacteristicDetails:">- parseMeasurementCharacteristicDetails:</option>
+		
+		<option value="//api/name/parseSessionRunTimeOffset:">- parseSessionRunTimeOffset:</option>
+		
+		<option value="//api/name/parseSessionStartTime:">- parseSessionStartTime:</option>
+		
+		<option value="//api/name/parseStatusCharacteristicDetails:">- parseStatusCharacteristicDetails:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSData(CGMParser) Category Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>NSData+CGMParser.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>NSData+CGMParser</code> provides CGM response parsing</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/parseMeasurementCharacteristicDetails:" title="parseMeasurementCharacteristicDetails:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseMeasurementCharacteristicDetails:">&ndash;&nbsp;parseMeasurementCharacteristicDetails:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary with all the data of the measurement characteristic minus the flags, size, and E2E-CRC (if present). Keys and enumerations are defined in the CGMConstants.h file, which is imported with this category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)parseMeasurementCharacteristicDetails:(BOOL)<em>crcPresent</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>crcPresent</code></th>
+						<td><p>Indicates whether the characteristic includes the E2E-CRC field</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>All the data of the measurement characteristic minus the flags, size, and E2E-CRC (if present). Keys and enumerations are defined in the CGMConstants.h file, which is imported with this category.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Here are the defined keys:</p>
+
+<pre><code>kCGMMeasurementKeyGlucoseConcentration:    Glucose concentration in mg/dl. Stored as NSNumber.
+kCGMKeyTimeOffset:                         Time offset from the session start time in minutes. Stored as NSNumber.
+kCGMStatusKeySensorStatus:                 Status details of the current measurement (if present). Stored as NSDictionary.
+kCGMMeasurementKeyTrendInfo:               Trend information of the current glucose concentration in (mg/dl)/min (if present). Stored as NSNumber.
+kCGMMeasurementKeyQuality:                 Measurement quality of the current glucose concentration in % (if present). Stored as NSNumber.
+kCGMMeasurementkeyCRCFailed:               Boolean to indicate if the E2E-CRC failed. Only included if CRC is supported. Stored as NSNumber.
+
+
+Example:
+{
+    CGMMeasurementKeyGlucoseConcentration: 75,
+    CGMKeyTimeOffset: 5,
+    CGMStatusKeySensorStatus:  {
+        CGMStatusKeyOctetStatus: 2, // device battery low
+        CGMStatusKeyOctetCalTemp: 4, // Calibration recommended
+        CGMStatusKeyOctetCalWarning: 10 // Result higher than Patient High Level &amp; Hyper Level
+    },
+    CGMMeasurementKeyTrendInfo: 3.5,
+    CGMMeasurementKeyQuality: 95,
+    CGMMeasurementkeyCRCFailed: 0,
+}
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSData+CGMParser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseFeatureCharacteristicDetails" title="parseFeatureCharacteristicDetails"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseFeatureCharacteristicDetails">&ndash;&nbsp;parseFeatureCharacteristicDetails</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary with the supported features and the glucose concentration fluid type and sample location. Keys, enumerations, and values are defined in the CGMConstants.h file, which is imported with this category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)parseFeatureCharacteristicDetails</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>All the supported features and the glucose concentration fluid type and sample locaiton.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Here are the defined keys</p>
+
+<pre><code>kCGMFeatureKeyFeatures:            Features of the CGM service.
+kCGMFeatureKeyFluidType:           Fluid type for glucose concentration
+kCGMFeatureKeySampleLocation:      Sample location of glucose concentration
+
+Example:
+{
+    CGMFeatureKeyFeatures: 3, // only calibration supported &amp; patient high/low alerts supported
+    CGMFeatureKeyFluidType: 9, // Interstitial Fluid (ISF)
+    CGMFeatureKeySampleLocation: 5, // Subcutaneous tissue
+}
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSData+CGMParser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseStatusCharacteristicDetails:" title="parseStatusCharacteristicDetails:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseStatusCharacteristicDetails:">&ndash;&nbsp;parseStatusCharacteristicDetails:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary with the current status of the CGM sensor. Structure is the same as in the measurement characteristic. Keys and enumerations are defined in the CGMConstants.h file, which is imported with this category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)parseStatusCharacteristicDetails:(BOOL)<em>crcPresent</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>crcPresent</code></th>
+						<td><p>crcPresent Indicates whether the characteristic includes the E2E-CRC field</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The current status of the cgm sensor</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Here are the defined keys</p>
+
+<pre><code>kCGMKeyTimeOffset:             Time offset from the session start time in minutes. Stored as NSNumber.
+kCGMStatusKeySensorStatus:     Current status details of the CGM sensor. Stored as NSDictionary.
+kCGMStatusKeyOctetStatus:      Status flags. Stored as NSNumber.
+kCGMStatusKeyOctetCalTemp:     Cal/Temp flags. Stored as NSNumber.
+kCGMStatusKeyOctetCalWarning:  Warning flags. Stored as NSnumber.
+
+Example:
+{
+    CGMKeyTimeOffset: 5,
+    CGMStatusKeySensorStatus:  {
+        CGMStatusKeyOctetStatus: 2, // device battery low
+        CGMStatusKeyOctetCalTemp: 4, // Calibration recommended
+        CGMStatusKeyOctetCalWarning: 10 // Result higher than Patient High Level &amp; Hyper Level
+    },
+}
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSData+CGMParser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseSessionStartTime:" title="parseSessionStartTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseSessionStartTime:">&ndash;&nbsp;parseSessionStartTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Session start time is the time the last session started</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDate *)parseSessionStartTime:(BOOL)<em>crcPresent</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>crcPresent</code></th>
+						<td><p>crcPresent Indicates whether the characteristic includes the E2E-CRC field</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The date of the current CGM session start time</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSData+CGMParser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseSessionRunTimeOffset:" title="parseSessionRunTimeOffset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseSessionRunTimeOffset:">&ndash;&nbsp;parseSessionRunTimeOffset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Session run time is the time offset from the session start time when the sensor should be replaced</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSTimeInterval)parseSessionRunTimeOffset:(BOOL)<em>crcPresent</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>crcPresent</code></th>
+						<td><p>crcPresent Indicates whether the characteristic includes the E2E-CRC field</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The time offset of the CGM sensor run time. Offset is from the CGM Session start time</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSData+CGMParser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseCGMCPResponse:" title="parseCGMCPResponse:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseCGMCPResponse:">&ndash;&nbsp;parseCGMCPResponse:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specific Ops Control Point OpCode indicates which command was sent.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)parseCGMCPResponse:(BOOL)<em>crcPresent</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>crcPresent</code></th>
+						<td><p>crcPresent Indicates whether the characteristic includes the E2E-CRC field</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The details of the response</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Here are the defined keys</p>
+
+<pre><code>kCGMCPKeyOpCode:                    Response op code
+kCGMCPKeyResponseDetails:           Details for the response (e.g. the request op code and the response code value) as `NSDictionary`
+kCGMCPKeyResponseRequestOpCode:     Requesting op code to which the response is related
+kCGMCPKeyResponseCodeValue:         The value of the response code
+kCGMCPKeyOperand:                   The operand of the response. Typically includes the short float value requested
+
+Example:
+{
+    CGMCPKeyOpCode: 3, // Communication interval response op code
+    CGMCPKeyOperand: 5, // communicaiton interval is set to 5 minutes
+}
+
+Example:
+{
+    CGMCPKeyOpCode: 28, // General response op code
+    CGMCPKeyResponseDetails: {
+        CGMCPKeyResponseRequestOpCode: 1 // set communication interval
+        CGMCPKeyResponseCodeValue: 1 // success
+    }
+}
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSData+CGMParser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Centre for Global eHealth Innovation. All rights reserved. Updated: 2015-02-17</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
