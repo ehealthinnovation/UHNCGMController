@@ -40,9 +40,9 @@
 + (NSData*)cgmCurrentTimeValue;
 
 /**
- Joins the sample type with the sample location
+ Joins the fluid type with the sample location into a single octet
  
- @param type The sample type. See `UHNCGMConstants` for `CGMTypeOption` definition
+ @param type The fluid type. See `UHNCGMConstants` for `CGMTypeOption` definition
  @param location The sample location. See `UHNCGMConstants` for `CGMLocationOption` definition
  
  @returns A sample type/location octet NSData format

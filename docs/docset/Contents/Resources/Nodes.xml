@@ -14,12 +14,32 @@
 					<Subnodes>
 						<NodeRef refid="1"/>
 						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
 						
 					</Subnodes>
 				</Node>
 				
                 
                 
+				<Node>
+					<Name>Constants</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						<NodeRef refid="10"/>
+						<NodeRef refid="11"/>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
+						<NodeRef refid="14"/>
+						
+					</Subnodes>
+				</Node>
+				
                 
 			</Subnodes>
         </Node>
@@ -81,9 +101,91 @@
             </Subnodes>
             
         </Node>
+		<Node id="3" type="file" documentType="reference">
+            <Name>NSDictionary(CGMExtensions)</Name>
+            <Path>Categories/NSDictionary+CGMExtensions.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Categories/NSDictionary+CGMExtensions.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Categories/NSDictionary+CGMExtensions.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Categories/NSDictionary+CGMExtensions.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
 		
         
-        
+        <Node id="4" type="file" documentType="reference">
+            <Name>CGMCPCalibrationStatusOption</Name>
+            <Path>Constants/CGMCPCalibrationStatusOption.html</Path>
+            
+        </Node>
+		<Node id="5" type="file" documentType="reference">
+            <Name>CGMCPOpCode</Name>
+            <Path>Constants/CGMCPOpCode.html</Path>
+            
+        </Node>
+		<Node id="6" type="file" documentType="reference">
+            <Name>CGMCPResponseCode</Name>
+            <Path>Constants/CGMCPResponseCode.html</Path>
+            
+        </Node>
+		<Node id="7" type="file" documentType="reference">
+            <Name>CGMFeatureOption</Name>
+            <Path>Constants/CGMFeatureOption.html</Path>
+            
+        </Node>
+		<Node id="8" type="file" documentType="reference">
+            <Name>CGMLocationOption</Name>
+            <Path>Constants/CGMLocationOption.html</Path>
+            
+        </Node>
+		<Node id="9" type="file" documentType="reference">
+            <Name>CGMMeasurementFlagOption</Name>
+            <Path>Constants/CGMMeasurementFlagOption.html</Path>
+            
+        </Node>
+		<Node id="10" type="file" documentType="reference">
+            <Name>CGMStatusCalTempOption</Name>
+            <Path>Constants/CGMStatusCalTempOption.html</Path>
+            
+        </Node>
+		<Node id="11" type="file" documentType="reference">
+            <Name>CGMStatusStatusOptions</Name>
+            <Path>Constants/CGMStatusStatusOptions.html</Path>
+            
+        </Node>
+		<Node id="12" type="file" documentType="reference">
+            <Name>CGMStatusWarningOption</Name>
+            <Path>Constants/CGMStatusWarningOption.html</Path>
+            
+        </Node>
+		<Node id="13" type="file" documentType="reference">
+            <Name>CGMTypeOption</Name>
+            <Path>Constants/CGMTypeOption.html</Path>
+            
+        </Node>
+		<Node id="14" type="file" documentType="reference">
+            <Name>DSTOffsetOption</Name>
+            <Path>Constants/DSTOffsetOption.html</Path>
+            
+        </Node>
+		
         
 	</Library>
 </DocSetNodes>

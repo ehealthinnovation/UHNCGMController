@@ -12,7 +12,8 @@
 #import "UHNDebug.h"
 #import "NSData+CGMCommands.h"
 #import "NSData+CGMParser.h"
-#import "RecordAccessControlPoint.h"
+#import "UHNRecordAccessControlPoint.h"
+#import "UHNBLETypes.h"
 
 @interface UHNCGMController() <UHNBLEControllerDelegate>
 @property(nonatomic,strong) UHNBLEController *bleController;
@@ -446,10 +447,10 @@
     if ([charUUID isEqualToString: kCGMCharacteristicUUIDMeasurement]) {
         NSMutableDictionary *measurementDetails = [[value parseMeasurementCharacteristicDetails: self.crcPresent] mutableCopy];
         
-        // for convenience, add the measurement date/time as native NSDate
+        // for convenience, add the measurement date/time as native NSDate, if possible
         if (self.sessionStartTime) {
             NSDate *measurementDate = [self.sessionStartTime dateByAddingTimeInterval: [measurementDetails[kCGMKeyTimeOffset] doubleValue]];
-            measurementDetails[kCGMMeasurementKeyDateTime] = measurementDate;
+            measurementDetails[kCGMKeyDateTime] = measurementDate;
         }
 
         NSLog(@"measurement details %@", measurementDetails);
@@ -466,7 +467,14 @@
             [self.delegate cgmController: self featuresDetails: cgmFeatures];
         }
     } else if ([charUUID isEqualToString: kCGMCharacteristicUUIDStatus]) {
-        NSDictionary *cgmStatus = [value parseStatusCharacteristicDetails: self.crcPresent];
+        NSMutableDictionary *cgmStatus = [[value parseStatusCharacteristicDetails: self.crcPresent] mutableCopy];
+
+        // for convenience, add the status date/time as native NSDate, if possible
+        if (self.sessionStartTime) {
+            NSDate *statusDate = [self.sessionStartTime dateByAddingTimeInterval: [cgmStatus[kCGMKeyTimeOffset] doubleValue]];
+            cgmStatus[kCGMKeyDateTime] = statusDate;
+        }
+
         if ([self.delegate respondsToSelector: @selector(cgmController:status:)]) {
             [self.delegate cgmController: self status: cgmStatus];
         }
@@ -516,6 +524,23 @@
                 }
                 break;
             }
+            case CGMCPOpCodeCalibrationValueResponse:
+            {
+                if ([self.delegate respondsToSelector:@selector(cgmController:didGetCalibrationDetails:)]) {
+                    NSMutableDictionary *calibrationDetails = [responseDict[kCGMCPKeyResponseCalibration] mutableCopy];
+                
+                    // for convenience, add the calibration date/time as native NSDate, if possible
+                    if (self.sessionStartTime) {
+                        NSDate *calibrationDate = [self.sessionStartTime dateByAddingTimeInterval: [calibrationDetails[kCGMKeyTimeOffset] doubleValue]];
+                        NSDate *calibrationDateNext = [self.sessionStartTime dateByAddingTimeInterval: [calibrationDetails[kCGMKeyTimeOffsetNext] doubleValue]];
+                        calibrationDetails[kCGMKeyDateTime] = calibrationDate;
+                        calibrationDetails[kCGMKeyDateTimeNext] = calibrationDateNext;
+                    }
+
+                    [self.delegate cgmController:self didGetCalibrationDetails:calibrationDetails];
+                }
+                break;
+            }
             default:
                 break;
         }
@@ -524,12 +549,12 @@
         RACPOpCode responseOpCode = [responseDict[kRACPKeyResponseOpCode] unsignedIntegerValue];
         
         switch (responseOpCode) {
-            case kRACPOpCodeResponse:
+            case RACPOpCodeResponse:
             {
                 NSDictionary *responseDetails = responseDict[kRACPKeyResponseCodeDetails];
                 RACPResponseCode responseCode = [responseDetails[kRACPKeyResponseCode] unsignedIntegerValue];
                 RACPOpCode requestOpCode = [responseDetails[kRACPKeyRequestOpCode] unsignedIntegerValue];
-                if (responseCode == kRACPSuccess) {
+                if (responseCode == RACPSuccess) {
                     if ([self.delegate respondsToSelector:@selector(cgmController:RACPOperationSuccessful:)]) {
                         [self.delegate cgmController: self RACPOperationSuccessful: requestOpCode];
                     }
@@ -540,7 +565,7 @@
                 }
                 break;
             }
-            case kRACPOpCodeResponseStoredRecordsReportNumber:
+            case RACPOpCodeResponseStoredRecordsReportNumber:
             {
                 if ([self.delegate respondsToSelector: @selector(cgmController:didGetNumberOfStoredRecords:)]) {
                     NSNumber *value = responseDict[kRACPKeyNumberOfRecords];

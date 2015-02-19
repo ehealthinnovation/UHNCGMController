@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/CGMStatusCalTempOption.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/CGMStatusCalTempOption</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempTimeSynchronizationRequired</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusCalTempTimeSynchronizationRequired</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="10"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempCalibrationNotAllowed</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusCalTempCalibrationNotAllowed</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="10"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempCalibrationRecommended</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusCalTempCalibrationRecommended</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="10"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempCalibrationRequired</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusCalTempCalibrationRequired</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="10"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempSensorTempTooHigh</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusCalTempSensorTempTooHigh</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="10"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempSensorTempTooLow</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusCalTempSensorTempTooLow</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="10"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

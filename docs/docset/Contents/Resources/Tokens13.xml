@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/CGMTypeOption.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/CGMTypeOption</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMTypeWholeBloodCapillary</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMTypeWholeBloodCapillary</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="13"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMTypePlasmaCapillary</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMTypePlasmaCapillary</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="13"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMTypeWholeBloodVenous</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMTypeWholeBloodVenous</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="13"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMTypePlasmaVenous</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMTypePlasmaVenous</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="13"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMTypeWholeBloodArterial</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMTypeWholeBloodArterial</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="13"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMTypePlasmaArterial</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMTypePlasmaArterial</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="13"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMTypeWholeBloodUndetermined</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMTypeWholeBloodUndetermined</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="13"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMTypePlasmaUndetermined</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMTypePlasmaUndetermined</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="13"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMTypeISF</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMTypeISF</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="13"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMTypeControlSolution</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMTypeControlSolution</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="13"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

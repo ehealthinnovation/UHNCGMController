@@ -8,93 +8,114 @@
 
 #import <Foundation/Foundation.h>
 #import "UHNCGMConstants.h"
-#import "RACPConstants.h"
+#import "UHNRACPConstants.h"
+#import "UHNBLETypes.h"
 
-@class UHNCGMController;
-
-@protocol UHNCGMControllerDelegate <NSObject>
-- (void) cgmController: (UHNCGMController*)controller didDisconnectFromCGM: (NSString*)cgmDeviceName;
-- (void) cgmController: (UHNCGMController*)controller didDiscoverCGMWithName: (NSString*)cgmDeviceName RSSI: (NSNumber*)RSSI;
-- (void) cgmController: (UHNCGMController*)controller didConnectToCGMWithName: (NSString*)cgmDeviceName;
-- (void) cgmController: (UHNCGMController*)controller currentMeasurementDetails: (NSDictionary*)measurementDetails;
-- (void) cgmController: (UHNCGMController*)controller sessionStartTime: (NSDate*)sessionStartTime;
-
-@optional
-- (void) cgmController: (UHNCGMController*)controller notificationMeasurement: (BOOL)enabled;
-- (void) cgmController: (UHNCGMController*)controller notificationRACP: (BOOL)enabled;
-- (void) cgmController: (UHNCGMController*)controller notificationCGMCP: (BOOL)enabled;
-- (void) cgmController: (UHNCGMController*)controller featuresDetails: (NSDictionary*)features;
-- (void) cgmController: (UHNCGMController*)controller status: (NSDictionary*)status;
-- (void) cgmController: (UHNCGMController*)controller sessionRunTime: (NSDate*)sessionRunTime;
-- (void) cgmController: (UHNCGMController*)controller CGMCPOperation: (CGMCPOpCode)opCode failed: (CGMCPResponseCode)responseCode;
-// instead include the specific details, not op code
-// - just success and failed
-- (void) cgmController: (UHNCGMController*)controller CGMCPOperationSuccessful: (CGMCPOpCode)opCode;
-- (void) cgmController: (UHNCGMController*)controller didGetValue: (NSNumber*)value CGMCPResponseOpCode: (CGMCPOpCode)responseOpCode;
-- (void) cgmController: (UHNCGMController*)controller RACPOperation: (RACPOpCode)opCode failed: (RACPResponseCode)responseCode;
-- (void) cgmController: (UHNCGMController*)controller RACPOperationSuccessful: (RACPOpCode)opCode;
-- (void) cgmController: (UHNCGMController*)controller didGetNumberOfStoredRecords: (NSNumber*)numOfRecords;
-@end
+@protocol UHNCGMControllerDelegate;
 
 @interface UHNCGMController : NSObject
 
-- (instancetype) initWithDelegate:(id<UHNCGMControllerDelegate>)delegate;
-- (instancetype) initWithDelegate:(id<UHNCGMControllerDelegate>)delegate requiredServices:(NSArray*)serviceUUIDs;
-- (BOOL) isConnected;
-- (void) tryToReconnect;
-- (void) connectToDevice: (NSString*)deviceName;
-- (void) disconnect;
+///-----------------------------------------
+/// @name Initialization of UHNCGMController
+///-----------------------------------------
+- (instancetype)initWithDelegate:(id<UHNCGMControllerDelegate>)delegate;
+- (instancetype)initWithDelegate:(id<UHNCGMControllerDelegate>)delegate requiredServices:(NSArray*)serviceUUIDs;
 
-// CGM Service
-// characteristics
-- (void) readFeatures;
-- (void) readSessionStartTime;
-- (void) setCurrentTime;
-- (void) readSessionRunTime;
-- (void) readStatus;
-- (void) enableNotificationMeasurement: (BOOL)enable;
-- (void) enableNotificationRACP: (BOOL)enable;
-- (void) enableNotificationCGMCP: (BOOL)enable;
+///----------------------------------
+/// @name Connection Methods
+///----------------------------------
+- (BOOL)isConnected;
+- (void)tryToReconnect;
+- (void)connectToDevice:(NSString*)deviceName;
+- (void)disconnect;
 
-// Specific Ops Control Point
-- (void) startSession;
-- (void) stopSession;
-- (void) resetDeviceSpecificAlert;
+///----------------------------------
+/// @name CGM Service Characteristics
+///----------------------------------
+- (void)readFeatures;
+- (void)readSessionStartTime;
+- (void)setCurrentTime;
+- (void)readSessionRunTime;
+- (void)readStatus;
+- (void)enableNotificationMeasurement:(BOOL)enable;
+- (void)enableNotificationRACP:(BOOL)enable;
+- (void)enableNotificationCGMCP:(BOOL)enable;
 
-- (void) getCommunicationInterval;
-- (void) getLastCalibrationValue;
-- (void) getCalibrationValue: (uint16_t)recordNumber;
-- (void) getPatientHighLevel;
-- (void) getPatientLowLevel;
-- (void) getHypoLevel;
-- (void) getHyperLevel;
-- (void) getRateDecreaseLevel;
-- (void) getRateIncreaseLevel;
+///---------------------------------
+/// @name Specific Ops Control Point
+///---------------------------------
+- (void)startSession;
+- (void)stopSession;
+- (void)resetDeviceSpecificAlert;
 
-- (void) setCommunicationInterval: (uint8_t)intervalInMinutes;
-- (void) disableCommunication; 
-- (void) setFastestCommunicationInterval;
-- (void) setCalibrationValue: (shortFloat)value
-                   fluidType: (CGMTypeOption)type
-              sampleLocation: (CGMLocationOption)location
-                        date: (NSDate*)date;
-- (void) setPatientHighLevel: (shortFloat)value;
-- (void) setPatientLowLevel: (shortFloat)value;
-- (void) setHypoLevel: (shortFloat)value;
-- (void) setHyperLevel: (shortFloat)value;
-- (void) setRateDecreaseLevel: (shortFloat)value;
-- (void) setRateIncreaseLevel: (shortFloat)value;
+- (void)getCommunicationInterval;
+- (void)getLastCalibrationValue;
+- (void)getCalibrationValue: (uint16_t)recordNumber;
+- (void)getPatientHighLevel;
+- (void)getPatientLowLevel;
+- (void)getHypoLevel;
+- (void)getHyperLevel;
+- (void)getRateDecreaseLevel;
+- (void)getRateIncreaseLevel;
 
-// Record Access Control Point
-- (void) getAllStoredRecords;
+- (void)setCommunicationInterval:(uint8_t)intervalInMinutes;
+- (void)disableCommunication;
+- (void)setFastestCommunicationInterval;
+- (void)setCalibrationValue:(shortFloat)value
+                  fluidType:(CGMTypeOption)type
+             sampleLocation:(CGMLocationOption)location
+                       date:(NSDate*)date;
+- (void)setPatientHighLevel:(shortFloat)value;
+- (void)setPatientLowLevel:(shortFloat)value;
+- (void)setHypoLevel:(shortFloat)value;
+- (void)setHyperLevel:(shortFloat)value;
+- (void)setRateDecreaseLevel:(shortFloat)value;
+- (void)setRateIncreaseLevel:(shortFloat)value;
 
-// Bond Management Service
+///----------------------------------
+/// @name Record Access Control Point
+///----------------------------------
+- (void)getAllStoredRecords;
 
-// Device Information Service
+///------------------------------
+/// @name Bond Management Service
+///------------------------------
 
-// Battery Service
+
+///---------------------------------
+/// @name Device Information Service
+///---------------------------------
+
+
+///----------------------
+/// @name Battery Service
+///----------------------
 //- (void) getBatteryLevel;
 
-
-
 @end
+
+@protocol UHNCGMControllerDelegate <NSObject>
+- (void)cgmController:(UHNCGMController*)controller didDisconnectFromCGM:(NSString*)cgmDeviceName;
+- (void)cgmController:(UHNCGMController*)controller didDiscoverCGMWithName:(NSString*)cgmDeviceName RSSI:(NSNumber*)RSSI;
+- (void)cgmController:(UHNCGMController*)controller didConnectToCGMWithName:(NSString*)cgmDeviceName;
+- (void)cgmController:(UHNCGMController*)controller currentMeasurementDetails:(NSDictionary*)measurementDetails;
+- (void)cgmController:(UHNCGMController*)controller sessionStartTime:(NSDate*)sessionStartTime;
+
+@optional
+- (void)cgmController:(UHNCGMController*)controller notificationMeasurement:(BOOL)enabled;
+- (void)cgmController:(UHNCGMController*)controller notificationRACP:(BOOL)enabled;
+- (void)cgmController:(UHNCGMController*)controller notificationCGMCP:(BOOL)enabled;
+- (void)cgmController:(UHNCGMController*)controller featuresDetails:(NSDictionary*)features;
+- (void)cgmController:(UHNCGMController*)controller status:(NSDictionary*)status;
+- (void)cgmController:(UHNCGMController*)controller sessionRunTime:(NSDate*)sessionRunTime;
+- (void)cgmController:(UHNCGMController*)controller CGMCPOperation:(CGMCPOpCode)opCode failed:(CGMCPResponseCode)responseCode;
+// instead include the specific details, not op code
+// - just success and failed
+- (void)cgmController:(UHNCGMController*)controller CGMCPOperationSuccessful:(CGMCPOpCode)opCode;
+- (void)cgmController:(UHNCGMController*)controller didGetValue:(NSNumber*)value CGMCPResponseOpCode:(CGMCPOpCode)responseOpCode;
+- (void)cgmController:(UHNCGMController*)controller didGetCalibrationDetails:(NSDictionary*)calibrationDetails;
+- (void)cgmController:(UHNCGMController*)controller RACPOperation:(RACPOpCode)opCode failed:(RACPResponseCode)responseCode;
+- (void)cgmController:(UHNCGMController*)controller RACPOperationSuccessful:(RACPOpCode)opCode;
+- (void)cgmController:(UHNCGMController*)controller didGetNumberOfStoredRecords:(NSNumber*)numOfRecords;
+@end
+

@@ -26,14 +26,14 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/NSData/joinFluidType:sampleLocation:</TokenIdentifier>
-			<Abstract type="html">Joins the sample type with the sample location</Abstract>
+			<Abstract type="html">Joins the fluid type with the sample location into a single octet</Abstract>
 			<DeclaredIn>NSData+CGMCommands.h</DeclaredIn>
 			
 			<Declaration>+ (NSData *)joinFluidType:(CGMTypeOption)type sampleLocation:(CGMLocationOption)location</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>type</Name>
-					<Abstract type="html">The sample type. See UHNCGMConstants for CGMTypeOption definition</Abstract>
+					<Abstract type="html">The fluid type. See UHNCGMConstants for CGMTypeOption definition</Abstract>
 				</Parameter><Parameter>
 					<Name>location</Name>
 					<Abstract type="html">The sample location. See UHNCGMConstants for CGMLocationOption definition</Abstract>

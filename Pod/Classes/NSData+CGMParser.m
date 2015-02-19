@@ -15,13 +15,15 @@
 @implementation NSData (CGMParser)
 
 #pragma mark - General Methods
+
 - (BOOL)comfirmCRC;
 {
     return YES;
 }
 
 #pragma mark - CGM Measurement Characteristic
-- (NSDictionary*)parseMeasurementCharacteristicDetails: (BOOL)crcPresent;
+
+- (NSDictionary*)parseMeasurementCharacteristicDetails:(BOOL)crcPresent;
 {
     // TODO add CRC checking
     BOOL crcFailed = NO;
@@ -31,7 +33,7 @@
     NSNumber *glucoseConcentration = [self parseGlucoseConcentration];
     NSUInteger timeOffset = [self parseMeasurementTimeOffest];
     NSMutableDictionary *measurementDetails = [NSMutableDictionary dictionaryWithObjectsAndKeys: glucoseConcentration, kCGMMeasurementKeyGlucoseConcentration, @(timeOffset), kCGMKeyTimeOffset, nil];
-    NSUInteger currentByteIndex = (NSRange)kCGMMeasurementFieldRangeTimeOffset.location + (NSRange)kCGMMeasurementFieldRangeTimeOffset.length;
+    NSUInteger currentByteIndex = kCGMMeasurementFieldRangeTimeOffset.location + kCGMMeasurementFieldRangeTimeOffset.length;
     
     NSDictionary *measurementStatusDict = [self parseStatusStartByte: currentByteIndex
                                                  warningOctetPresent: (flags & CGMMeasurementFlagsWarningOctetPresent)
@@ -41,21 +43,23 @@
         measurementDetails[kCGMStatusKeySensorStatus] = measurementStatusDict;
     }
 
-    currentByteIndex += ((flags & CGMMeasurementFlagsWarningOctetPresent) != 0) + ((flags & CGMMeasurementFlagsCalTempOctetPresent) != 0) + ((flags & CGMMeasurementFlagsStatusOctetPresent) != 0);
+    currentByteIndex += ((flags & CGMMeasurementFlagsWarningOctetPresent) != NO) + ((flags & CGMMeasurementFlagsCalTempOctetPresent) != NO) + ((flags & CGMMeasurementFlagsStatusOctetPresent) != NO);
     if (flags & CGMMeasurementFlagsTrendInformationPresent) {
-        NSNumber *trendInfo = [self parseMeasurementTrendInformation: currentByteIndex];
+        NSNumber *trendInfo = [self parseMeasurementTrendInformation:currentByteIndex];
         measurementDetails[kCGMMeasurementKeyTrendInfo] = trendInfo;
         currentByteIndex += kCGMMeasurementFieldSizeTrendInfo;
     }
     
     if (flags & CGMMeasurementFlagsQualityPresent) {
-        NSNumber *measurementQuality = [self parseMeasurementQuality: currentByteIndex];
+        NSNumber *measurementQuality = [self parseMeasurementQuality:currentByteIndex];
         measurementDetails[kCGMMeasurementKeyQuality] = measurementQuality;
         currentByteIndex += kCGMMeasurementFieldSizeQuality;
     }
     
+    
+    //TODO update CRC calculation
     if (crcPresent) {
-        measurementDetails[kCGMMeasurementkeyCRCFailed] = @(crcFailed);
+        measurementDetails[kCGMCRCFailed] = @(crcFailed);
     }
     
     return measurementDetails;
@@ -63,48 +67,49 @@
 
 - (NSUInteger)parseMeasurementCharacteristicSize;
 {
-    return [self unsignedIntegerAtRange: (NSRange)kCGMMeasurementFieldRangeSize];
+    return [self unsignedIntegerAtRange:kCGMMeasurementFieldRangeSize];
 }
 
 - (NSUInteger)parseMeasurementCharacteristicFlags;
 {
-    return [self unsignedIntegerAtRange: (NSRange)kCGMMeasurementFieldRangeFlags];
+    return [self unsignedIntegerAtRange:kCGMMeasurementFieldRangeFlags];
 }
 
 - (NSNumber*)parseGlucoseConcentration;
 {
-    float glucoseConcentration = [self shortFloatAtRange: (NSRange)kCGMMeasurementFieldRangeGlucoseConcentration];
+    float glucoseConcentration = [self shortFloatAtRange:kCGMMeasurementFieldRangeGlucoseConcentration];
     return @(glucoseConcentration);
 }
 
 - (NSUInteger)parseMeasurementTimeOffest;
 {
-    return [self unsignedIntegerAtRange: (NSRange)kCGMMeasurementFieldRangeTimeOffset];
+    return [self unsignedIntegerAtRange:kCGMMeasurementFieldRangeTimeOffset];
 }
 
-- (NSNumber*)parseMeasurementTrendInformation: (NSUInteger)startByte;
+- (NSNumber*)parseMeasurementTrendInformation:(NSUInteger)startByte;
 {
     NSRange trendRange = {startByte, 2};
-    float trend = [self shortFloatAtRange: trendRange];
+    float trend = [self shortFloatAtRange:trendRange];
     
     return @(trend);
 }
-- (NSNumber*)parseMeasurementQuality: (NSUInteger)startByte;
+- (NSNumber*)parseMeasurementQuality:(NSUInteger)startByte;
 {
     NSRange qualityRange = {startByte, 2};
-    float quality = [self shortFloatAtRange: qualityRange];
+    float quality = [self shortFloatAtRange:qualityRange];
     
     return @(quality);
 }
 
 #pragma mark - CGM Feature Characteristic
+
 - (NSDictionary*)parseFeatureCharacteristicDetails;
 {
     // TODO add CRC checking
     
     NSUInteger feature = [self parseFeatures];
-    NSUInteger fluidType = [self parseFluidTypeWithRange: (NSRange)kCGMFeatureFieldRangeTypeLocation];
-    NSUInteger sampleLocation = [self parseSampleLocationWithRange: (NSRange)kCGMFeatureFieldRangeTypeLocation];
+    NSUInteger fluidType = [self parseFluidTypeWithRange:kCGMFeatureFieldRangeTypeLocation];
+    NSUInteger sampleLocation = [self parseSampleLocationWithRange:kCGMFeatureFieldRangeTypeLocation];
     NSDictionary *featureDetails = @{kCGMFeatureKeyFeatures: @(feature),
                                      kCGMFeatureKeyFluidType: @(fluidType),
                                      kCGMFeatureKeySampleLocation: @(sampleLocation)};
@@ -113,10 +118,10 @@
 
 - (NSUInteger)parseFeatures;
 {
-    return [self unsignedIntegerAtRange: (NSRange)kCGMFeatureFieldRangeFeatures];
+    return [self unsignedIntegerAtRange:kCGMFeatureFieldRangeFeatures];
 }
 
-- (NSUInteger)parseFluidTypeWithRange: (NSRange)range;
+- (NSUInteger)parseFluidTypeWithRange:(NSRange)range;
 {
     NSUInteger typeAndLocation = [self unsignedIntegerAtRange: range];
     // Remove location using bit mask
@@ -125,7 +130,7 @@
     return fluidType;
 }
 
-- (NSUInteger)parseSampleLocationWithRange: (NSRange)range;
+- (NSUInteger)parseSampleLocationWithRange:(NSRange)range;
 {
     NSUInteger typeAndLocation = [self unsignedIntegerAtRange: range];
     // Remove type using bit shifting
@@ -135,42 +140,43 @@
 }
 
 #pragma mark - CGM Status
-- (NSDictionary*)parseStatusCharacteristicDetails: (BOOL)crcPresent;
+
+- (NSDictionary*)parseStatusCharacteristicDetails:(BOOL)crcPresent;
 {
     // TODO add CRC checking
     
     NSUInteger timeOffset = [self parseStatusTimeOffest];
-    NSDictionary *status = [self parseStatusStartByte: (NSRange)kCGMStatusFieldRangeStatus.location
-                                  warningOctetPresent: YES
-                                  calTempOctetPresent: YES
-                                   statusOctetPresent: YES];
+    NSDictionary *status = [self parseStatusStartByte:kCGMStatusFieldRangeStatus.location
+                                  warningOctetPresent:YES
+                                  calTempOctetPresent:YES
+                                   statusOctetPresent:YES];
     NSDictionary *statusDetails = @{kCGMStatusKeySensorStatus: status,
                                     kCGMKeyTimeOffset: @(timeOffset)};
     
     return statusDetails;
 }
 
-- (NSDictionary*)parseStatusStartByte: (NSUInteger)startByte
-                  warningOctetPresent: (BOOL)warningPresent
-                  calTempOctetPresent: (BOOL)calTempPresent
-                   statusOctetPresent: (BOOL)statusPresent;
+- (NSDictionary*)parseStatusStartByte:(NSUInteger)startByte
+                  warningOctetPresent:(BOOL)warningPresent
+                  calTempOctetPresent:(BOOL)calTempPresent
+                   statusOctetPresent:(BOOL)statusPresent;
 {
     NSMutableDictionary *statusDict = [NSMutableDictionary dictionary];
     
     if (statusPresent) {
-        NSUInteger statusOctet = [self unsignedIntegerAtRange: (NSRange){startByte,1}];
+        NSUInteger statusOctet = [self unsignedIntegerAtRange:(NSRange){startByte,kCGMStatusFieldSizeOctet}];
         statusDict[kCGMStatusKeyOctetStatus] = @(statusOctet);
         startByte++;
     }
     
     if (calTempPresent) {
-        NSUInteger calTempOctet = [self unsignedIntegerAtRange: (NSRange){startByte,1}];
+        NSUInteger calTempOctet = [self unsignedIntegerAtRange:(NSRange){startByte,kCGMStatusFieldSizeOctet}];
         statusDict[kCGMStatusKeyOctetCalTemp] = @(calTempOctet);
         startByte++;
     }
     
     if (warningPresent) {
-        NSUInteger warningOctet = [self unsignedIntegerAtRange: (NSRange){startByte,1}];
+        NSUInteger warningOctet = [self unsignedIntegerAtRange:(NSRange){startByte,kCGMStatusFieldSizeOctet}];
         statusDict[kCGMStatusKeyOctetWarning] = @(warningOctet);
     }
     
@@ -179,29 +185,30 @@
 
 - (NSUInteger)parseStatusTimeOffest;
 {
-    return [self unsignedIntegerAtRange: (NSRange)kCGMStatusFieldRangeTimeOffset];
+    return [self unsignedIntegerAtRange:kCGMStatusFieldRangeTimeOffset];
 }
 
 #pragma mark - CGM Session Start Time
-- (NSDate*)parseSessionStartTime: (BOOL)crcPresent;
+
+- (NSDate*)parseSessionStartTime:(BOOL)crcPresent;
 {
     // TODO add CRC checking
     
-    NSUInteger year = [self unsignedIntegerAtRange: (NSRange)kCGMSessionStartTimeFieldRangeYear];
-    NSUInteger month = [self unsignedIntegerAtRange: (NSRange)kCGMSessionStartTimeFieldRangeMonth];
-    NSUInteger day = [self unsignedIntegerAtRange: (NSRange)kCGMSessionStartTimeFieldRangeDay];
+    NSUInteger year = [self unsignedIntegerAtRange:kCGMSessionStartTimeFieldRangeYear];
+    NSUInteger month = [self unsignedIntegerAtRange:kCGMSessionStartTimeFieldRangeMonth];
+    NSUInteger day = [self unsignedIntegerAtRange:kCGMSessionStartTimeFieldRangeDay];
     
     if (year == 0 || month == 0 || day == 0) {
         // Session start time is not known
         return nil;
     }
     
-    NSUInteger hours = [self unsignedIntegerAtRange: (NSRange)kCGMSessionStartTimeFieldRangeHour];
-    NSUInteger minutes = [self unsignedIntegerAtRange: (NSRange)kCGMSessionStartTimeFieldRangeMinute];
-    NSUInteger seconds = [self unsignedIntegerAtRange: (NSRange)kCGMSessionStartTimeFieldRangeSecond];
-    NSTimeInterval timeZoneOffsetInHours = [self integerAtRange: (NSRange)kCGMSessionStartTimeFieldRangeTimeZone] / kCGMTimeZoneStepSize;
-    NSTimeZone *timeZone = [NSTimeZone timeZoneForSecondsFromGMT: (timeZoneOffsetInHours * kSecondsInHour)];
-    NSInteger dstOffsetCode = [self unsignedIntegerAtRange: (NSRange)kCGMSessionStartTimeFieldRangeDSTOffset];
+    NSUInteger hours = [self unsignedIntegerAtRange:kCGMSessionStartTimeFieldRangeHour];
+    NSUInteger minutes = [self unsignedIntegerAtRange:kCGMSessionStartTimeFieldRangeMinute];
+    NSUInteger seconds = [self unsignedIntegerAtRange:kCGMSessionStartTimeFieldRangeSecond];
+    NSTimeInterval timeZoneOffsetInHours = [self integerAtRange:kCGMSessionStartTimeFieldRangeTimeZone] / kCGMTimeZoneStepSizeMin60;
+    NSTimeZone *timeZone = [NSTimeZone timeZoneForSecondsFromGMT:(timeZoneOffsetInHours * kSecondsInHour)];
+    NSInteger dstOffsetCode = [self unsignedIntegerAtRange:kCGMSessionStartTimeFieldRangeDSTOffset];
     
     NSTimeInterval dstOffsetInSeconds = 0.;
     if ((dstOffsetCode == DSTStandardTime) && ([timeZone daylightSavingTimeOffset] == 0)) {
@@ -217,13 +224,13 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setCalendar:calendar];
-    [components setYear: year];
-    [components setMonth: month];
-    [components setDay: day];
-    [components setHour: hours];
-    [components setMinute: minutes];
-    [components setSecond: seconds - dstOffsetInSeconds];
-    [components setTimeZone: timeZone];
+    [components setYear:year];
+    [components setMonth:month];
+    [components setDay:day];
+    [components setHour:hours];
+    [components setMinute:minutes];
+    [components setSecond:seconds - dstOffsetInSeconds];
+    [components setTimeZone:timeZone];
     
     NSDate *sessionStartTime = [calendar dateFromComponents:components];
     
@@ -231,20 +238,22 @@
 }
 
 #pragma mark - CGM Session Run Time
+
 - (NSTimeInterval)parseSessionRunTimeOffset: (BOOL)crcPresent;
 {
     // TODO add CRC checking
     
-    return [self unsignedIntegerAtRange: (NSRange)kCGMSessionRunTimeFieldRangeRunTime] * kSecondsInHour;
+    return [self unsignedIntegerAtRange:kCGMSessionRunTimeFieldRangeRunTime] * kSecondsInHour;
 }
 
 #pragma mark - CGM Specific Ops Control Point
+
 - (NSDictionary*)parseCGMCPResponse: (BOOL)crcPresent;
 {
     // TODO add CRC checking
     
     CGMCPOpCode opCode = [self parseCGMCPOpCode];
-    NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObject: [NSNumber numberWithUnsignedInteger: opCode] forKey: kCGMCPKeyOpCode];
+    NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObject:@(opCode) forKey:kCGMCPKeyOpCode];
     switch (opCode) {
         case CGMCPOpCodeResponse:
         {
@@ -284,54 +293,54 @@
 
 - (NSUInteger)parseCGMCPOpCode;
 {
-    return [self unsignedIntegerAtRange: (NSRange)kCGMCPFieldRangeOpCode];
+    return [self unsignedIntegerAtRange:kCGMCPFieldRangeOpCode];
 }
 
 - (NSDictionary*)parseCGMCPResponseDetails;
 {
     CGMCPOpCode requestOpCode = [self parseCGMCPRequestOpCode];
     CGMCPResponseCode responseValue = [self parseCGMCPResponseCodeValue];
-    return @{kCGMCPKeyResponseRequestOpCode: [NSNumber numberWithUnsignedInteger: requestOpCode], kCGMCPKeyResponseCodeValue: [NSNumber numberWithUnsignedInteger: responseValue]};
+    return @{kCGMCPKeyResponseRequestOpCode: @(requestOpCode), kCGMCPKeyResponseCodeValue: @(responseValue)};
 }
 
 - (CGMCPOpCode)parseCGMCPRequestOpCode;
 {
-    CGMCPOpCode requestOpCode = [self unsignedIntegerAtRange: (NSRange)kCGMCPFieldRangeResponseRequestOpCode];
+    CGMCPOpCode requestOpCode = [self unsignedIntegerAtRange:kCGMCPFieldRangeResponseRequestOpCode];
     return requestOpCode;
 }
 
 - (CGMCPResponseCode)parseCGMCPResponseCodeValue;
 {
-    CGMCPResponseCode responseCode = [self unsignedIntegerAtRange: (NSRange)kCGMCPFieldRangeResponseCodeValue];
+    CGMCPResponseCode responseCode = [self unsignedIntegerAtRange:kCGMCPFieldRangeResponseCodeValue];
     return responseCode;
 }
 
 - (NSUInteger)parseCommInterval;
 {
-    return [self unsignedIntegerAtRange: (NSRange)kCGMCPFieldRangeCommIntervalResponse];
+    return [self unsignedIntegerAtRange:kCGMCPFieldRangeCommIntervalResponse];
 }
 
 - (float)parseCGMCPShortFloatOperand;
 {
-    return [self shortFloatAtRange: (NSRange)kCGMCPFieldRangeSFloatResponse];
+    return [self shortFloatAtRange:kCGMCPFieldRangeSFloatResponse];
 }
 
 - (NSDictionary*)parseCalibrationDetails;
 {
-    float value = [self shortFloatAtRange: (NSRange)kCGMCPFieldRangeCalibrationGlucoseConcentration];
-    NSUInteger timeOffet = [self unsignedIntegerAtRange: (NSRange)kCGMCPFieldRangeCalibrationTime];
-    NSUInteger fluidType = [self parseFluidTypeWithRange: (NSRange)kCGMCPFieldRangeCalibrationTypeLocation];
-    NSUInteger sampleLocation = [self parseSampleLocationWithRange: (NSRange)kCGMCPFieldRangeCalibrationTypeLocation];
-    NSUInteger nextCalibrationTimeOffset = [self unsignedIntegerAtRange: (NSRange)kCGMCPFieldRangeCalibrationTimeNext];
-    NSUInteger recordNumber = [self unsignedIntegerAtRange: (NSRange)kCGMCPFieldRangeCalibrationRecordNumber];
-    NSUInteger status = [self unsignedIntegerAtRange: (NSRange)kCGMCPFieldRangeCalibrationStatus];
-    NSDictionary *calibrationDetails = @{kCGMCalibrationKeyValue: [NSNumber numberWithFloat: value],
-                                         kCGMCalibrationKeyTimeOffset: [NSNumber numberWithUnsignedInteger: timeOffet],
-                                         kCGMCalibrationKeyFluidType: [NSNumber numberWithUnsignedInteger: fluidType],
-                                         kCGMCalibrationKeySampleLocation: [NSNumber numberWithUnsignedInteger: sampleLocation],
-                                         kCGMCalibrationKeyTimeOffsetNext: [NSNumber numberWithUnsignedInteger: nextCalibrationTimeOffset],
-                                         kCGMCalibrationKeyRecordNumber: [NSNumber numberWithUnsignedInteger: recordNumber],
-                                         kCGMCalibrationKeyStatus: [NSNumber numberWithUnsignedInteger: status]};
+    float value = [self shortFloatAtRange:kCGMCPFieldRangeCalibrationGlucoseConcentration];
+    NSUInteger timeOffet = [self unsignedIntegerAtRange:kCGMCPFieldRangeCalibrationTime];
+    NSUInteger fluidType = [self parseFluidTypeWithRange:kCGMCPFieldRangeCalibrationTypeLocation];
+    NSUInteger sampleLocation = [self parseSampleLocationWithRange:kCGMCPFieldRangeCalibrationTypeLocation];
+    NSUInteger nextCalibrationTimeOffset = [self unsignedIntegerAtRange:kCGMCPFieldRangeCalibrationTimeNext];
+    NSUInteger recordNumber = [self unsignedIntegerAtRange:kCGMCPFieldRangeCalibrationRecordNumber];
+    NSUInteger status = [self unsignedIntegerAtRange:kCGMCPFieldRangeCalibrationStatus];
+    NSDictionary *calibrationDetails = @{kCGMCalibrationKeyValue: @(value),
+                                         kCGMKeyTimeOffset: @(timeOffet),
+                                         kCGMCalibrationKeyFluidType: @(fluidType),
+                                         kCGMCalibrationKeySampleLocation: @(sampleLocation),
+                                         kCGMKeyTimeOffsetNext: @(nextCalibrationTimeOffset),
+                                         kCGMCalibrationKeyRecordNumber: @(recordNumber),
+                                         kCGMCalibrationKeyStatus: @(status)};
     
     return calibrationDetails;
 }

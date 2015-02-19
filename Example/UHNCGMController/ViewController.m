@@ -322,7 +322,7 @@
     self.runTimeLabel.text = [self.dateFormatter stringFromDate: sessionRunTime];
 }
 
-- (void) cgmController: (UHNCGMController*)controller CGMCPOperationSuccessful: (CGMCPOpCode)opCode;
+- (void) cgmController:(UHNCGMController*)controller CGMCPOperationSuccessful:(CGMCPOpCode)opCode;
 {
     if (opCode == CGMCPOpCodeSessionStop && self.shouldStartNewSession) {
         self.shouldStartNewSession = NO;
@@ -336,14 +336,14 @@
 
 - (void) cgmController: (UHNCGMController*)controller RACPOperation: (RACPOpCode)opCode failed: (RACPResponseCode)responseCode;
 {
-    if (opCode == kRACPOpCodeStoredRecordsReport) {
+    if (opCode == RACPOpCodeStoredRecordsReport) {
         [self finishedLoadingStoredData];
     }
 }
 
 - (void) cgmController: (UHNCGMController*)controller RACPOperationSuccessful: (RACPOpCode)opCode;
 {
-    if (opCode == kRACPOpCodeStoredRecordsReport) {
+    if (opCode == RACPOpCodeStoredRecordsReport) {
         [self finishedLoadingStoredData];
     }
 }

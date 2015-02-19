@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CGMFeatureOption Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">UHNCGMController </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Centre for Global eHealth Innovation</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CGMFeatureOption Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>UHNCGMConstants.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">CGMFeatureOption</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+<p>Type - nibble/4 bit (Mandatory)
+    - value 0: RESERVED FOR FUTURE USE
+    - value 1: Capillary Whole blood
+    - value 2: Capillary Plasma
+    - value 3: Venous Whole blood
+    - value 4: Venous Plasma
+    - value 5: Arterial Whole blood
+    - value 6: Arterial Plasma
+    - value 7: Undetermined Whole blood
+    - value 8: Undetermined Plasma
+    - value 9: Interstitial Fluid (ISF)
+    - value 10: Control Solution
+    - value 11-15: RESERVED FOR FUTURE USE</p>
+
+<p>Sample Location - nibble/4 bit (Mandatory)
+    - value 0: RESERVED FOR FUTURE USE
+    - value 1: Finger
+    - value 2: Alternate Site Test (AST)
+    - value 3: Earlobe
+    - value 4: Control solution
+    - value 5: Subcutaneous tissue
+    - value 15: Sample Location value not available
+    - value 6-14: RESERVED FOR FUTURE USE</p>
+
+<p>E2E-CRC - uint16 (Mandatory)
+    - If E2E-CRC support is not indicated in the CGM Feature characteristic (bit 12), this field&rsquo;s value is 0xFFFF</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(uint32_t, CGMFeatureOption ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedCalibration</a> = ( 1 &lt; &lt; 0 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedAlertLowHighPatient</a> = ( 1 &lt; &lt; 1 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedAlertHypo</a> = ( 1 &lt; &lt; 2 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedAlertHyper</a> = ( 1 &lt; &lt; 3 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedAlertIncreaseDecreaseRate</a> = ( 1 &lt; &lt; 4 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedAlertDeviceSpecific</a> = ( 1 &lt; &lt; 5 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedSensorDetectionMalfunction</a> = ( 1 &lt; &lt; 6 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedSensorDetectionLowHighTemp</a> = ( 1 &lt; &lt; 7 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedSensorDetectionLowHighResult</a> = ( 1 &lt; &lt; 8 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedLowBattery</a> = ( 1 &lt; &lt; 9 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedSensorDetectionTypeError</a> = ( 1 &lt; &lt; 10 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedGeneralDeviceFault</a> = ( 1 &lt; &lt; 11 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedE2ECRC</a> = ( 1 &lt; &lt; 12 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedMultipleBond</a> = ( 1 &lt; &lt; 13 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedMultipleSession</a> = ( 1 &lt; &lt; 14 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedCGMTrend</a> = ( 1 &lt; &lt; 15 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMFeatureSupportedCGMQuality</a> = ( 1 &lt; &lt; 16 ),<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="CGMFeatureSupportedCalibration"></a><code>CGMFeatureSupportedCalibration</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedAlertLowHighPatient"></a><code>CGMFeatureSupportedAlertLowHighPatient</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedAlertHypo"></a><code>CGMFeatureSupportedAlertHypo</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedAlertHyper"></a><code>CGMFeatureSupportedAlertHyper</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedAlertIncreaseDecreaseRate"></a><code>CGMFeatureSupportedAlertIncreaseDecreaseRate</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedAlertDeviceSpecific"></a><code>CGMFeatureSupportedAlertDeviceSpecific</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedSensorDetectionMalfunction"></a><code>CGMFeatureSupportedSensorDetectionMalfunction</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedSensorDetectionLowHighTemp"></a><code>CGMFeatureSupportedSensorDetectionLowHighTemp</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedSensorDetectionLowHighResult"></a><code>CGMFeatureSupportedSensorDetectionLowHighResult</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedLowBattery"></a><code>CGMFeatureSupportedLowBattery</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedSensorDetectionTypeError"></a><code>CGMFeatureSupportedSensorDetectionTypeError</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedGeneralDeviceFault"></a><code>CGMFeatureSupportedGeneralDeviceFault</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedE2ECRC"></a><code>CGMFeatureSupportedE2ECRC</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedMultipleBond"></a><code>CGMFeatureSupportedMultipleBond</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedMultipleSession"></a><code>CGMFeatureSupportedMultipleSession</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedCGMTrend"></a><code>CGMFeatureSupportedCGMTrend</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMFeatureSupportedCGMQuality"></a><code>CGMFeatureSupportedCGMQuality</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">UHNCGMConstants.h</code></p>
+                    </div>
+                    
+                    
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Centre for Global eHealth Innovation. All rights reserved. Updated: 2015-02-19</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

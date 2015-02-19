@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/CGMFeatureOption.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/CGMFeatureOption</TokenIdentifier>
+			<Abstract type="html">  CGM Feature Format (Mandatory) *
+Feature - 24 bit (Mandatory)
+    - bit 0: Calibration supported
+    - bit 1: Patient high/low alert supported
+    - bit 2: Hypo alerts
+    - bit 3: Hyper alerts
+    - bit 4: Rate of increase/decrease alerts supported
+    - bit 5: Device specific alert supported
+    - bit 6: Sensor malfunction detection supported
+    - bit 7: Sensor temperature high/low detection supported
+    - bit 8: Sensor result high/low detection supported
+    - bit 9: Low battery detection supported
+    - bit 10: Sensor type error detection supported
+    - bit 11: General device fault supported
+    - bit 12: E2E-CRC supported
+    - bit 13: Multiple bond supported
+    - bit 14: Multiple sessions supported
+    - bit 15: CGM trend information supported
+    - bit 16: CGM quality supported
+    - bit 17: RESERVED FOR FUTURE USE
+    - bit 18: RESERVED FOR FUTURE USE
+    - bit 19: RESERVED FOR FUTURE USE
+    - bit 20: RESERVED FOR FUTURE USE
+    - bit 21: RESERVED FOR FUTURE USE
+    - bit 22: RESERVED FOR FUTURE USE
+    - bit 23: RESERVED FOR FUTURE USE</Abstract>
+			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedCalibration</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedCalibration</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedAlertLowHighPatient</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedAlertLowHighPatient</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedAlertHypo</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedAlertHypo</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedAlertHyper</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedAlertHyper</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedAlertIncreaseDecreaseRate</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedAlertIncreaseDecreaseRate</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedAlertDeviceSpecific</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedAlertDeviceSpecific</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedSensorDetectionMalfunction</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedSensorDetectionMalfunction</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedSensorDetectionLowHighTemp</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedSensorDetectionLowHighTemp</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedSensorDetectionLowHighResult</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedSensorDetectionLowHighResult</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedLowBattery</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedLowBattery</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedSensorDetectionTypeError</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedSensorDetectionTypeError</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedGeneralDeviceFault</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedGeneralDeviceFault</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedE2ECRC</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedE2ECRC</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedMultipleBond</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedMultipleBond</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedMultipleSession</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedMultipleSession</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedCGMTrend</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedCGMTrend</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMFeatureSupportedCGMQuality</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMFeatureSupportedCGMQuality</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="7"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

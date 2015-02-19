@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/CGMCPOpCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/CGMCPOpCode</TokenIdentifier>
+			<Abstract type="html">  CGM Session Run Time Format (Mandatory) *
+Session Run Time - uint16 (Mandatory)
+    - units in hour
+    - relative time from the session start time</Abstract>
+			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCommIntervalSet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeCommIntervalSet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCommIntervalGet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeCommIntervalGet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCommIntervalResponse</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeCommIntervalResponse</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCalibrationValueSet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeCalibrationValueSet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCalibrationValueGet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeCalibrationValueGet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCalibrationValueResponse</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeCalibrationValueResponse</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientHighSet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelPatientHighSet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientHighGet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelPatientHighGet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientHighResponse</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelPatientHighResponse</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientLowSet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelPatientLowSet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientLowGet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelPatientLowGet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientLowResponse</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelPatientLowResponse</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHypoSet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelHypoSet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHypoGet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelHypoGet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHypoReponse</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelHypoReponse</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHyperSet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelHyperSet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHyperGet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelHyperGet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHyperReponse</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelHyperReponse</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateDecreaseSet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelRateDecreaseSet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateDecreaseGet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelRateDecreaseGet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateDecreaseResponse</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelRateDecreaseResponse</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateIncreaseSet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelRateIncreaseSet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateIncreaseGet</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelRateIncreaseGet</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateIncreaseResponse</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertLevelRateIncreaseResponse</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertDeviceSpecificReset</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeAlertDeviceSpecificReset</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeSessionStart</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeSessionStart</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeSessionStop</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeSessionStop</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeResponse</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeResponse</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

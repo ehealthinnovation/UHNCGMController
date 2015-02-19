@@ -25,40 +25,46 @@
 //
 // CGMS UUIDs can be found here: https://developer.bluetooth.org/gatt/services/Pages/ServiceViewer.aspx?u=org.bluetooth.service.cgm.xml
 
-typedef struct shortFloat {
-    char exponent : 4;
-    short mantissa : 12;
-} shortFloat;
 
-#define kSecondsInHour 3600.
-#define kSecondsInMinute 60.
-
-#define kTestName @"NAT"
-#define kCGMDeviceName @"CGM Sim"
-
+///----------------
+/// @name RACP Keys
+///----------------
 #pragma mark - Keys
-// Shared Keys
-#define kCGMKeyTimeOffset @"CGMTimeOffset"
 
-// Keys for Measurement Characteristic
-#define kCGMMeasurementKeyDateTime @"CGMMeasurementDateTime"
+/**
+ Keys shared between characteristic details
+ */
+#define kCGMKeyDateTime @"CGMDateTime"
+#define kCGMKeyDateTimeNext @"CGMDateTimeNext"
+#define kCGMKeyTimeOffset @"CGMTimeOffset"
+#define kCGMKeyTimeOffsetNext @"CGMTimeOffsetNext"
+#define kCGMCRCFailed @"CGMCRCFailed"
+
+/**
+ Keys for Measurement Characteristic
+ */
 #define kCGMMeasurementKeyGlucoseConcentration @"CGMGlucoseConcentration"
 #define kCGMMeasurementKeyTrendInfo @"CGMTrendInformation"
 #define kCGMMeasurementKeyQuality @"CGMMeasurementQuality"
-#define kCGMMeasurementkeyCRCFailed @"CGMMeasurementCRCFailed"
 
-// Keys for Status Characteristic
-#define kCGMStatusKeySensorStatus @"CGMStatusOctets"
+/** 
+ Keys for Status Characteristic
+ */
+#define kCGMStatusKeySensorStatus @"CGMSensorStatus"
 #define kCGMStatusKeyOctetStatus @"CGMStatusOctet"
 #define kCGMStatusKeyOctetCalTemp @"CGMCalTempOctet"
 #define kCGMStatusKeyOctetWarning @"CGMWarningOctet"
 
-// Keys for Feature Characteristic
+/**
+ Keys for Feature Characteristic
+ */
 #define kCGMFeatureKeyFeatures @"CGMFeatures"
 #define kCGMFeatureKeyFluidType @"CGMFluidType"
 #define kCGMFeatureKeySampleLocation @"CGMSampleLocation"
 
-// Keys for Specific Ops Control Point
+/**
+ Keys for Specific Ops Control Point
+ */
 #define kCGMCPKeyOpCode @"CGMCPOpCode"
 #define kCGMCPKeyOperand @"CGMCPOperand"
 #define kCGMCPKeyResponseDetails @"CGMCPResponseDetails"
@@ -66,18 +72,21 @@ typedef struct shortFloat {
 #define kCGMCPKeyResponseCodeValue @"CGMCPResponseCodeValue"
 #define kCGMCPKeyResponseCalibration  @"CGMCPCalibrationResponse"
 #define kCGMCalibrationKeyValue @"CGMCalibrationValue"
-#define kCGMCalibrationKeyTimeOffset @"CGMCalibrationTimeOffset"
 #define kCGMCalibrationKeyFluidType @"CGMCalibrationFluidType"
 #define kCGMCalibrationKeySampleLocation @"CGMCalibrationSampleLocation"
-#define kCGMCalibrationKeyTimeOffsetNext @"CGMCalibrationTimeOffsetNext"
 #define kCGMCalibrationKeyRecordNumber @"CGMCalibrationRecordNumber"
 #define kCGMCalibrationKeyStatus @"CGMCalibrationStatus"
 
-#pragma mark - Services
+///-----------------------
+/// @name CGM Service UUID
+///-----------------------
+#pragma mark - CGM Service UUID
 #define kCGMServiceUUID @"181F"
-#define kGlucoseServiceUUID @"1808"
 
-#pragma mark - Characteristics
+///-------------------------------
+/// @name CGM Characteristic UUIDs
+///-------------------------------
+#pragma mark - Characteristic UUIDs
 #define kCGMCharacteristicUUIDMeasurement @"2AA7"
 #define kCGMCharacteristicUUIDFeature @"2AA8"
 #define kCGMCharacteristicUUIDStatus @"2AA9"
@@ -86,7 +95,10 @@ typedef struct shortFloat {
 #define kCGMCharacteristicUUIDRecordAccessControlPoint @"2A52"
 #define kCGMCharacteristicUUIDSpecificOpsControlPoint @"2AAC"
 
-#pragma mark - CGM Measurement 
+///-------------------------------------
+/// @name CGM Measurement Characteristic
+///-------------------------------------
+#pragma mark - CGM Measurement Characteristic
 /**********  CGM Measurement Format (Mandatory) ***************
  Size - uint8 (Mandatory)
  * Size of the measurement changes based on the flags field (Sensor Status Annunication, Trend, Quality) and the CGM features (E2E-CRC supported)
@@ -147,22 +159,29 @@ typedef struct shortFloat {
  E2E-CRC - uint16 (Field exists if the CGM Feature characterist bi 12 is set to 1)
  **********************************************/
 
-#define kCGMMeasurementFieldRangeSize                   {0,1}
-#define kCGMMeasurementFieldRangeFlags                  {1,1}
-#define kCGMMeasurementFieldRangeGlucoseConcentration   {2,2}
-#define kCGMMeasurementFieldRangeTimeOffset             {4,2}
+#define kCGMMeasurementFieldRangeSize                   (NSRange){0,1}
+#define kCGMMeasurementFieldRangeFlags                  (NSRange){1,1}
+#define kCGMMeasurementFieldRangeGlucoseConcentration   (NSRange){2,2}
+#define kCGMMeasurementFieldRangeTimeOffset             (NSRange){4,2}
 #define kCGMMeasurementFieldSizeTrendInfo               2
 #define kCGMMeasurementFieldSizeQuality                 2
 #define kCGMMeasurementFieldSizeCRC                     2
 
+/**
+ All possible CGM measurement flags with their assigned bit position
+ */
 typedef NS_ENUM (uint8_t, CGMMeasurementFlagOption) {
+    /** Flag indicating that glucose trend information is present in the measurement */
     CGMMeasurementFlagsTrendInformationPresent  = (1 << 0),
+    /** Flag indicating that glucose quality information is present in the measurement */
     CGMMeasurementFlagsQualityPresent           = (1 << 1),
+    /** Flag indicating that the sensor status status details is present in the measurement */
     CGMMeasurementFlagsStatusOctetPresent       = (1 << 5),
+    /** Flag indicating that the sensor status calibration and temperature details is present in the measurement */
     CGMMeasurementFlagsCalTempOctetPresent      = (1 << 6),
+    /** Flag indicating that the sensor status warning details is present in the measurement */
     CGMMeasurementFlagsWarningOctetPresent      = (1 << 7),
 };
-
 
 #pragma mark - CGM Feature
 /**********  CGM Feature Format (Mandatory) ***************
@@ -220,9 +239,9 @@ typedef NS_ENUM (uint8_t, CGMMeasurementFlagOption) {
     - If E2E-CRC support is not indicated in the CGM Feature characteristic (bit 12), this field's value is 0xFFFF
  **********************************************/
 
-#define kCGMFeatureFieldRangeFeatures       {0,3}
-#define kCGMFeatureFieldRangeTypeLocation   {3,1}
-#define kCGMFeatureFieldRangeCRC            {4,2}
+#define kCGMFeatureFieldRangeFeatures               (NSRange){0,3}
+#define kCGMFeatureFieldRangeTypeLocation           (NSRange){3,1}
+#define kCGMFeatureFieldRangeCRC                    (NSRange){4,2}
 
 typedef NS_ENUM (uint32_t, CGMFeatureOption) {
     CGMFeatureSupportedCalibration                     = (1 << 0),
@@ -307,37 +326,38 @@ typedef NS_ENUM (uint8_t, CGMLocationOption) {
  E2E-CRC - uint16 (Field exists if the CGM Feature characterist bi 12 is set to 1)
  **********************************************/
 
-#define kCGMStatusFieldRangeTimeOffset  {0,2}
-#define kCGMStatusFieldRangeStatus      {2,3}
-#define kCGMStatusFieldRangeCRC         {5,2}
+#define kCGMStatusFieldRangeTimeOffset              (NSRange){0,2}
+#define kCGMStatusFieldRangeStatus                  (NSRange){2,3}
+#define kCGMStatusFieldRangeCRC                     (NSRange){5,2}
+#define kCGMStatusFieldSizeOctet                    1
 
 typedef NS_ENUM (uint8_t, CGMStatusStatusOptions) {
-    CGMMeasurementStatusSessionStopped                = (1 << 0),
-    CGMMeasurementStatusDeviceBatteryLow              = (1 << 1),
-    CGMMeasurementStatusSensorTypeIncorrect           = (1 << 2),
-    CGMMeasurementStatusSensorMalfunction             = (1 << 3),
-    CGMMeasurementStatusDeviceSpecificAlert           = (1 << 4),
-    CGMMeasurementStatusGeneralDeviceFault            = (1 << 5),
+    CGMStatusStatusSessionStopped                = (1 << 0),
+    CGMStatusStatusDeviceBatteryLow              = (1 << 1),
+    CGMStatusStatusSensorTypeIncorrect           = (1 << 2),
+    CGMStatusStatusSensorMalfunction             = (1 << 3),
+    CGMStatusStatusDeviceSpecificAlert           = (1 << 4),
+    CGMStatusStatusGeneralDeviceFault            = (1 << 5),
 };
 
 typedef NS_ENUM (uint8_t, CGMStatusCalTempOption) {
-    CGMMeasurementStatusTimeSynchronizationRequired   = (1 << 0),
-    CGMMeasurementStatusCalibrationNotAllowed         = (1 << 1),
-    CGMMeasurementStatusCalibrationRecommended        = (1 << 2),
-    CGMMeasurementStatusCalibrationRequired           = (1 << 3),
-    CGMMeasurementStatusSensorTooHighTemp             = (1 << 4),
-    CGMMeasurementStatusSensorTooLowTemp              = (1 << 5),
+    CGMStatusCalTempTimeSynchronizationRequired   = (1 << 0),
+    CGMStatusCalTempCalibrationNotAllowed         = (1 << 1),
+    CGMStatusCalTempCalibrationRecommended        = (1 << 2),
+    CGMStatusCalTempCalibrationRequired           = (1 << 3),
+    CGMStatusCalTempSensorTempTooHigh             = (1 << 4),
+    CGMStatusCalTempSensorTempTooLow              = (1 << 5),
 };
 
 typedef NS_ENUM (uint8_t, CGMStatusWarningOption) {
-    CGMMeasurementStatusResultLowerThanPatientLow     = (1 << 0),
-    CGMMeasurementStatusResultHigherThanPatientHigh   = (1 << 1),
-    CGMMeasurementStatusResultLowerThanHypo           = (1 << 2),
-    CGMMeasurementStatusResultHigherThanHyper         = (1 << 3),
-    CGMMeasurementStatusResultExceedRateDecrease      = (1 << 4),
-    CGMMeasurementStatusResultExceedRateIncrease      = (1 << 5),
-    CGMMeasurementStatusSensorTooLowResult            = (1 << 6),
-    CGMMeasurementStatusSensorTooHighResult           = (1 << 7),
+    CGMStatusWarningResultLowerThanPatientLow     = (1 << 0),
+    CGMStatusWarningResultHigherThanPatientHigh   = (1 << 1),
+    CGMStatusWarningResultLowerThanHypo           = (1 << 2),
+    CGMStatusWarningResultHigherThanHyper         = (1 << 3),
+    CGMStatusWarningResultExceedRateDecrease      = (1 << 4),
+    CGMStatusWarningResultExceedRateIncrease      = (1 << 5),
+    CGMStatusWarningSensorResultTooLow            = (1 << 6),
+    CGMStatusWarningSensorResultTooHigh           = (1 << 7),
 };
 
 
@@ -385,21 +405,22 @@ typedef NS_ENUM (uint8_t, CGMStatusWarningOption) {
  E2E-CRC - uint16 (Field exists if the CGM Feature characterist bi 12 is set to 1)
  **********************************************/
 
-#define kCGMSessionStartTimeFieldRangeYear          {0,2}
-#define kCGMSessionStartTimeFieldRangeMonth         {2,1}
-#define kCGMSessionStartTimeFieldRangeDay           {3,1}
-#define kCGMSessionStartTimeFieldRangeHour          {4,1}
-#define kCGMSessionStartTimeFieldRangeMinute        {5,1}
-#define kCGMSessionStartTimeFieldRangeSecond        {6,1}
-#define kCGMSessionStartTimeFieldRangeTimeZone      {7,1}
-#define kCGMSessionStartTimeFieldRangeDSTOffset     {8,1}
-#define kCGMSessionStartTimeFieldRangeCRC           {9,2}
+#define kCGMSessionStartTimeFieldRangeYear          (NSRange){0,2}
+#define kCGMSessionStartTimeFieldRangeMonth         (NSRange){2,1}
+#define kCGMSessionStartTimeFieldRangeDay           (NSRange){3,1}
+#define kCGMSessionStartTimeFieldRangeHour          (NSRange){4,1}
+#define kCGMSessionStartTimeFieldRangeMinute        (NSRange){5,1}
+#define kCGMSessionStartTimeFieldRangeSecond        (NSRange){6,1}
+#define kCGMSessionStartTimeFieldRangeTimeZone      (NSRange){7,1}
+#define kCGMSessionStartTimeFieldRangeDSTOffset     (NSRange){8,1}
+#define kCGMSessionStartTimeFieldRangeCRC           (NSRange){9,2}
 
-#define kCGMSessionStartTimeUnknownYear     0
-#define kCGMSessionStartTimeUnknownMonth    0
-#define kCGMSessionStartTimeUnknownDay      0
-#define kCGMSessionStartTimeUnknownTimeZone -128
-#define kCGMTimeZoneStepSize                4.
+#define kCGMSessionStartTimeUnknownYear             0
+#define kCGMSessionStartTimeUnknownMonth            0
+#define kCGMSessionStartTimeUnknownDay              0
+#define kCGMSessionStartTimeUnknownTimeZone         -128
+#define kCGMTimeZoneStepSizeMin30                   2.
+#define kCGMTimeZoneStepSizeMin60                   4.
 
 typedef NS_ENUM (uint8_t, DSTOffsetOption) {
     DSTStandardTime   = 0,
@@ -408,7 +429,6 @@ typedef NS_ENUM (uint8_t, DSTOffsetOption) {
     DSTPlusHoursTwo   = 8,
     DSTUnknown        = 255,
 };
-
 
 #pragma mark - CGM Session Run Time
 /**********  CGM Session Run Time Format (Mandatory) ***************
@@ -419,22 +439,21 @@ typedef NS_ENUM (uint8_t, DSTOffsetOption) {
  E2E-CRC - uint16 (Field exists if the CGM Feature characterist bi 12 is set to 1)
  **********************************************/
 
-#define kCGMSessionRunTimeFieldRangeRunTime     {0,2}
-#define kCGMSessionRunTimeFieldRangeCRC         {2,2}
-
+#define kCGMSessionRunTimeFieldRangeRunTime                 (NSRange){0,2}
+#define kCGMSessionRunTimeFieldRangeCRC                     (NSRange){2,2}
 
 #pragma mark - CGM Specific Ops Control Point
-#define kCGMCPFieldRangeOpCode                            {0,1}
-#define kCGMCPFieldRangeResponseRequestOpCode             {1,1}
-#define kCGMCPFieldRangeResponseCodeValue                 {2,1}
-#define kCGMCPFieldRangeCommIntervalResponse              {1,1}
-#define kCGMCPFieldRangeSFloatResponse                    {1,2}
-#define kCGMCPFieldRangeCalibrationGlucoseConcentration   {1,2}
-#define kCGMCPFieldRangeCalibrationTime                   {3,2}
-#define kCGMCPFieldRangeCalibrationTypeLocation           {5,1}
-#define kCGMCPFieldRangeCalibrationTimeNext               {6,2}
-#define kCGMCPFieldRangeCalibrationRecordNumber           {8,2}
-#define kCGMCPFieldRangeCalibrationStatus                 {10,1}
+#define kCGMCPFieldRangeOpCode                              (NSRange){0,1}
+#define kCGMCPFieldRangeResponseRequestOpCode               (NSRange){1,1}
+#define kCGMCPFieldRangeResponseCodeValue                   (NSRange){2,1}
+#define kCGMCPFieldRangeCommIntervalResponse                (NSRange){1,1}
+#define kCGMCPFieldRangeSFloatResponse                      (NSRange){1,2}
+#define kCGMCPFieldRangeCalibrationGlucoseConcentration     (NSRange){1,2}
+#define kCGMCPFieldRangeCalibrationTime                     (NSRange){3,2}
+#define kCGMCPFieldRangeCalibrationTypeLocation             (NSRange){5,1}
+#define kCGMCPFieldRangeCalibrationTimeNext                 (NSRange){6,2}
+#define kCGMCPFieldRangeCalibrationRecordNumber             (NSRange){8,2}
+#define kCGMCPFieldRangeCalibrationStatus                   (NSRange){10,1}
 
 typedef NS_ENUM (uint8_t, CGMCPOpCode) {
     CGMCPOpCodeCommIntervalSet = 1,
@@ -474,3 +493,19 @@ typedef NS_ENUM (uint8_t, CGMCPResponseCode) {
     CGMCPProcedureNotCompleted,
     CGMCPParameterOutOfRange,
 };
+
+typedef NS_ENUM (uint8_t, CGMCPCalibrationStatusOption) {
+    CGMCPCalibrationStatusDataRejected = 0,
+    CGMCPCalibrationStatusDataOutOfRange,
+    CGMCPCalibrationStatusProcessPending,
+};
+
+///-----------------------
+/// @name Time Definitions
+///-----------------------
+/**
+ These time definitions are needed to help with time offset calculations, day light saving offet, and time zone offset
+ */
+#define kMinutesInHour 60.
+#define kSecondsInMinute 60.
+#define kSecondsInHour (kMinutesInHour * kSecondsInMinute)

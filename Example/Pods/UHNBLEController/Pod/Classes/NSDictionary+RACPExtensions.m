@@ -1,19 +1,19 @@
 //
-//  NSDictionary+RACPExtension.m
+//  NSDictionary+RACPExtensions.m
 //  UHNBLEDemo
 //
 //  Created by Nathaniel Hamming on 2015-02-09.
 //  Copyright (c) 2015 University Health Network.
 //
 
-#import "NSDictionary+RACPExtension.h"
+#import "NSDictionary+RACPExtensions.h"
 
-@implementation NSDictionary (RACPExtension)
+@implementation NSDictionary (RACPExtensions)
 
 - (BOOL)isNumberOfRecordResponse;
 {
     RACPOpCode opCode = [self responseOpCode];
-    if (opCode == kRACPOpCodeResponseStoredRecordsReportNumber) {
+    if (opCode == RACPOpCodeResponseStoredRecordsReportNumber) {
         return YES;
     } else {
         return NO;
@@ -23,7 +23,7 @@
 - (BOOL)isGeneralResponse;
 {
     RACPOpCode opCode = [self responseOpCode];
-    if (opCode == kRACPOpCodeResponse) {
+    if (opCode == RACPOpCodeResponse) {
         return YES;
     } else {
         return NO;
@@ -32,17 +32,17 @@
 
 - (BOOL)isSuccessfulResponseReportRecords;
 {
-    return [self isSuccessfulResponseOfType: kRACPOpCodeStoredRecordsReport];
+    return [self isSuccessfulResponseOfType: RACPOpCodeStoredRecordsReport];
 }
 
 - (BOOL)isSuccessfulResponseDeleteRecords;
 {
-    return [self isSuccessfulResponseOfType: kRACPOpCodeStoredRecordsDelete];
+    return [self isSuccessfulResponseOfType: RACPOpCodeStoredRecordsDelete];
 }
 
 - (BOOL)isSuccessfulResponseAbort;
 {
-    return [self isSuccessfulResponseOfType: kRACPOpCodeAbortOperation];
+    return [self isSuccessfulResponseOfType: RACPOpCodeAbortOperation];
 }
 
 - (BOOL)isSuccessfulResponseOfType: (RACPOpCode)opCode
@@ -50,7 +50,7 @@
     if ([self isGeneralResponse]) {
         RACPOpCode requestOpCode = [self requestOpCode];
         RACPResponseCode responseCode = [self responseCodeValue];
-        if (requestOpCode == opCode && responseCode == kRACPSuccess) {
+        if (requestOpCode == opCode && responseCode == RACPSuccess) {
             return YES;
         }
     }

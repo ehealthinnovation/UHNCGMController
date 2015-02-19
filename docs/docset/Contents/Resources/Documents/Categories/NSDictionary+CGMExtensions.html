@@ -1,0 +1,3557 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSDictionary(CGMExtensions) Category Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">UHNCGMController </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Centre for Global eHealth Innovation</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/calibrationDateTime">- calibrationDateTime</option>
+		
+		<option value="//api/name/calibrationFluidType">- calibrationFluidType</option>
+		
+		<option value="//api/name/calibrationRecordNumber">- calibrationRecordNumber</option>
+		
+		<option value="//api/name/calibrationSampleLocation">- calibrationSampleLocation</option>
+		
+		<option value="//api/name/calibrationTimeOffset">- calibrationTimeOffset</option>
+		
+		<option value="//api/name/didCRCFail">- didCRCFail</option>
+		
+		<option value="//api/name/didSensorMalfunction">- didSensorMalfunction</option>
+		
+		<option value="//api/name/glucoseValue">- glucoseValue</option>
+		
+		<option value="//api/name/hasDeviceSpecificAlert">- hasDeviceSpecificAlert</option>
+		
+		<option value="//api/name/hasExceededDeviceLimitHigh">- hasExceededDeviceLimitHigh</option>
+		
+		<option value="//api/name/hasExceededDeviceLimitLow">- hasExceededDeviceLimitLow</option>
+		
+		<option value="//api/name/hasExceededLevelHyper">- hasExceededLevelHyper</option>
+		
+		<option value="//api/name/hasExceededLevelHypo">- hasExceededLevelHypo</option>
+		
+		<option value="//api/name/hasExceededLevelPatientHigh">- hasExceededLevelPatientHigh</option>
+		
+		<option value="//api/name/hasExceededLevelPatientLow">- hasExceededLevelPatientLow</option>
+		
+		<option value="//api/name/hasExceededRateDecrease">- hasExceededRateDecrease</option>
+		
+		<option value="//api/name/hasExceededRateIncrease">- hasExceededRateIncrease</option>
+		
+		<option value="//api/name/hasGeneraldeviceFault">- hasGeneraldeviceFault</option>
+		
+		<option value="//api/name/hasSessionStopped">- hasSessionStopped</option>
+		
+		<option value="//api/name/isAlertLevelHyperReponse">- isAlertLevelHyperReponse</option>
+		
+		<option value="//api/name/isAlertLevelHypoReponse">- isAlertLevelHypoReponse</option>
+		
+		<option value="//api/name/isAlertLevelPatientHighResponse">- isAlertLevelPatientHighResponse</option>
+		
+		<option value="//api/name/isAlertLevelPatientLowResponse">- isAlertLevelPatientLowResponse</option>
+		
+		<option value="//api/name/isAlertLevelRateDecreasedReponse">- isAlertLevelRateDecreasedReponse</option>
+		
+		<option value="//api/name/isAlertLevelRateIncreasedReponse">- isAlertLevelRateIncreasedReponse</option>
+		
+		<option value="//api/name/isCalibrationNotAllowed">- isCalibrationNotAllowed</option>
+		
+		<option value="//api/name/isCalibrationProcessPending">- isCalibrationProcessPending</option>
+		
+		<option value="//api/name/isCalibrationRecommended">- isCalibrationRecommended</option>
+		
+		<option value="//api/name/isCalibrationReponse">- isCalibrationReponse</option>
+		
+		<option value="//api/name/isCalibrationRequired">- isCalibrationRequired</option>
+		
+		<option value="//api/name/isCommunicationIntervalResponse">- isCommunicationIntervalResponse</option>
+		
+		<option value="//api/name/isDeviceBatteryLow">- isDeviceBatteryLow</option>
+		
+		<option value="//api/name/isGeneralResponse">- isGeneralResponse</option>
+		
+		<option value="//api/name/isSensorTempTooHigh">- isSensorTempTooHigh</option>
+		
+		<option value="//api/name/isSensorTempTooLow">- isSensorTempTooLow</option>
+		
+		<option value="//api/name/isSensorTypeIncorrect">- isSensorTypeIncorrect</option>
+		
+		<option value="//api/name/isTimeSynchronizationRequired">- isTimeSynchronizationRequired</option>
+		
+		<option value="//api/name/measurementDateTime">- measurementDateTime</option>
+		
+		<option value="//api/name/measurementTimeOffset">- measurementTimeOffset</option>
+		
+		<option value="//api/name/nextCalibrationDateTime">- nextCalibrationDateTime</option>
+		
+		<option value="//api/name/nextCalibrationTimeOffset">- nextCalibrationTimeOffset</option>
+		
+		<option value="//api/name/qualityValue">- qualityValue</option>
+		
+		<option value="//api/name/requestOpCode">- requestOpCode</option>
+		
+		<option value="//api/name/responseCode">- responseCode</option>
+		
+		<option value="//api/name/responseValue">- responseValue</option>
+		
+		<option value="//api/name/statusDateTime">- statusDateTime</option>
+		
+		<option value="//api/name/statusTimeOffset">- statusTimeOffset</option>
+		
+		<option value="//api/name/supportsAlertDeviceSpecific">- supportsAlertDeviceSpecific</option>
+		
+		<option value="//api/name/supportsAlertHyper">- supportsAlertHyper</option>
+		
+		<option value="//api/name/supportsAlertHypo">- supportsAlertHypo</option>
+		
+		<option value="//api/name/supportsAlertIncreaseDecreaseRate">- supportsAlertIncreaseDecreaseRate</option>
+		
+		<option value="//api/name/supportsAlertLowHighPatient">- supportsAlertLowHighPatient</option>
+		
+		<option value="//api/name/supportsCGMQuality">- supportsCGMQuality</option>
+		
+		<option value="//api/name/supportsCGMTrend">- supportsCGMTrend</option>
+		
+		<option value="//api/name/supportsCalibration">- supportsCalibration</option>
+		
+		<option value="//api/name/supportsE2ECRC">- supportsE2ECRC</option>
+		
+		<option value="//api/name/supportsGeneralDeviceFault">- supportsGeneralDeviceFault</option>
+		
+		<option value="//api/name/supportsMultipleBond">- supportsMultipleBond</option>
+		
+		<option value="//api/name/supportsMultipleSession">- supportsMultipleSession</option>
+		
+		<option value="//api/name/supportsSensorDetectionLowHighResult">- supportsSensorDetectionLowHighResult</option>
+		
+		<option value="//api/name/supportsSensorDetectionLowHighTemp">- supportsSensorDetectionLowHighTemp</option>
+		
+		<option value="//api/name/supportsSensorDetectionMalfunction">- supportsSensorDetectionMalfunction</option>
+		
+		<option value="//api/name/supportsSensorDetectionTypeError">- supportsSensorDetectionTypeError</option>
+		
+		<option value="//api/name/supportsSensorLowBattery">- supportsSensorLowBattery</option>
+		
+		<option value="//api/name/trendValue">- trendValue</option>
+		
+		<option value="//api/name/wasCalibrationDataOutOfRange">- wasCalibrationDataOutOfRange</option>
+		
+		<option value="//api/name/wasCalibrationDataRejected">- wasCalibrationDataRejected</option>
+		
+		<option value="//api/name/wasCalibrationSuccessful">- wasCalibrationSuccessful</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSDictionary(CGMExtensions) Category Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>NSDictionary+CGMExtensions.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>NSDictionary+CGMExtensions</code> provides helper methods for interpreting the dictionary returned by the <code>[NSData+CGMParser]</code></p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Shared Values/Flags" name="task_Shared Values/Flags"></a>
+						<h2 class="task-title">Shared Values/Flags</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/didCRCFail" title="didCRCFail"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didCRCFail">&ndash;&nbsp;didCRCFail</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks if the E2E-CRC included in the response failed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)didCRCFail</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the E2E-CRC failed, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Measurement Values" name="task_Measurement Values"></a>
+						<h2 class="task-title">Measurement Values</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/measurementDateTime" title="measurementDateTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/measurementDateTime">&ndash;&nbsp;measurementDateTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the measurement characteristic details for the glucose measurement date and time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDate *)measurementDateTime</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The date and time of the glucose measurement as calculated using the measurement time offset and session start time. If the date and time cannot be calculated, <code>nil</code> is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The glucose measurement date and time is only available if the CGM controller knows the session start time.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/measurementTimeOffset" title="measurementTimeOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/measurementTimeOffset">&ndash;&nbsp;measurementTimeOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the measurement characteristic details for the glucose measurement time offset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSNumber *)measurementTimeOffset</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The measurement time offset. Units is minutes</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The measurement time offset indicates the time of measurement as minutes from the session start time. Also, it can be considered a sequence number.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/glucoseValue" title="glucoseValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/glucoseValue">&ndash;&nbsp;glucoseValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the measurement characteristic details for the glucose concentration value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSNumber *)glucoseValue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The glucose centration value. Units is mg/dl</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trendValue" title="trendValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trendValue">&ndash;&nbsp;trendValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the measurement characteristic details for the glucose trend value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSNumber *)trendValue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The glucose trend value. Units is (mg/dl)/min</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If a trend value is not available, returns <code>nil</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/qualityValue" title="qualityValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/qualityValue">&ndash;&nbsp;qualityValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the measurement characteristic details for the glucose quality value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSNumber *)qualityValue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The glucose quality value. Units is %</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If a quality value is not available, returns <code>nil</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Sensor Status" name="task_Sensor Status"></a>
+						<h2 class="task-title">Sensor Status</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/statusDateTime" title="statusDateTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/statusDateTime">&ndash;&nbsp;statusDateTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for the sensor status date and time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDate *)statusDateTime</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The date and time of the sensor status as calculated using the status time offset and session start time. If the date and time cannot be calculated, <code>nil</code> is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The sensor status date and time is only available if the CGM controller knows the session start time.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/statusTimeOffset" title="statusTimeOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/statusTimeOffset">&ndash;&nbsp;statusTimeOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for the sensor status time offset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSNumber *)statusTimeOffset</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The sensor status time offset. Units is minutes</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The sensor status time offset indicates the time of the sensor status as minutes from the session start time.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Sensor Status Status Flags" name="task_Sensor Status Status Flags"></a>
+						<h2 class="task-title">Sensor Status Status Flags</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/hasSessionStopped" title="hasSessionStopped"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasSessionStopped">&ndash;&nbsp;hasSessionStopped</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the session has stopped</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasSessionStopped</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the session has stopped, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isDeviceBatteryLow" title="isDeviceBatteryLow"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isDeviceBatteryLow">&ndash;&nbsp;isDeviceBatteryLow</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the device battery is low</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isDeviceBatteryLow</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the battery is low, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isSensorTypeIncorrect" title="isSensorTypeIncorrect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isSensorTypeIncorrect">&ndash;&nbsp;isSensorTypeIncorrect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the sensor type is incorrect</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isSensorTypeIncorrect</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor type is incorrect, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didSensorMalfunction" title="didSensorMalfunction"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didSensorMalfunction">&ndash;&nbsp;didSensorMalfunction</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the device has malfunctioned</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)didSensorMalfunction</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the device has malfunctioned, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasDeviceSpecificAlert" title="hasDeviceSpecificAlert"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasDeviceSpecificAlert">&ndash;&nbsp;hasDeviceSpecificAlert</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the device has had a specific alert</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasDeviceSpecificAlert</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the device has had a specific alert, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasGeneraldeviceFault" title="hasGeneraldeviceFault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasGeneraldeviceFault">&ndash;&nbsp;hasGeneraldeviceFault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the device has had a general fault</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasGeneraldeviceFault</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the device has had a general fault, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Sensor Status Cal/Temp Flags" name="task_Sensor Status Cal/Temp Flags"></a>
+						<h2 class="task-title">Sensor Status Cal/Temp Flags</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/isTimeSynchronizationRequired" title="isTimeSynchronizationRequired"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isTimeSynchronizationRequired">&ndash;&nbsp;isTimeSynchronizationRequired</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that time synchronization is required between the sensor and collector</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isTimeSynchronizationRequired</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if time synchronization is required, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isCalibrationNotAllowed" title="isCalibrationNotAllowed"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isCalibrationNotAllowed">&ndash;&nbsp;isCalibrationNotAllowed</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that calibration is not allowed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isCalibrationNotAllowed</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if calibration is not allowed, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isCalibrationRecommended" title="isCalibrationRecommended"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isCalibrationRecommended">&ndash;&nbsp;isCalibrationRecommended</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that calibration is recommended</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isCalibrationRecommended</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if calibration is recommended, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isCalibrationRequired" title="isCalibrationRequired"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isCalibrationRequired">&ndash;&nbsp;isCalibrationRequired</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that calibration is required</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isCalibrationRequired</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if calibration is required, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isSensorTempTooHigh" title="isSensorTempTooHigh"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isSensorTempTooHigh">&ndash;&nbsp;isSensorTempTooHigh</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the sensor temperature is too high to provide accurate glucose meaurements</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isSensorTempTooHigh</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor temperature is too high, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isSensorTempTooLow" title="isSensorTempTooLow"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isSensorTempTooLow">&ndash;&nbsp;isSensorTempTooLow</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the sensor temperature is too low to provide accurate glucose meaurements</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isSensorTempTooLow</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor temperature is too low, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Sensor Status Warning Flags" name="task_Sensor Status Warning Flags"></a>
+						<h2 class="task-title">Sensor Status Warning Flags</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/hasExceededLevelHypo" title="hasExceededLevelHypo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasExceededLevelHypo">&ndash;&nbsp;hasExceededLevelHypo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the measurement value has exceeded the hypo alert level</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasExceededLevelHypo</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the measurement value has exceeded the hypo alert level, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasExceededLevelHyper" title="hasExceededLevelHyper"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasExceededLevelHyper">&ndash;&nbsp;hasExceededLevelHyper</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the measurement value has exceeded the hyper alert level</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasExceededLevelHyper</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the measurement value has exceeded the hyper alert level, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasExceededLevelPatientLow" title="hasExceededLevelPatientLow"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasExceededLevelPatientLow">&ndash;&nbsp;hasExceededLevelPatientLow</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the measurement value has exceeded the patient low alert level</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasExceededLevelPatientLow</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the measurement value has exceeded the patient low alert level, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasExceededLevelPatientHigh" title="hasExceededLevelPatientHigh"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasExceededLevelPatientHigh">&ndash;&nbsp;hasExceededLevelPatientHigh</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the measurement value has exceeded the patient high alert level</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasExceededLevelPatientHigh</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the measurement value has exceeded the patient high alert level, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasExceededRateDecrease" title="hasExceededRateDecrease"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasExceededRateDecrease">&ndash;&nbsp;hasExceededRateDecrease</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the measurement value has exceeded the rate of decrease alert level</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasExceededRateDecrease</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the measurement value has exceeded the rate of decrease alert level, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasExceededRateIncrease" title="hasExceededRateIncrease"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasExceededRateIncrease">&ndash;&nbsp;hasExceededRateIncrease</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the measurement value has exceeded the rate of increase alert level</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasExceededRateIncrease</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the measurement value has exceeded the rate of increase alert level, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasExceededDeviceLimitLow" title="hasExceededDeviceLimitLow"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasExceededDeviceLimitLow">&ndash;&nbsp;hasExceededDeviceLimitLow</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the measurement value has exceeded the device lower limit</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasExceededDeviceLimitLow</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the measurement value has exceeded the device lower limit, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasExceededDeviceLimitHigh" title="hasExceededDeviceLimitHigh"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasExceededDeviceLimitHigh">&ndash;&nbsp;hasExceededDeviceLimitHigh</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the status characteristic details for indication that the measurement value has exceeded the device upper limit</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasExceededDeviceLimitHigh</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the measurement value has exceeded the device upper limit, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Feature Flags" name="task_Feature Flags"></a>
+						<h2 class="task-title">Feature Flags</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/supportsCalibration" title="supportsCalibration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsCalibration">&ndash;&nbsp;supportsCalibration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports calibration</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsCalibration</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports calibration, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsAlertLowHighPatient" title="supportsAlertLowHighPatient"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsAlertLowHighPatient">&ndash;&nbsp;supportsAlertLowHighPatient</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the patient low and high alert levels</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsAlertLowHighPatient</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the patient low and high alert levels, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsAlertHypo" title="supportsAlertHypo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsAlertHypo">&ndash;&nbsp;supportsAlertHypo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the hypo alert level</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsAlertHypo</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the hypo alert level, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsAlertHyper" title="supportsAlertHyper"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsAlertHyper">&ndash;&nbsp;supportsAlertHyper</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the hyper alert level</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsAlertHyper</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the hyper alert level, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsAlertIncreaseDecreaseRate" title="supportsAlertIncreaseDecreaseRate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsAlertIncreaseDecreaseRate">&ndash;&nbsp;supportsAlertIncreaseDecreaseRate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the rate of increase and decrease alert levels</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsAlertIncreaseDecreaseRate</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the rate of increase and decrease alert levels, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsAlertDeviceSpecific" title="supportsAlertDeviceSpecific"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsAlertDeviceSpecific">&ndash;&nbsp;supportsAlertDeviceSpecific</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the device specific alert</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsAlertDeviceSpecific</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the device specifc alert, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsSensorDetectionMalfunction" title="supportsSensorDetectionMalfunction"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsSensorDetectionMalfunction">&ndash;&nbsp;supportsSensorDetectionMalfunction</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the detection of sensor malfunction</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsSensorDetectionMalfunction</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the detection of sensor malfunction, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsSensorDetectionLowHighTemp" title="supportsSensorDetectionLowHighTemp"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsSensorDetectionLowHighTemp">&ndash;&nbsp;supportsSensorDetectionLowHighTemp</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the detection of sensor temperature too low or too high</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsSensorDetectionLowHighTemp</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the detection of sensor temperature too low or too high, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsSensorDetectionLowHighResult" title="supportsSensorDetectionLowHighResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsSensorDetectionLowHighResult">&ndash;&nbsp;supportsSensorDetectionLowHighResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the detection of glucose measurements exceeding the sensor&rsquo;s lower or upper limits</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsSensorDetectionLowHighResult</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the detection of glucose measurements exceeding the sensor&rsquo;s lower or upper limits, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsSensorLowBattery" title="supportsSensorLowBattery"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsSensorLowBattery">&ndash;&nbsp;supportsSensorLowBattery</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the low battery alert</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsSensorLowBattery</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the low battery alert, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsSensorDetectionTypeError" title="supportsSensorDetectionTypeError"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsSensorDetectionTypeError">&ndash;&nbsp;supportsSensorDetectionTypeError</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the detection of sensor type error</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsSensorDetectionTypeError</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the detection of sensor type error, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsGeneralDeviceFault" title="supportsGeneralDeviceFault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsGeneralDeviceFault">&ndash;&nbsp;supportsGeneralDeviceFault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the general device fault</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsGeneralDeviceFault</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the general device fault, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsE2ECRC" title="supportsE2ECRC"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsE2ECRC">&ndash;&nbsp;supportsE2ECRC</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the end-to-end CRC</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsE2ECRC</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the end-to-end CRC, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsMultipleBond" title="supportsMultipleBond"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsMultipleBond">&ndash;&nbsp;supportsMultipleBond</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports multiple bonds</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsMultipleBond</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports multiple bonds, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsMultipleSession" title="supportsMultipleSession"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsMultipleSession">&ndash;&nbsp;supportsMultipleSession</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports multiple sessions</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsMultipleSession</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports multiple sessions, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsCGMTrend" title="supportsCGMTrend"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsCGMTrend">&ndash;&nbsp;supportsCGMTrend</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the glucose measurement trend feature</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsCGMTrend</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the glucose measurement trend feature, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsCGMQuality" title="supportsCGMQuality"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsCGMQuality">&ndash;&nbsp;supportsCGMQuality</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the feature characteristic details for indication that the sensor supports the glucose measurement quality feature</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsCGMQuality</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the sensor supports the glucose measurement quality feature, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="CGM Specific Ops Control Point" name="task_CGM Specific Ops Control Point"></a>
+						<h2 class="task-title">CGM Specific Ops Control Point</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/isGeneralResponse" title="isGeneralResponse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isGeneralResponse">&ndash;&nbsp;isGeneralResponse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the CGMCP characteristic details that the response is a general response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isGeneralResponse</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the response was a general response, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isCommunicationIntervalResponse" title="isCommunicationIntervalResponse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isCommunicationIntervalResponse">&ndash;&nbsp;isCommunicationIntervalResponse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the CGMCP characteristic details that the response is a communication interval response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isCommunicationIntervalResponse</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the response was a communication interval response, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isAlertLevelPatientHighResponse" title="isAlertLevelPatientHighResponse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAlertLevelPatientHighResponse">&ndash;&nbsp;isAlertLevelPatientHighResponse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the CGMCP characteristic details that the response is a patient high response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isAlertLevelPatientHighResponse</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the response was a patient high response, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isAlertLevelPatientLowResponse" title="isAlertLevelPatientLowResponse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAlertLevelPatientLowResponse">&ndash;&nbsp;isAlertLevelPatientLowResponse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the CGMCP characteristic details that the response is a patient low response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isAlertLevelPatientLowResponse</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the response was a patient low response, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isAlertLevelHypoReponse" title="isAlertLevelHypoReponse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAlertLevelHypoReponse">&ndash;&nbsp;isAlertLevelHypoReponse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the CGMCP characteristic details that the response is a hypo alert level response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isAlertLevelHypoReponse</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the response was a hypo alert level response, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isAlertLevelHyperReponse" title="isAlertLevelHyperReponse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAlertLevelHyperReponse">&ndash;&nbsp;isAlertLevelHyperReponse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the CGMCP characteristic details that the response is a hyper alert level response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isAlertLevelHyperReponse</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the response was a hyper alert level response, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isAlertLevelRateDecreasedReponse" title="isAlertLevelRateDecreasedReponse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAlertLevelRateDecreasedReponse">&ndash;&nbsp;isAlertLevelRateDecreasedReponse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the CGMCP characteristic details that the response is a rate decreased alert level response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isAlertLevelRateDecreasedReponse</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the response was a rate decreased alert level response, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isAlertLevelRateIncreasedReponse" title="isAlertLevelRateIncreasedReponse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAlertLevelRateIncreasedReponse">&ndash;&nbsp;isAlertLevelRateIncreasedReponse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the CGMCP characteristic details that the response is a rate increased alert level response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isAlertLevelRateIncreasedReponse</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the response was a rate increased alert level response, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/responseCode" title="responseCode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/responseCode">&ndash;&nbsp;responseCode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the CGMCP response code from a CGMCP general response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGMCPResponseCode)responseCode</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The response code, as defined in <code>UHNCGMConstants.h</code></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If a value of 0 is returned, no response code valuex was found</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestOpCode" title="requestOpCode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestOpCode">&ndash;&nbsp;requestOpCode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the CGMCP request op code from a CGMCP general response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGMCPOpCode)requestOpCode</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The request op code is the operation just completed by the CGMCP and for which these response details are related to. The values are defined in <code>UHNCGMConstants.h</code></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If a value of 0 is returned, no request op code was found</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/responseValue" title="responseValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/responseValue">&ndash;&nbsp;responseValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the CGMCP response value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSNumber *)responseValue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A <code>NSNumber</code> with the response value. Values will either be integers or floats, depending on the CGMCP request</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A value will be returned for the following response types, otherwise <code>nil</code></p>
+
+<pre><code>CGMCPOpCodeCommIntervalResponse             (integer)
+CGMCPOpCodeAlertLevelPatientHighResponse    (float)
+CGMCPOpCodeAlertLevelPatientLowResponse     (float)
+CGMCPOpCodeAlertLevelHypoReponse            (float)
+CGMCPOpCodeAlertLevelHyperReponse           (float)
+CGMCPOpCodeAlertLevelRateDecreaseResponse   (float)
+CGMCPOpCodeAlertLevelRateIncreaseResponse   (float)
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="CGM Specific Ops Control Point - Calibration" name="task_CGM Specific Ops Control Point - Calibration"></a>
+						<h2 class="task-title">CGM Specific Ops Control Point - Calibration</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/isCalibrationReponse" title="isCalibrationReponse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isCalibrationReponse">&ndash;&nbsp;isCalibrationReponse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the CGMCP characteristic details that the response is a calibration response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isCalibrationReponse</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the response was a rate increased alert level response, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calibrationDateTime" title="calibrationDateTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calibrationDateTime">&ndash;&nbsp;calibrationDateTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the calibration details for the calibration date and time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDate *)calibrationDateTime</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The date and time of the calibration as calculated using the calibration time offset and session start time. If the date and time cannot be calculated, <code>nil</code> is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The calibration date and time is only available if the CGM controller knows the session start time.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calibrationTimeOffset" title="calibrationTimeOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calibrationTimeOffset">&ndash;&nbsp;calibrationTimeOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the calibration details for the calibration time offset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSNumber *)calibrationTimeOffset</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The calibration time offset. Units is minutes</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The calibration time offset indicates the time of calibration as minutes from the session start time.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calibrationFluidType" title="calibrationFluidType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calibrationFluidType">&ndash;&nbsp;calibrationFluidType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the calibration details for the calibration fluid type</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGMTypeOption)calibrationFluidType</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The calibration fluid type, as defined in <code>UHNCGMConstants.h</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calibrationSampleLocation" title="calibrationSampleLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calibrationSampleLocation">&ndash;&nbsp;calibrationSampleLocation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the calibration details for the calibration sample location</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGMLocationOption)calibrationSampleLocation</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The calibration sample location, as defined in <code>UHNCGMConstants.h</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextCalibrationDateTime" title="nextCalibrationDateTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextCalibrationDateTime">&ndash;&nbsp;nextCalibrationDateTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the calibration details for the next calibration date and time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDate *)nextCalibrationDateTime</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The date and time of the next calibration as calculated using the next calibration time offset and session start time. If the date and time cannot be calculated, <code>nil</code> is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The next calibration date and time is only available if the CGM controller knows the session start time.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextCalibrationTimeOffset" title="nextCalibrationTimeOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextCalibrationTimeOffset">&ndash;&nbsp;nextCalibrationTimeOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the calibration details for the next calibration time offset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSNumber *)nextCalibrationTimeOffset</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The next calibration time offset. Units is minutes</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The next calibration time offset indicates the time of the next calibration as minutes from the session start time.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calibrationRecordNumber" title="calibrationRecordNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calibrationRecordNumber">&ndash;&nbsp;calibrationRecordNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the calibration details for the calibration record number</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSNumber *)calibrationRecordNumber</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The calibration record number</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wasCalibrationSuccessful" title="wasCalibrationSuccessful"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wasCalibrationSuccessful">&ndash;&nbsp;wasCalibrationSuccessful</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the calibration details for indication that the calibration was successful</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)wasCalibrationSuccessful</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the calibration was successful, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>After a CGMCP general response indicating calibration was set successfully, the Collector should check the status of the calibration by a read of the last calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wasCalibrationDataRejected" title="wasCalibrationDataRejected"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wasCalibrationDataRejected">&ndash;&nbsp;wasCalibrationDataRejected</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the calibration details for indication if the calibration data was rejected</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)wasCalibrationDataRejected</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the calibration data was rejected, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>After a CGMCP general response indicating calibration was set successfully, the Collector should check the status of the calibration by a read of the last calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wasCalibrationDataOutOfRange" title="wasCalibrationDataOutOfRange"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wasCalibrationDataOutOfRange">&ndash;&nbsp;wasCalibrationDataOutOfRange</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the calibration details for indication if the calibration data was out-of-range</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)wasCalibrationDataOutOfRange</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the calibration data was out-of-range, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>After a CGMCP general response indicating calibration was set successfully, the Collector should check the status of the calibration by a read of the last calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isCalibrationProcessPending" title="isCalibrationProcessPending"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isCalibrationProcessPending">&ndash;&nbsp;isCalibrationProcessPending</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the calibration details for indication if the calibration process is pending</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isCalibrationProcessPending</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the calibration process is pending, otherwise <code>NO</code></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>After a CGMCP general response indicating calibration was set successfully, the Collector should check the status of the calibration by a read of the last calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Centre for Global eHealth Innovation. All rights reserved. Updated: 2015-02-19</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

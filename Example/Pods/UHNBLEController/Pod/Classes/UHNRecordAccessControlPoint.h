@@ -1,5 +1,5 @@
 //
-//  RecordAccessControlPoint.h
+//  UHNRecordAccessControlPoint.h
 //  UHNBLEDemo
 //
 //  Created by Nathaniel Hamming on 2015-01-16.
@@ -23,11 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef CGM_Collector_RecordAccessControlPoint_h
-#define CGM_Collector_RecordAccessControlPoint_h
-#endif
-
-#import "RACPConstants.h"
+#import "UHNRACPConstants.h"
 #import "NSData+RACPCommands.h"
 #import "NSData+RACPParser.h"
-#import "NSDictionary+RACPExtension.h"
+#import "NSDictionary+RACPExtensions.h"

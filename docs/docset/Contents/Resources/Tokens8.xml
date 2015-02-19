@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/CGMLocationOption.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/CGMLocationOption</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="8"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationFinger</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMSampleLocationFinger</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="8"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationAlternativeSiteTest</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMSampleLocationAlternativeSiteTest</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="8"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationEarlobe</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMSampleLocationEarlobe</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="8"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationControlSolution</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMSampleLocationControlSolution</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="8"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationSubcutaneousTissue</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMSampleLocationSubcutaneousTissue</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="8"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationNotAvailable</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMSampleLocationNotAvailable</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="8"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

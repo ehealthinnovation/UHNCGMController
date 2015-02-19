@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/CGMCPResponseCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/CGMCPResponseCode</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPSuccess</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPSuccess</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="6"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeNotSupported</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPOpCodeNotSupported</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="6"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPInvalidOperand</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPInvalidOperand</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="6"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPProcedureNotCompleted</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPProcedureNotCompleted</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="6"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPParameterOutOfRange</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMCPParameterOutOfRange</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="6"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

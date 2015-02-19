@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/CGMStatusWarningOption.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/CGMStatusWarningOption</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultLowerThanPatientLow</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusWarningResultLowerThanPatientLow</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="12"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultHigherThanPatientHigh</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusWarningResultHigherThanPatientHigh</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="12"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultLowerThanHypo</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusWarningResultLowerThanHypo</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="12"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultHigherThanHyper</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusWarningResultHigherThanHyper</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="12"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultExceedRateDecrease</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusWarningResultExceedRateDecrease</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="12"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultExceedRateIncrease</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusWarningResultExceedRateIncrease</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="12"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningSensorResultTooLow</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusWarningSensorResultTooLow</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="12"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningSensorResultTooHigh</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>CGMStatusWarningSensorResultTooHigh</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="12"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

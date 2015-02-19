@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CGMStatusStatusOptions Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">UHNCGMController </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Centre for Global eHealth Innovation</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CGMStatusStatusOptions Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>UHNCGMConstants.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">CGMStatusStatusOptions</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p><strong><strong><strong><strong>  CGM Status Format (Mandatory) </strong></strong></strong></strong>*******
+Time Offset - uint16 (Mandatory)
+    - units in minutes</p>
+
+<p>Status - 24bit (Mandatory)
+- Status-Octet
+    - bit 0: Session stopped
+    - bit 1: Device battery low
+    - bit 2: Sensor type incorrect for device
+    - bit 3: Sensor malfunction
+    - bit 4: Device specific alert
+    - bit 5: Gerenal device fault has occurred in the sensor
+    - bit 6: RESERVED FOR FUTURE USE
+    - bit 7: RESERVED FOR FUTURE USE</p>
+
+<ul>
+<li><p>Cal/Temp-Octet</p>
+
+<ul>
+<li>bit 8: Time synchronization between sensor and collector required</li>
+<li>bit 9: Calibration not allowed</li>
+<li>bit 10: Calibration recommended</li>
+<li>bit 11: Calibration required</li>
+<li>bit 12: Sensor temperature too high for valid test/result at time of measurement</li>
+<li>bit 13: Sensor temperature too low for valid test/result at time of measurement</li>
+<li>bit 14: RESERVED FOR FUTURE USE</li>
+<li>bit 15: RESERVED FOR FUTURE USE</li>
+</ul>
+</li>
+<li><p>Warning-Octet</p>
+
+<ul>
+<li>bit 16: Sensor result lower than the Patient Low level</li>
+<li>bit 17: Sensor result higher than the Patient High level</li>
+<li>bit 18: Sensor result lower than the Hypo level</li>
+<li>bit 19: Sensor result higher than the Hyper level</li>
+<li>bit 20: Sensor rate of decrease exceeded</li>
+<li>bit 21: Sensor rate of increase exceeded</li>
+<li>bit 22: Sensor result lower than the device can process</li>
+<li>bit 23: Sensor result higher than the device can process</li>
+</ul>
+</li>
+</ul>
+
+
+<p>E2E-CRC - uint16 (Field exists if the CGM Feature characterist bi 12 is set to 1)</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(uint8_t, CGMStatusStatusOptions ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMStatusStatusSessionStopped</a> = ( 1 &lt; &lt; 0 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMStatusStatusDeviceBatteryLow</a> = ( 1 &lt; &lt; 1 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMStatusStatusSensorTypeIncorrect</a> = ( 1 &lt; &lt; 2 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMStatusStatusSensorMalfunction</a> = ( 1 &lt; &lt; 3 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMStatusStatusDeviceSpecificAlert</a> = ( 1 &lt; &lt; 4 ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">CGMStatusStatusGeneralDeviceFault</a> = ( 1 &lt; &lt; 5 ),<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="CGMStatusStatusSessionStopped"></a><code>CGMStatusStatusSessionStopped</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Status Format (Mandatory) </strong></strong></strong></strong>*******
+Time Offset - uint16 (Mandatory)
+    - units in minutes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMStatusStatusDeviceBatteryLow"></a><code>CGMStatusStatusDeviceBatteryLow</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Status Format (Mandatory) </strong></strong></strong></strong>*******
+Time Offset - uint16 (Mandatory)
+    - units in minutes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMStatusStatusSensorTypeIncorrect"></a><code>CGMStatusStatusSensorTypeIncorrect</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Status Format (Mandatory) </strong></strong></strong></strong>*******
+Time Offset - uint16 (Mandatory)
+    - units in minutes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMStatusStatusSensorMalfunction"></a><code>CGMStatusStatusSensorMalfunction</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Status Format (Mandatory) </strong></strong></strong></strong>*******
+Time Offset - uint16 (Mandatory)
+    - units in minutes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMStatusStatusDeviceSpecificAlert"></a><code>CGMStatusStatusDeviceSpecificAlert</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Status Format (Mandatory) </strong></strong></strong></strong>*******
+Time Offset - uint16 (Mandatory)
+    - units in minutes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CGMStatusStatusGeneralDeviceFault"></a><code>CGMStatusStatusGeneralDeviceFault</code></dt>
+<dd>
+
+
+<p><strong><strong><strong><strong>  CGM Status Format (Mandatory) </strong></strong></strong></strong>*******
+Time Offset - uint16 (Mandatory)
+    - units in minutes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">UHNCGMConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">UHNCGMConstants.h</code></p>
+                    </div>
+                    
+                    
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Centre for Global eHealth Innovation. All rights reserved. Updated: 2015-02-19</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -17,7 +17,7 @@
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSUInteger const kComponentBits = (NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
                                        | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitTimeZone);
-    NSDateComponents *components = [cal components: kComponentBits fromDate: now];
+    NSDateComponents *components = [cal components:kComponentBits fromDate:now];
     uint16_t year = components.year;
     uint8_t month = components.month;
     uint8_t day = components.day;
@@ -40,19 +40,19 @@
     
     NSInteger secFromGMT = [localTimeZone secondsFromGMT];
     float hourFromGMT = secFromGMT / kSecondsInHour;
-    uint8_t timeZoneValue = hourFromGMT * kCGMTimeZoneStepSize;
+    uint8_t timeZoneValue = hourFromGMT * kCGMTimeZoneStepSizeMin60;
 
     char cgmCurrentTimeBytes[] = {year, (year >> 8), month, day, hour, minute, second, timeZoneValue, dtsOffsetValue};
-    NSData *cgmCurrentTimeValue = [NSData dataWithBytes: cgmCurrentTimeBytes length: sizeof(cgmCurrentTimeBytes)];
+    NSData *cgmCurrentTimeValue = [NSData dataWithBytes:cgmCurrentTimeBytes length:sizeof(cgmCurrentTimeBytes)];
     
     return cgmCurrentTimeValue;
 }
 
-+ (NSData*)joinFluidType: (CGMTypeOption)type
-          sampleLocation: (CGMLocationOption)location;
++ (NSData*)joinFluidType:(CGMTypeOption)type
+          sampleLocation:(CGMLocationOption)location;
 {
     uint8_t typeLocation = type | (location << 4);
-    return [NSData dataWithBytes: &typeLocation length:sizeof(uint8_t)];
+    return [NSData dataWithBytes:&typeLocation length:sizeof(uint8_t)];
 }
 
 

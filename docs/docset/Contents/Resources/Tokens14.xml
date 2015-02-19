@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/DSTOffsetOption.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/DSTOffsetOption</TokenIdentifier>
+			<Abstract type="html">  CGM Session Start Time Format (Mandatory) *
+Session Start Time - org.bluetooth.characteristic.date_time (Mandatory)
+- year uint16 (Mandatory)
+    - Min 1582
+    - Max 9999
+    - value 0: unknown
+- month uint8 (Mandatory)
+    - Min 0
+    - Max 12
+    - value 0: unknown
+- day uint8 (Mandatory)
+    - Min 0
+    - Max 31
+    - value 0: unkonwn
+- hours uint8 (Mandatory)
+    - Min 0
+    - Max 23
+- minutes uint8 (Mandatory)
+    - Min 0
+    - Max 60
+- seconds uint8 (Mandatory)
+    - Min 0
+    - Max 60</Abstract>
+			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DSTStandardTime</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DSTStandardTime</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="14"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DSTPlusHourHalf</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DSTPlusHourHalf</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="14"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DSTPlusHourOne</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DSTPlusHourOne</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="14"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DSTPlusHoursTwo</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DSTPlusHoursTwo</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="14"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DSTUnknown</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>DSTUnknown</Declaration>
+            
+            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+            
+            <NodeRef refid="14"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>
