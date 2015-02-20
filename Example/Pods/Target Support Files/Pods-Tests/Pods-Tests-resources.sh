@@ -48,6 +48,7 @@ install_resource()
   esac
 }
           install_resource "${BUILT_PRODUCTS_DIR}/NHArrowView.bundle"
+                    install_resource "${BUILT_PRODUCTS_DIR}/UHNBLEController.bundle"
                     install_resource "${BUILT_PRODUCTS_DIR}/UHNCGMController.bundle"
                     install_resource "${BUILT_PRODUCTS_DIR}/UHNTimeSeriesPlotView.bundle"
           

@@ -78,7 +78,7 @@
 - (BOOL)isConnected;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    return self.bleController.isPerpherialConnected;
+    return self.bleController.isPeripheralConnected;
 }
 
 - (void)tryToReconnect;
@@ -102,7 +102,7 @@
 - (void)disconnect;
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
-    if ([self.bleController isPerpherialConnected]) {
+    if ([self.bleController isPeripheralConnected]) {
         DLog(@"going to cancel BTLE connection");
         self.shouldBlockReconnect = YES;
         [self.bleController cancelConnection];

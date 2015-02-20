@@ -35,6 +35,6 @@ Pod::Spec.new do |s|
   s.dependency 'UHNDebug'
   s.dependency 'UHNTimeSeriesPlotView'
   s.dependency 'NHArrowView'
-#  s.dependency 'UHNBLEController'
+  s.dependency 'UHNBLEController'
 
 end
