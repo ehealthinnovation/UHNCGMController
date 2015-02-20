@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/CGMLocationOption.html">
+	<File path="Constants/CGMCPResponseCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/CGMLocationOption</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/CGMCPResponseCode</TokenIdentifier>
+			<Abstract type="html">All possible CGMCP Response Codes for a general response with their assigned value</Abstract>
 			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationFinger</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMSampleLocationFinger</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPSuccess</TokenIdentifier>
+            <Abstract type="html">CGMCP response code indicating the request was successful</Abstract>
+            <Declaration>CGMCPSuccess</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationAlternativeSiteTest</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMSampleLocationAlternativeSiteTest</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeNotSupported</TokenIdentifier>
+            <Abstract type="html">CGMCP response code indicating the requested op code is not supported</Abstract>
+            <Declaration>CGMCPOpCodeNotSupported</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationEarlobe</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMSampleLocationEarlobe</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPInvalidOperand</TokenIdentifier>
+            <Abstract type="html">CGMCP response code indicating the requested operand is invalid</Abstract>
+            <Declaration>CGMCPInvalidOperand</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationControlSolution</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMSampleLocationControlSolution</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPProcedureNotCompleted</TokenIdentifier>
+            <Abstract type="html">CGMCP response code indicating the requested procedure was not completed</Abstract>
+            <Declaration>CGMCPProcedureNotCompleted</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -54,19 +54,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationSubcutaneousTissue</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMSampleLocationSubcutaneousTissue</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
-            <NodeRef refid="8"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMSampleLocationNotAvailable</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMSampleLocationNotAvailable</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPParameterOutOfRange</TokenIdentifier>
+            <Abstract type="html">CGMCP response code indicating the parameter sent with the request is out of the supported range of the sensor</Abstract>
+            <Declaration>CGMCPParameterOutOfRange</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             

@@ -1,300 +1,736 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/CGMCPOpCode.html">
+	<File path="Protocols/UHNCGMControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/CGMCPOpCode</TokenIdentifier>
-			<Abstract type="html">  CGM Session Run Time Format (Mandatory) *
-Session Run Time - uint16 (Mandatory)
-    - units in hour
-    - relative time from the session start time</Abstract>
-			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/UHNCGMControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The UHNCGMControllerDelegate protocol defines the methods that a delegate of a UHNCGMController object must adopt. The optional methods of the protocol allow the delegate to monitor, request, or command the CGM sensor. The required methods of the protocol indicates discovery, connectivity, and reporting current glucose measurements with the CGM sensor.</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCommIntervalSet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeCommIntervalSet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didDiscoverCGMWithName:services:RSSI:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when a CGM sensor has been discovered</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didDiscoverCGMWithName:(NSString *)cgmDeviceName services:(NSArray *)serviceUUIDs RSSI:(NSNumber *)RSSI</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGM sensor was discovered</Abstract>
+				</Parameter><Parameter>
+					<Name>cgmDeviceName</Name>
+					<Abstract type="html">The device name of the CGM sensor</Abstract>
+				</Parameter><Parameter>
+					<Name>serviceUUIDs</Name>
+					<Abstract type="html">An array of NSString representing the UUID of the services available for the CGM sensor. This array includes all the provided required services and potentially additional services.</Abstract>
+				</Parameter><Parameter>
+					<Name>RSSI</Name>
+					<Abstract type="html">The rssi power of the CGM Sensor</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didDiscoverCGMWithName:services:RSSI:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCommIntervalGet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeCommIntervalGet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didConnectToCGMWithName:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when a CGM sensor did connect</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didConnectToCGMWithName:(NSString *)cgmDeviceName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController that is managing the CGM sensor</Abstract>
+				</Parameter><Parameter>
+					<Name>cgmDeviceName</Name>
+					<Abstract type="html">The device name of the CGM sensor</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didConnectToCGMWithName:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCommIntervalResponse</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeCommIntervalResponse</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didDisconnectFromCGM:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when a CGM sensor was disconnected</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didDisconnectFromCGM:(NSString *)cgmDeviceName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController that was managing the CGM sensor</Abstract>
+				</Parameter><Parameter>
+					<Name>cgmDeviceName</Name>
+					<Abstract type="html">The device name of the peripheral</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didDisconnectFromCGM:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCalibrationValueSet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeCalibrationValueSet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:measurementDetails:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when a CGM sensor has a measurement to report</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller measurementDetails:(NSDictionary *)measurementDetails</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController that was managing the CGM sensor</Abstract>
+				</Parameter><Parameter>
+					<Name>measurementDetails</Name>
+					<Abstract type="html">A NSDictionary including all the measurement details</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:measurementDetails:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCalibrationValueGet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeCalibrationValueGet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didReadSessionStartTime:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGM sensor session start time characteristic has been read</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didReadSessionStartTime:(NSDate *)sessionStartTime</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the characteristic was read</Abstract>
+				</Parameter><Parameter>
+					<Name>sessionStartTime</Name>
+					<Abstract type="html">A NSDate representing the session start time</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didReadSessionStartTime:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeCalibrationValueResponse</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeCalibrationValueResponse</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:notificationMeasurement:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGM Measurement characteristic notification has been enabled or disabled</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller notificationMeasurement:(BOOL)enabled</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the characteristic was read</Abstract>
+				</Parameter><Parameter>
+					<Name>enabled</Name>
+					<Abstract type="html">If YES indicates that the notification was enabled. NO indicates that the notification was disabled</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:notificationMeasurement:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientHighSet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelPatientHighSet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:notificationRACP:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGM RACP characteristic indication has been enabled or disabled</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller notificationRACP:(BOOL)enabled</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the characteristic was read</Abstract>
+				</Parameter><Parameter>
+					<Name>enabled</Name>
+					<Abstract type="html">If YES indicates that the indication was enabled. NO indicates that the notifications were disabled</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:notificationRACP:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientHighGet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelPatientHighGet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:notificationCGMCP:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGMCP characteristic indication has been enabled or disabled</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller notificationCGMCP:(BOOL)enabled</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the characteristic was read</Abstract>
+				</Parameter><Parameter>
+					<Name>enabled</Name>
+					<Abstract type="html">If YES indicates that the indication was enabled. NO indicates that the notifications were disabled</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:notificationCGMCP:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientHighResponse</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelPatientHighResponse</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didReadFeatures:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGM sensor features characteristic has been read</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didReadFeatures:(NSDictionary *)features</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the characteristic was read</Abstract>
+				</Parameter><Parameter>
+					<Name>features</Name>
+					<Abstract type="html">A NSDictionary including all the support features of the CGM sensor</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didReadFeatures:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientLowSet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelPatientLowSet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didReadSessionRunTime:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGM sensor session run time characteristic has been read</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didReadSessionRunTime:(NSDate *)sessionRunTime</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the characteristic was read</Abstract>
+				</Parameter><Parameter>
+					<Name>sessionRunTime</Name>
+					<Abstract type="html">A NSDate representing the session run time</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didReadSessionRunTime:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientLowGet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelPatientLowGet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didReadStatus:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGM sensor status characteristic has been read</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didReadStatus:(NSDictionary *)status</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the characteristic was read</Abstract>
+				</Parameter><Parameter>
+					<Name>status</Name>
+					<Abstract type="html">A NSDictionary including the status of the CGM sensor</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didReadStatus:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelPatientLowResponse</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelPatientLowResponse</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:CGMCPOperationSuccessful:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when a CGMCP operation has been completed successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller CGMCPOperationSuccessful:(CGMCPOpCode)opCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>opCode</Name>
+					<Abstract type="html">The requested operation that was completed successfully. The CGMCP op codes are defined in UHNCGMConstants.h</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:CGMCPOperationSuccessful:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHypoSet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelHypoSet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:CGMCPOperation:failed:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when a CGMCP operation has failed</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller CGMCPOperation:(CGMCPOpCode)opCode failed:(CGMCPResponseCode)responseCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>opCode</Name>
+					<Abstract type="html">The requested operation that failed. The CGMCP op codes are defined in UHNCGMConstants.h</Abstract>
+				</Parameter><Parameter>
+					<Name>responseCode</Name>
+					<Abstract type="html">The value of the response code to help determine the cause of the failed CGMCP operation</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:CGMCPOperation:failed:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHypoGet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelHypoGet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:CGMCPResponseOpCode:didGetValue:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when a CGMCP get operations has been completed successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller CGMCPResponseOpCode:(CGMCPOpCode)responseOpCode didGetValue:(NSNumber *)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>responseOpCode</Name>
+					<Abstract type="html">The Response Op Code related to the operation. The CGMCP op codes are defined in UHNCGMConstants.h</Abstract>
+				</Parameter><Parameter>
+					<Name>value</Name>
+					<Abstract type="html">A NSNumber representing the value of the CGMCP response</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:CGMCPResponseOpCode:didGetValue:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHypoReponse</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelHypoReponse</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidStartSession:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGM sensor session has been started</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidStartSession:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidStartSession:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHyperSet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelHyperSet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidStopSession:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGM sensor session has been stopped</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidStopSession:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidStopSession:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHyperGet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelHyperGet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidResetDeviceSpecificAlert:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGM sensor session has been stopped</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidResetDeviceSpecificAlert:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidResetDeviceSpecificAlert:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelHyperReponse</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelHyperReponse</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidSetCommunicationInterval:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGM sensor communication interval has been successfully updated</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidSetCommunicationInterval:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidSetCommunicationInterval:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateDecreaseSet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelRateDecreaseSet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidSetCalibration:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the CGM sensor calibration was been set successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidSetCalibration:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidSetCalibration:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateDecreaseGet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelRateDecreaseGet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidSetAlertLevelPatientHigh:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the patient high alert level was been set successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidSetAlertLevelPatientHigh:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidSetAlertLevelPatientHigh:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateDecreaseResponse</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelRateDecreaseResponse</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidSetAlertLevelPatientLow:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the patient low alert level was been set successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidSetAlertLevelPatientLow:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidSetAlertLevelPatientLow:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateIncreaseSet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelRateIncreaseSet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidSetAlertLevelHypo:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the hypo alert level was been set successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidSetAlertLevelHypo:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidSetAlertLevelHypo:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateIncreaseGet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelRateIncreaseGet</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidSetAlertLevelHyper:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the hyper alert level was been set successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidSetAlertLevelHyper:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidSetAlertLevelHyper:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertLevelRateIncreaseResponse</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertLevelRateIncreaseResponse</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidSetAlertLevelRateDecrease:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the rate decrease alert level was been set successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidSetAlertLevelRateDecrease:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidSetAlertLevelRateDecrease:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeAlertDeviceSpecificReset</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeAlertDeviceSpecificReset</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidSetAlertLevelRateIncrease:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the rate increase alert level was been set successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidSetAlertLevelRateIncrease:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidSetAlertLevelRateIncrease:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeSessionStart</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeSessionStart</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didGetCommunicationInterval:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate of the current communication interval of the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didGetCommunicationInterval:(NSNumber *)commInterval</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>commInterval</Name>
+					<Abstract type="html">The current communication interval</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didGetCommunicationInterval:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeSessionStop</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeSessionStop</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didGetCalibrationDetails:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when the get calibration data record CGMCP operation has been completed successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didGetCalibrationDetails:(NSDictionary *)calibrationDetails</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>calibrationDetails</Name>
+					<Abstract type="html">A NSDictionary including the calibration data record</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didGetCalibrationDetails:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeResponse</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeResponse</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didGetPatientAlertLevelHigh:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate of the current patient high alert level of the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didGetPatientAlertLevelHigh:(NSNumber *)highLevel</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>highLevel</Name>
+					<Abstract type="html">The current patient high alert level</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didGetPatientAlertLevelHigh:</Anchor>
             <NodeRef refid="5"/>
-        </Token>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didGetPatientAlertLevelLow:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate of the current patient low alert level of the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didGetPatientAlertLevelLow:(NSNumber *)lowLevel</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>lowLevel</Name>
+					<Abstract type="html">The current patient low alert level</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didGetPatientAlertLevelLow:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didGetAlertLevelHypo:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate of the current hypo alert level of the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didGetAlertLevelHypo:(NSNumber *)hypoLevel</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>hypoLevel</Name>
+					<Abstract type="html">The current hypo alert level</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didGetAlertLevelHypo:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didGetAlertLevelHyper:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate of the current hyper alert level of the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didGetAlertLevelHyper:(NSNumber *)hyperLevel</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>hyperLevel</Name>
+					<Abstract type="html">The current hyper alert level</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didGetAlertLevelHyper:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didGetAlertLevelRateDecrease:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate of the current rate of decrease alert level of the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didGetAlertLevelRateDecrease:(NSNumber *)decreaseLevel</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>decreaseLevel</Name>
+					<Abstract type="html">The current rate of decrease alert level</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didGetAlertLevelRateDecrease:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didGetAlertLevelRateIncrease:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate of the current rate of increase alert level of the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didGetAlertLevelRateIncrease:(NSNumber *)increaseLevel</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the CGMCP operation was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>increaseLevel</Name>
+					<Abstract type="html">The current rate of increase alert level</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didGetAlertLevelRateIncrease:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:RACPOperationSuccessful:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when a RACP procedure has been completed successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller RACPOperationSuccessful:(RACPOpCode)opCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the RACP procedure was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>opCode</Name>
+					<Abstract type="html">The requested procedure that was completed successfully. The RACP op codes are defined in UHNRACPConstants.h in the UHNBLEController pod</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:RACPOperationSuccessful:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:RACPOperation:failed:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate when a RAACP procedure has failed</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller RACPOperation:(RACPOpCode)opCode failed:(RACPResponseCode)responseCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the RACP procedure was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>opCode</Name>
+					<Abstract type="html">The requested procedure that failed. The RACP op codes are defined in UHNRACPConstants.h in the UHNBLEController pod</Abstract>
+				</Parameter><Parameter>
+					<Name>responseCode</Name>
+					<Abstract type="html">The value of the response code to help determine the cause of the failed RACP procedure</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:RACPOperation:failed:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmControllerDidGetStoredRecords:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate that the requested get of stored records has been completed successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmControllerDidGetStoredRecords:(UHNCGMController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the RACP procedure was executed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmControllerDidGetStoredRecords:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UHNCGMControllerDelegate/cgmController:didGetNumberOfStoredRecords:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate that the requested get number of stored records has been completed successfully</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)cgmController:(UHNCGMController *)controller didGetNumberOfStoredRecords:(NSNumber *)numOfRecords</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The UHNCGMController which with the RACP procedure was executed</Abstract>
+				</Parameter><Parameter>
+					<Name>numOfRecords</Name>
+					<Abstract type="html">The number of stored records</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cgmController:didGetNumberOfStoredRecords:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
         
         
 	</File>

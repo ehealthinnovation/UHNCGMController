@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSData+CGMCommands.html">
+	<File path="Classes/UHNCGMController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSData(CGMCommands)</TokenIdentifier>
-			<Abstract type="html">NSData+CGMCommands constructs CGM commands or values in NSDate format to be sent is a CGM sensor</Abstract>
-			<DeclaredIn>NSData+CGMCommands.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/UHNCGMController</TokenIdentifier>
+			<Abstract type="html">The UHNCGMController provides an interface to a BLE peripheral that implements the Continuous Glucose Monitoring and Device Information services. Other optional services that may be supported include Bond Management, Battery, and Current Time services. Through the inteface and delegate protocol, one should be able to easily make requests of a CGM sensor.</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
             
 			
 			<NodeRef refid="1"/>
@@ -13,34 +13,579 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSData/cgmCurrentTimeValue</TokenIdentifier>
-			<Abstract type="html">Constructs the current time value to be sent to the CGM Session Start Time characteristic</Abstract>
-			<DeclaredIn>NSData+CGMCommands.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/initWithDelegate:</TokenIdentifier>
+			<Abstract type="html">UHNCGMController is initialized with a delegate and optional required services. If only the CGM profile mandatory services are required, initialize using initWithDelegate:. Mandatory services include CGMS and DIS.</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
 			
-			<Declaration>+ (NSData *)cgmCurrentTimeValue</Declaration>
-			
-			<ReturnValue><Abstract type="html">Current time value in NSData format</Abstract></ReturnValue>
-			<Anchor>//api/name/cgmCurrentTimeValue</Anchor>
+			<Declaration>- (instancetype)initWithDelegate:(id&lt;UHNCGMControllerDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate object that will received discovery, connectivity, and read/write events. This parameter is mandatory.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of a UHNCGMController</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSData/joinFluidType:sampleLocation:</TokenIdentifier>
-			<Abstract type="html">Joins the fluid type with the sample location into a single octet</Abstract>
-			<DeclaredIn>NSData+CGMCommands.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/initWithDelegate:requiredServices:</TokenIdentifier>
+			<Abstract type="html">UHNCGMController is initialized with a delegate and optional required services.</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
 			
-			<Declaration>+ (NSData *)joinFluidType:(CGMTypeOption)type sampleLocation:(CGMLocationOption)location</Declaration>
+			<Declaration>- (instancetype)initWithDelegate:(id&lt;UHNCGMControllerDelegate&gt;)delegate requiredServices:(NSArray *)serviceUUIDs</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>type</Name>
-					<Abstract type="html">The fluid type. See UHNCGMConstants for CGMTypeOption definition</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate object that will received discovery, connectivity, and read/write events. This parameter is mandatory.</Abstract>
 				</Parameter><Parameter>
-					<Name>location</Name>
-					<Abstract type="html">The sample location. See UHNCGMConstants for CGMLocationOption definition</Abstract>
+					<Name>serviceUUIDs</Name>
+					<Abstract type="html">The required services used to filter eligibility of discovered peripherals. Only peripherals that advertist all the required services will be deemed eligible and reported to the delegate. If services is nil, only the peripherals discovered with the mandatory CGM profile services will be reported to the delegate. Mandatory services include CGMS and DIS.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A sample type/location octet NSData format</Abstract></ReturnValue>
-			<Anchor>//api/name/joinFluidType:sampleLocation:</Anchor>
+			<ReturnValue><Abstract type="html">Instance of a UHNCGMController</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:requiredServices:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/isConnected</TokenIdentifier>
+			<Abstract type="html">Determine if a CGM sensor is connected</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isConnected</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if a CGM sensor is connected, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isConnected</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/tryToReconnect</TokenIdentifier>
+			<Abstract type="html">Try to reconnect to the previously connected CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)tryToReconnect</Declaration>
+			
+			
+			<Anchor>//api/name/tryToReconnect</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/connectToDevice:</TokenIdentifier>
+			<Abstract type="html">Try to connect to the CGM sensor advertising the device name</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)connectToDevice:(NSString *)deviceName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>deviceName</Name>
+					<Abstract type="html">The name of the device with which a connection is desired. Device names are reported when the cgm sensors are discovered.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/connectToDevice:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/disconnect</TokenIdentifier>
+			<Abstract type="html">Disconnect from the connected CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)disconnect</Declaration>
+			
+			
+			<Anchor>//api/name/disconnect</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/readFeatures</TokenIdentifier>
+			<Abstract type="html">Request a read of the supported features of the CGM sesnor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)readFeatures</Declaration>
+			
+			
+			<Anchor>//api/name/readFeatures</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/readSessionStartTime</TokenIdentifier>
+			<Abstract type="html">Request a read of the CGM sensor session start time</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)readSessionStartTime</Declaration>
+			
+			
+			<Anchor>//api/name/readSessionStartTime</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/sendCurrentTime</TokenIdentifier>
+			<Abstract type="html">Send the current time to the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)sendCurrentTime</Declaration>
+			
+			
+			<Anchor>//api/name/sendCurrentTime</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/readSessionRunTime</TokenIdentifier>
+			<Abstract type="html">Request a read of the CGM sensor session run time</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)readSessionRunTime</Declaration>
+			
+			
+			<Anchor>//api/name/readSessionRunTime</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/readStatus</TokenIdentifier>
+			<Abstract type="html">Request a read of the CGM sensor status</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)readStatus</Declaration>
+			
+			
+			<Anchor>//api/name/readStatus</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/enableNotificationMeasurement:</TokenIdentifier>
+			<Abstract type="html">Request that the measurement characteristic notifcations should be enabled or disabled</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)enableNotificationMeasurement:(BOOL)enable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enable</Name>
+					<Abstract type="html">If YES indicates that the notification should be enabled. NO indicates that the notification should be disabled</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/enableNotificationMeasurement:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/enableNotificationRACP:</TokenIdentifier>
+			<Abstract type="html">Request that the RACP characteristic indicationss should be enabled or disabled</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)enableNotificationRACP:(BOOL)enable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enable</Name>
+					<Abstract type="html">If YES indicates that the indications should be enabled. NO indicates that the indications should be disabled</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/enableNotificationRACP:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/enableNotificationCGMCP:</TokenIdentifier>
+			<Abstract type="html">Request that the CGMCP characteristic indicationss should be enabled or disabled</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)enableNotificationCGMCP:(BOOL)enable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enable</Name>
+					<Abstract type="html">If YES indicates that the indications should be enabled. NO indicates that the indications should be disabled</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/enableNotificationCGMCP:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/startSession</TokenIdentifier>
+			<Abstract type="html">Request the start of a new CGM session</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)startSession</Declaration>
+			
+			
+			<Anchor>//api/name/startSession</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/stopSession</TokenIdentifier>
+			<Abstract type="html">Request the stop of a CGM session</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)stopSession</Declaration>
+			
+			
+			<Anchor>//api/name/stopSession</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/resetDeviceSpecificAlert</TokenIdentifier>
+			<Abstract type="html">Request the reset of the device specific alert</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)resetDeviceSpecificAlert</Declaration>
+			
+			
+			<Anchor>//api/name/resetDeviceSpecificAlert</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getCommunicationInterval</TokenIdentifier>
+			<Abstract type="html">Request the current communication interval from the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getCommunicationInterval</Declaration>
+			
+			
+			<Anchor>//api/name/getCommunicationInterval</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getMostCurrentCalibrationDataRecord</TokenIdentifier>
+			<Abstract type="html">Request the most current calibration data records from the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getMostCurrentCalibrationDataRecord</Declaration>
+			
+			
+			<Anchor>//api/name/getMostCurrentCalibrationDataRecord</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getCalibrationDataRecord:</TokenIdentifier>
+			<Abstract type="html">Request the calibration data record from the CGM sensor with specified record number</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getCalibrationDataRecord:(uint16_t)recordNumber</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>recordNumber</Name>
+					<Abstract type="html">The record number of the requested calibration data record</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCalibrationDataRecord:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getPatientAlertLevelHigh</TokenIdentifier>
+			<Abstract type="html">Request the current patient high alert level from the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getPatientAlertLevelHigh</Declaration>
+			
+			
+			<Anchor>//api/name/getPatientAlertLevelHigh</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getPatientAlertLevelLow</TokenIdentifier>
+			<Abstract type="html">Request the current patient low alert level from the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getPatientAlertLevelLow</Declaration>
+			
+			
+			<Anchor>//api/name/getPatientAlertLevelLow</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getAlertLevelHypo</TokenIdentifier>
+			<Abstract type="html">Request the current hypo alert level from the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getAlertLevelHypo</Declaration>
+			
+			
+			<Anchor>//api/name/getAlertLevelHypo</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getAlertLevelHyper</TokenIdentifier>
+			<Abstract type="html">Request the current hyper alert level from the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getAlertLevelHyper</Declaration>
+			
+			
+			<Anchor>//api/name/getAlertLevelHyper</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getAlertLevelRateDecrease</TokenIdentifier>
+			<Abstract type="html">Request the current rate of decrease alert level from the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getAlertLevelRateDecrease</Declaration>
+			
+			
+			<Anchor>//api/name/getAlertLevelRateDecrease</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getAlertLevelRateIncrease</TokenIdentifier>
+			<Abstract type="html">Request the current rate of increase alert level from the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getAlertLevelRateIncrease</Declaration>
+			
+			
+			<Anchor>//api/name/getAlertLevelRateIncrease</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/setCommunicationInterval:</TokenIdentifier>
+			<Abstract type="html">Request to set the current communication interval to the specified value</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)setCommunicationInterval:(uint8_t)intervalInMinutes</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>intervalInMinutes</Name>
+					<Abstract type="html">The communication interval to set</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCommunicationInterval:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/disablePeriodicCommunication</TokenIdentifier>
+			<Abstract type="html">Request to disable periodic communication with the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)disablePeriodicCommunication</Declaration>
+			
+			
+			<Anchor>//api/name/disablePeriodicCommunication</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/setFastestCommunicationInterval</TokenIdentifier>
+			<Abstract type="html">Request to set the fastest communication interval supported</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)setFastestCommunicationInterval</Declaration>
+			
+			
+			<Anchor>//api/name/setFastestCommunicationInterval</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/setCalibrationValue:fluidType:sampleLocation:date:</TokenIdentifier>
+			<Abstract type="html">Request to set a calibration as specified</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)setCalibrationValue:(shortFloat)value fluidType:(GlucoseFluidTypeOption)type sampleLocation:(GlucoseSampleLocationOption)location date:(NSDate *)date</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The glucose concentration value with which to calibration. The short float type is defined in UHNBLETypes.h</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The fluid type with which the glucose concentration was measured</Abstract>
+				</Parameter><Parameter>
+					<Name>location</Name>
+					<Abstract type="html">The sample location where the glucose concentration was measured</Abstract>
+				</Parameter><Parameter>
+					<Name>date</Name>
+					<Abstract type="html">The date the glucose concentration was measured</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCalibrationValue:fluidType:sampleLocation:date:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/setPatientHighLevel:</TokenIdentifier>
+			<Abstract type="html">Request to set the patient high alert level</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)setPatientHighLevel:(shortFloat)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The value of the patient high alert level. The short float type is defined in UHNBLETypes.h</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setPatientHighLevel:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/setPatientLowLevel:</TokenIdentifier>
+			<Abstract type="html">Request to set the patient low alert level</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)setPatientLowLevel:(shortFloat)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The value of the patient low alert level. The short float type is defined in UHNBLETypes.h</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setPatientLowLevel:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/setHypoLevel:</TokenIdentifier>
+			<Abstract type="html">Request to set the hypo alert level</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)setHypoLevel:(shortFloat)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The value of the hypo alert level. The short float type is defined in UHNBLETypes.h</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setHypoLevel:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/setHyperLevel:</TokenIdentifier>
+			<Abstract type="html">Request to set the hyper alert level</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)setHyperLevel:(shortFloat)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The value of the hyper alert level. The short float type is defined in UHNBLETypes.h</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setHyperLevel:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/setRateDecreaseLevel:</TokenIdentifier>
+			<Abstract type="html">Request to set the rate decrease alert level</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRateDecreaseLevel:(shortFloat)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The value of the rate decrease alert level. The short float type is defined in UHNBLETypes.h</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRateDecreaseLevel:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/setRateIncreaseLevel:</TokenIdentifier>
+			<Abstract type="html">Request to set the rate increase alert level</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRateIncreaseLevel:(shortFloat)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The value of the rate increase alert level. The short float type is defined in UHNBLETypes.h</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRateIncreaseLevel:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getAllStoredRecords</TokenIdentifier>
+			<Abstract type="html">Request to get all stored records from the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getAllStoredRecords</Declaration>
+			
+			
+			<Anchor>//api/name/getAllStoredRecords</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getStoredRecordsGreatThanEqualTo:</TokenIdentifier>
+			<Abstract type="html">Request to get stored records greater than or eqaul to the specified date</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getStoredRecordsGreatThanEqualTo:(NSDate *)date</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>date</Name>
+					<Abstract type="html">The date for which the requested records should be greater than or equal to</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getStoredRecordsGreatThanEqualTo:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getNumberOfStoredRecords</TokenIdentifier>
+			<Abstract type="html">Request to get the number of all the stored records from the CGM sensor</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getNumberOfStoredRecords</Declaration>
+			
+			
+			<Anchor>//api/name/getNumberOfStoredRecords</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/getNumberOfStoredRecordsGreatThanEqualTo:</TokenIdentifier>
+			<Abstract type="html">Request to get the number of stored records greater than or eqaul to the specified date</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>- (void)getNumberOfStoredRecordsGreatThanEqualTo:(NSDate *)date</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>date</Name>
+					<Abstract type="html">The date for which the requested records should be greater than or equal to</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getNumberOfStoredRecordsGreatThanEqualTo:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		

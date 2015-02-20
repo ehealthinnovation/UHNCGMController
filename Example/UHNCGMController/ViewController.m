@@ -211,7 +211,7 @@
     [self.messagingActivity stopAnimating];
     self.messagingActivity.hidden = YES;
     self.messageLabel.hidden = YES;
-    [self.cgmController setCurrentTime];
+    [self.cgmController sendCurrentTime];
 }
 
 #pragma mark - IBAction Methods
@@ -245,7 +245,7 @@
 
 #pragma mark - CGM Profile Delegate Methods
 
-- (void) cgmController: (UHNCGMController*)controller didDiscoverCGMWithName: (NSString*)cgmDeviceName RSSI: (NSNumber*)RSSI;
+- (void) cgmController: (UHNCGMController*)controller didDiscoverCGMWithName: (NSString*)cgmDeviceName services:(NSArray*)serviceUUIDs RSSI:(NSNumber *)RSSI;
 {
     [self.cgmController connectToDevice: cgmDeviceName];
 }
@@ -285,7 +285,7 @@
     [self.cgmController enableNotificationMeasurement: YES];
 }
 
-- (void) cgmController: (UHNCGMController*)controller currentMeasurementDetails: (NSDictionary*)measurementDetails;
+- (void) cgmController: (UHNCGMController*)controller measurementDetails: (NSDictionary*)measurementDetails;
 {
     NSNumber *glucoseValue = [measurementDetails glucoseValue];
     NSNumber *trendValue = [measurementDetails trendValue];
@@ -311,13 +311,13 @@
     }
 }
 
-- (void) cgmController: (UHNCGMController*)controller sessionStartTime: (NSDate*)sessionStartTime;
+- (void) cgmController: (UHNCGMController*)controller didReadSessionStartTime: (NSDate*)sessionStartTime;
 {
     self.startTimeLabel.text = [self.dateFormatter stringFromDate: sessionStartTime];
     [self.cgmController readSessionRunTime];
 }
 
-- (void) cgmController: (UHNCGMController*)controller sessionRunTime: (NSDate*)sessionRunTime;
+- (void) cgmController: (UHNCGMController*)controller didReadSessionRunTime: (NSDate*)sessionRunTime;
 {
     self.runTimeLabel.text = [self.dateFormatter stringFromDate: sessionRunTime];
 }
@@ -328,7 +328,7 @@
         self.shouldStartNewSession = NO;
         [self.cgmController startSession];
     } else if (opCode == CGMCPOpCodeSessionStart) {
-        [self.cgmController setCurrentTime];
+        [self.cgmController sendCurrentTime];
     } else if (opCode == CGMCPOpCodeAlertLevelHypoSet) {
         self.tempHypoValue = [self.hypoThresholdTextField.text floatValue];
     }

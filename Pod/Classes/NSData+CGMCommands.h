@@ -48,7 +48,7 @@
  @returns A sample type/location octet NSData format
  
  */
-+ (NSData*)joinFluidType: (CGMTypeOption)type
-          sampleLocation: (CGMLocationOption)location;
++ (NSData*)joinFluidType: (GlucoseFluidTypeOption)type
+          sampleLocation: (GlucoseSampleLocationOption)location;
 
 @end

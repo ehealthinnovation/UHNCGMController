@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/CGMStatusStatusOptions.html">
+	<File path="Constants/CGMStatusCalTempOption.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/CGMStatusStatusOptions</TokenIdentifier>
-			<Abstract type="html">  CGM Status Format (Mandatory) *
-Time Offset - uint16 (Mandatory)
-    - units in minutes</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/CGMStatusCalTempOption</TokenIdentifier>
+			<Abstract type="html">All possible CGM sessor status calibration and temperature flags with their assigned bit position</Abstract>
 			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
 			
@@ -16,9 +14,9 @@ Time Offset - uint16 (Mandatory)
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusSessionStopped</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusStatusSessionStopped</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempTimeSynchronizationRequired</TokenIdentifier>
+            <Abstract type="html">Flag indicating that time synchronization between the sensor and collector is required</Abstract>
+            <Declaration>CGMStatusCalTempTimeSynchronizationRequired</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -26,9 +24,9 @@ Time Offset - uint16 (Mandatory)
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusDeviceBatteryLow</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusStatusDeviceBatteryLow</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempCalibrationNotAllowed</TokenIdentifier>
+            <Abstract type="html">Flag indicating that calibration is not allowed</Abstract>
+            <Declaration>CGMStatusCalTempCalibrationNotAllowed</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -36,9 +34,9 @@ Time Offset - uint16 (Mandatory)
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusSensorTypeIncorrect</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusStatusSensorTypeIncorrect</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempCalibrationRecommended</TokenIdentifier>
+            <Abstract type="html">Flag indicating that calibration is recommended</Abstract>
+            <Declaration>CGMStatusCalTempCalibrationRecommended</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -46,9 +44,9 @@ Time Offset - uint16 (Mandatory)
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusSensorMalfunction</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusStatusSensorMalfunction</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempCalibrationRequired</TokenIdentifier>
+            <Abstract type="html">Flag indicating that calibration is required</Abstract>
+            <Declaration>CGMStatusCalTempCalibrationRequired</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -56,9 +54,9 @@ Time Offset - uint16 (Mandatory)
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusDeviceSpecificAlert</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusStatusDeviceSpecificAlert</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempSensorTempTooHigh</TokenIdentifier>
+            <Abstract type="html">Flag indicating that sensor temperature is too high for accurate measurement results</Abstract>
+            <Declaration>CGMStatusCalTempSensorTempTooHigh</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -66,9 +64,9 @@ Time Offset - uint16 (Mandatory)
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusGeneralDeviceFault</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusStatusGeneralDeviceFault</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusCalTempSensorTempTooLow</TokenIdentifier>
+            <Abstract type="html">Flag indicating that sensor temperature is too low for accurate measurement results</Abstract>
+            <Declaration>CGMStatusCalTempSensorTempTooLow</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             

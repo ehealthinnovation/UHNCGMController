@@ -79,59 +79,7 @@
                     
 					
 					<div class="section section-overview">
-                        <p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
-
-<p>Type - nibble/4 bit (Mandatory)
-    - value 0: RESERVED FOR FUTURE USE
-    - value 1: Capillary Whole blood
-    - value 2: Capillary Plasma
-    - value 3: Venous Whole blood
-    - value 4: Venous Plasma
-    - value 5: Arterial Whole blood
-    - value 6: Arterial Plasma
-    - value 7: Undetermined Whole blood
-    - value 8: Undetermined Plasma
-    - value 9: Interstitial Fluid (ISF)
-    - value 10: Control Solution
-    - value 11-15: RESERVED FOR FUTURE USE</p>
-
-<p>Sample Location - nibble/4 bit (Mandatory)
-    - value 0: RESERVED FOR FUTURE USE
-    - value 1: Finger
-    - value 2: Alternate Site Test (AST)
-    - value 3: Earlobe
-    - value 4: Control solution
-    - value 5: Subcutaneous tissue
-    - value 15: Sample Location value not available
-    - value 6-14: RESERVED FOR FUTURE USE</p>
-
-<p>E2E-CRC - uint16 (Mandatory)
-    - If E2E-CRC support is not indicated in the CGM Feature characteristic (bit 12), this field&rsquo;s value is 0xFFFF</p>
+                        <p>All possible CGM feature flags with their assigned bit position</p>
 					</div>
 					
 					
@@ -187,32 +135,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that calibration is supported by the CGM sensor</p>
 
 
 
@@ -229,32 +152,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that the patient low and high alert levels are supported by the CGM sensor</p>
 
 
 
@@ -271,32 +169,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that the hypo alert level is supported by the CGM sensor</p>
 
 
 
@@ -313,32 +186,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that the hyper alert level is supported by the CGM sensor</p>
 
 
 
@@ -355,32 +203,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that the rate of increase and decrease alert levels are supported by the CGM sensor</p>
 
 
 
@@ -397,32 +220,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that the device specific alert is supported by the CGM sensor</p>
 
 
 
@@ -439,32 +237,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that the detection of sensor malfunctions is supported by the CGM sensor</p>
 
 
 
@@ -481,32 +254,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that the detection of sensor temperature too low and too high for accurate measurement results is supported by the CGM sensor</p>
 
 
 
@@ -523,32 +271,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that the detection of results outside of the sensor lower and upper limits is supported by the CGM sensor</p>
 
 
 
@@ -565,32 +288,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that low battery alert is supported by the CGM sensor</p>
 
 
 
@@ -607,32 +305,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that the detection of incorrect sensor type is supported by the CGM sensor</p>
 
 
 
@@ -649,32 +322,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that general device fault alert is supported by the CGM sensor</p>
 
 
 
@@ -691,32 +339,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that end-to-end CRC is supported by the CGM sensor</p>
 
 
 
@@ -733,32 +356,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that multiple bonds is supported by the CGM sensor</p>
 
 
 
@@ -775,32 +373,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that multiple sessions is supported by the CGM sensor</p>
 
 
 
@@ -817,32 +390,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that measurement trend is supported by the CGM sensor</p>
 
 
 
@@ -859,32 +407,7 @@ Feature - 24 bit (Mandatory)
 <dd>
 
 
-<p><strong><strong><strong><strong>  CGM Feature Format (Mandatory) </strong></strong></strong></strong>*******
-Feature - 24 bit (Mandatory)
-    - bit 0: Calibration supported
-    - bit 1: Patient high/low alert supported
-    - bit 2: Hypo alerts
-    - bit 3: Hyper alerts
-    - bit 4: Rate of increase/decrease alerts supported
-    - bit 5: Device specific alert supported
-    - bit 6: Sensor malfunction detection supported
-    - bit 7: Sensor temperature high/low detection supported
-    - bit 8: Sensor result high/low detection supported
-    - bit 9: Low battery detection supported
-    - bit 10: Sensor type error detection supported
-    - bit 11: General device fault supported
-    - bit 12: E2E-CRC supported
-    - bit 13: Multiple bond supported
-    - bit 14: Multiple sessions supported
-    - bit 15: CGM trend information supported
-    - bit 16: CGM quality supported
-    - bit 17: RESERVED FOR FUTURE USE
-    - bit 18: RESERVED FOR FUTURE USE
-    - bit 19: RESERVED FOR FUTURE USE
-    - bit 20: RESERVED FOR FUTURE USE
-    - bit 21: RESERVED FOR FUTURE USE
-    - bit 22: RESERVED FOR FUTURE USE
-    - bit 23: RESERVED FOR FUTURE USE</p>
+<p>Flag indicating that measurement quality is supported by the CGM sensor</p>
 
 
 
@@ -919,7 +442,7 @@ Feature - 24 bit (Mandatory)
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Centre for Global eHealth Innovation. All rights reserved. Updated: 2015-02-19</p>
+						<p class="copyright">Copyright &copy; 2015 Centre for Global eHealth Innovation. All rights reserved. Updated: 2015-02-20</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

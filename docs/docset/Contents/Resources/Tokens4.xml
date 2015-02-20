@@ -1,47 +1,833 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/CGMCPCalibrationStatusOption.html">
+	<File path="Categories/NSDictionary+CGMExtensions.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/CGMCPCalibrationStatusOption</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSDictionary(CGMExtensions)</TokenIdentifier>
+			<Abstract type="html">NSDictionary+CGMExtensions provides helper methods for interpreting the dictionary returned by the [NSData+CGMParser]</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
             
 			
 			<NodeRef refid="4"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPCalibrationStatusDataRejected</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPCalibrationStatusDataRejected</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/didCRCFail</TokenIdentifier>
+			<Abstract type="html">Checks if the E2E-CRC included in the response failed</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)didCRCFail</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the E2E-CRC failed, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/didCRCFail</Anchor>
             <NodeRef refid="4"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPCalibrationStatusDataOutOfRange</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPCalibrationStatusDataOutOfRange</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/measurementDateTime</TokenIdentifier>
+			<Abstract type="html">Checks the measurement characteristic details for the glucose measurement date and time</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSDate *)measurementDateTime</Declaration>
+			
+			<ReturnValue><Abstract type="html">The date and time of the glucose measurement as calculated using the measurement time offset and session start time. If the date and time cannot be calculated, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/measurementDateTime</Anchor>
             <NodeRef refid="4"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPCalibrationStatusProcessPending</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPCalibrationStatusProcessPending</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/measurementTimeOffset</TokenIdentifier>
+			<Abstract type="html">Checks the measurement characteristic details for the glucose measurement time offset</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)measurementTimeOffset</Declaration>
+			
+			<ReturnValue><Abstract type="html">The measurement time offset. Units is minutes</Abstract></ReturnValue>
+			<Anchor>//api/name/measurementTimeOffset</Anchor>
             <NodeRef refid="4"/>
-        </Token>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/glucoseValue</TokenIdentifier>
+			<Abstract type="html">Checks the measurement characteristic details for the glucose concentration value</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)glucoseValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The glucose centration value. Units is mg/dl</Abstract></ReturnValue>
+			<Anchor>//api/name/glucoseValue</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/trendValue</TokenIdentifier>
+			<Abstract type="html">Checks the measurement characteristic details for the glucose trend value</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)trendValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The glucose trend value. Units is (mg/dl)/min</Abstract></ReturnValue>
+			<Anchor>//api/name/trendValue</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/qualityValue</TokenIdentifier>
+			<Abstract type="html">Checks the measurement characteristic details for the glucose quality value</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)qualityValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The glucose quality value. Units is %</Abstract></ReturnValue>
+			<Anchor>//api/name/qualityValue</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/statusDateTime</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for the sensor status date and time</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSDate *)statusDateTime</Declaration>
+			
+			<ReturnValue><Abstract type="html">The date and time of the sensor status as calculated using the status time offset and session start time. If the date and time cannot be calculated, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/statusDateTime</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/statusTimeOffset</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for the sensor status time offset</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)statusTimeOffset</Declaration>
+			
+			<ReturnValue><Abstract type="html">The sensor status time offset. Units is minutes</Abstract></ReturnValue>
+			<Anchor>//api/name/statusTimeOffset</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/hasSessionStopped</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the session has stopped</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasSessionStopped</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the session has stopped, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/hasSessionStopped</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isDeviceBatteryLow</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the device battery is low</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isDeviceBatteryLow</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the battery is low, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isDeviceBatteryLow</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSensorTypeIncorrect</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the sensor type is incorrect</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSensorTypeIncorrect</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor type is incorrect, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSensorTypeIncorrect</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/didSensorMalfunction</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the device has malfunctioned</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)didSensorMalfunction</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the device has malfunctioned, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/didSensorMalfunction</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/hasDeviceSpecificAlert</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the device has had a specific alert</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasDeviceSpecificAlert</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the device has had a specific alert, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/hasDeviceSpecificAlert</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/hasGeneraldeviceFault</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the device has had a general fault</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasGeneraldeviceFault</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the device has had a general fault, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/hasGeneraldeviceFault</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isTimeSynchronizationRequired</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that time synchronization is required between the sensor and collector</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isTimeSynchronizationRequired</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if time synchronization is required, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isTimeSynchronizationRequired</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isCalibrationNotAllowed</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that calibration is not allowed</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isCalibrationNotAllowed</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if calibration is not allowed, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isCalibrationNotAllowed</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isCalibrationRecommended</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that calibration is recommended</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isCalibrationRecommended</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if calibration is recommended, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isCalibrationRecommended</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isCalibrationRequired</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that calibration is required</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isCalibrationRequired</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if calibration is required, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isCalibrationRequired</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSensorTempTooHigh</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the sensor temperature is too high to provide accurate glucose meaurements</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSensorTempTooHigh</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor temperature is too high, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSensorTempTooHigh</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSensorTempTooLow</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the sensor temperature is too low to provide accurate glucose meaurements</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSensorTempTooLow</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor temperature is too low, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSensorTempTooLow</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/hasExceededLevelHypo</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the measurement value has exceeded the hypo alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasExceededLevelHypo</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the measurement value has exceeded the hypo alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/hasExceededLevelHypo</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/hasExceededLevelHyper</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the measurement value has exceeded the hyper alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasExceededLevelHyper</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the measurement value has exceeded the hyper alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/hasExceededLevelHyper</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/hasExceededLevelPatientLow</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the measurement value has exceeded the patient low alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasExceededLevelPatientLow</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the measurement value has exceeded the patient low alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/hasExceededLevelPatientLow</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/hasExceededLevelPatientHigh</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the measurement value has exceeded the patient high alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasExceededLevelPatientHigh</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the measurement value has exceeded the patient high alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/hasExceededLevelPatientHigh</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/hasExceededRateDecrease</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the measurement value has exceeded the rate of decrease alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasExceededRateDecrease</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the measurement value has exceeded the rate of decrease alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/hasExceededRateDecrease</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/hasExceededRateIncrease</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the measurement value has exceeded the rate of increase alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasExceededRateIncrease</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the measurement value has exceeded the rate of increase alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/hasExceededRateIncrease</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/hasExceededDeviceLimitLow</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the measurement value has exceeded the device lower limit</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasExceededDeviceLimitLow</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the measurement value has exceeded the device lower limit, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/hasExceededDeviceLimitLow</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/hasExceededDeviceLimitHigh</TokenIdentifier>
+			<Abstract type="html">Checks the status characteristic details for indication that the measurement value has exceeded the device upper limit</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasExceededDeviceLimitHigh</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the measurement value has exceeded the device upper limit, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/hasExceededDeviceLimitHigh</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsCalibration</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports calibration</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsCalibration</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports calibration, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsCalibration</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsAlertLowHighPatient</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the patient low and high alert levels</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsAlertLowHighPatient</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the patient low and high alert levels, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsAlertLowHighPatient</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsAlertHypo</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the hypo alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsAlertHypo</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the hypo alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsAlertHypo</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsAlertHyper</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the hyper alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsAlertHyper</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the hyper alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsAlertHyper</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsAlertIncreaseDecreaseRate</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the rate of increase and decrease alert levels</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsAlertIncreaseDecreaseRate</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the rate of increase and decrease alert levels, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsAlertIncreaseDecreaseRate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsAlertDeviceSpecific</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the device specific alert</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsAlertDeviceSpecific</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the device specifc alert, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsAlertDeviceSpecific</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsSensorDetectionMalfunction</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the detection of sensor malfunction</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsSensorDetectionMalfunction</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the detection of sensor malfunction, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsSensorDetectionMalfunction</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsSensorDetectionLowHighTemp</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the detection of sensor temperature too low or too high</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsSensorDetectionLowHighTemp</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the detection of sensor temperature too low or too high, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsSensorDetectionLowHighTemp</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsSensorDetectionLowHighResult</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the detection of glucose measurements exceeding the sensor&apos;s lower or upper limits</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsSensorDetectionLowHighResult</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the detection of glucose measurements exceeding the sensor&apos;s lower or upper limits, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsSensorDetectionLowHighResult</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsSensorLowBattery</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the low battery alert</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsSensorLowBattery</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the low battery alert, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsSensorLowBattery</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsSensorDetectionTypeError</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the detection of sensor type error</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsSensorDetectionTypeError</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the detection of sensor type error, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsSensorDetectionTypeError</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsGeneralDeviceFault</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the general device fault</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsGeneralDeviceFault</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the general device fault, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsGeneralDeviceFault</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsE2ECRC</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the end-to-end CRC</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsE2ECRC</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the end-to-end CRC, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsE2ECRC</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsMultipleBond</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports multiple bonds</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsMultipleBond</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports multiple bonds, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsMultipleBond</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsMultipleSession</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports multiple sessions</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsMultipleSession</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports multiple sessions, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsMultipleSession</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsCGMTrend</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the glucose measurement trend feature</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsCGMTrend</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the glucose measurement trend feature, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsCGMTrend</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/supportsCGMQuality</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for indication that the sensor supports the glucose measurement quality feature</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)supportsCGMQuality</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the sensor supports the glucose measurement quality feature, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/supportsCGMQuality</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isGeneralResponse</TokenIdentifier>
+			<Abstract type="html">Checks the CGMCP characteristic details that the response is a general response</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isGeneralResponse</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a general response, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isGeneralResponse</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isCommunicationIntervalResponse</TokenIdentifier>
+			<Abstract type="html">Checks the CGMCP characteristic details that the response is a communication interval response</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isCommunicationIntervalResponse</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a communication interval response, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isCommunicationIntervalResponse</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isAlertLevelPatientHighResponse</TokenIdentifier>
+			<Abstract type="html">Checks the CGMCP characteristic details that the response is a patient high response</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isAlertLevelPatientHighResponse</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a patient high response, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isAlertLevelPatientHighResponse</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isAlertLevelPatientLowResponse</TokenIdentifier>
+			<Abstract type="html">Checks the CGMCP characteristic details that the response is a patient low response</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isAlertLevelPatientLowResponse</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a patient low response, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isAlertLevelPatientLowResponse</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isAlertLevelHypoReponse</TokenIdentifier>
+			<Abstract type="html">Checks the CGMCP characteristic details that the response is a hypo alert level response</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isAlertLevelHypoReponse</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a hypo alert level response, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isAlertLevelHypoReponse</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isAlertLevelHyperReponse</TokenIdentifier>
+			<Abstract type="html">Checks the CGMCP characteristic details that the response is a hyper alert level response</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isAlertLevelHyperReponse</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a hyper alert level response, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isAlertLevelHyperReponse</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isAlertLevelRateDecreasedReponse</TokenIdentifier>
+			<Abstract type="html">Checks the CGMCP characteristic details that the response is a rate decreased alert level response</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isAlertLevelRateDecreasedReponse</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a rate decreased alert level response, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isAlertLevelRateDecreasedReponse</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isAlertLevelRateIncreasedReponse</TokenIdentifier>
+			<Abstract type="html">Checks the CGMCP characteristic details that the response is a rate increased alert level response</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isAlertLevelRateIncreasedReponse</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a rate increased alert level response, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isAlertLevelRateIncreasedReponse</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/responseCode</TokenIdentifier>
+			<Abstract type="html">Get the CGMCP response code from a CGMCP general response</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (CGMCPResponseCode)responseCode</Declaration>
+			
+			<ReturnValue><Abstract type="html">The response code, as defined in UHNCGMConstants.h</Abstract></ReturnValue>
+			<Anchor>//api/name/responseCode</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/requestOpCode</TokenIdentifier>
+			<Abstract type="html">Get the CGMCP request op code from a CGMCP general response</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (CGMCPOpCode)requestOpCode</Declaration>
+			
+			<ReturnValue><Abstract type="html">The request op code is the operation just completed by the CGMCP and for which these response details are related to. The values are defined in UHNCGMConstants.h</Abstract></ReturnValue>
+			<Anchor>//api/name/requestOpCode</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/responseValue</TokenIdentifier>
+			<Abstract type="html">Get the CGMCP response value</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)responseValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">A NSNumber with the response value. Values will either be integers or floats, depending on the CGMCP request</Abstract></ReturnValue>
+			<Anchor>//api/name/responseValue</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isCalibrationReponse</TokenIdentifier>
+			<Abstract type="html">Checks the CGMCP characteristic details that the response is a calibration response</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isCalibrationReponse</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a rate increased alert level response, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isCalibrationReponse</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/calibrationDateTime</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for the calibration date and time</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSDate *)calibrationDateTime</Declaration>
+			
+			<ReturnValue><Abstract type="html">The date and time of the calibration as calculated using the calibration time offset and session start time. If the date and time cannot be calculated, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/calibrationDateTime</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/calibrationTimeOffset</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for the calibration time offset</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)calibrationTimeOffset</Declaration>
+			
+			<ReturnValue><Abstract type="html">The calibration time offset. Units is minutes</Abstract></ReturnValue>
+			<Anchor>//api/name/calibrationTimeOffset</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/calibrationFluidType</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for the calibration fluid type</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (GlucoseFluidTypeOption)calibrationFluidType</Declaration>
+			
+			<ReturnValue><Abstract type="html">The calibration fluid type, as defined in UHNCGMConstants.h</Abstract></ReturnValue>
+			<Anchor>//api/name/calibrationFluidType</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/calibrationSampleLocation</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for the calibration sample location</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (GlucoseSampleLocationOption)calibrationSampleLocation</Declaration>
+			
+			<ReturnValue><Abstract type="html">The calibration sample location, as defined in UHNCGMConstants.h</Abstract></ReturnValue>
+			<Anchor>//api/name/calibrationSampleLocation</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/nextCalibrationDateTime</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for the next calibration date and time</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSDate *)nextCalibrationDateTime</Declaration>
+			
+			<ReturnValue><Abstract type="html">The date and time of the next calibration as calculated using the next calibration time offset and session start time. If the date and time cannot be calculated, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/nextCalibrationDateTime</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/nextCalibrationTimeOffset</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for the next calibration time offset</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)nextCalibrationTimeOffset</Declaration>
+			
+			<ReturnValue><Abstract type="html">The next calibration time offset. Units is minutes</Abstract></ReturnValue>
+			<Anchor>//api/name/nextCalibrationTimeOffset</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/calibrationRecordNumber</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for the calibration record number</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)calibrationRecordNumber</Declaration>
+			
+			<ReturnValue><Abstract type="html">The calibration record number</Abstract></ReturnValue>
+			<Anchor>//api/name/calibrationRecordNumber</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/wasCalibrationSuccessful</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for indication that the calibration was successful</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)wasCalibrationSuccessful</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the calibration was successful, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/wasCalibrationSuccessful</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/wasCalibrationDataRejected</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for indication if the calibration data was rejected</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)wasCalibrationDataRejected</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the calibration data was rejected, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/wasCalibrationDataRejected</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/wasCalibrationDataOutOfRange</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for indication if the calibration data was out-of-range</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)wasCalibrationDataOutOfRange</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the calibration data was out-of-range, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/wasCalibrationDataOutOfRange</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isCalibrationProcessPending</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for indication if the calibration process is pending</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isCalibrationProcessPending</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the calibration process is pending, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isCalibrationProcessPending</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
         
         
 	</File>

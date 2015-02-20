@@ -1,0 +1,2508 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>UHNCGMControllerDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">UHNCGMController </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Centre for Global eHealth Innovation</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/cgmController:CGMCPOperation:failed:">- cgmController:CGMCPOperation:failed:</option>
+		
+		<option value="//api/name/cgmController:CGMCPOperationSuccessful:">- cgmController:CGMCPOperationSuccessful:</option>
+		
+		<option value="//api/name/cgmController:CGMCPResponseOpCode:didGetValue:">- cgmController:CGMCPResponseOpCode:didGetValue:</option>
+		
+		<option value="//api/name/cgmController:RACPOperation:failed:">- cgmController:RACPOperation:failed:</option>
+		
+		<option value="//api/name/cgmController:RACPOperationSuccessful:">- cgmController:RACPOperationSuccessful:</option>
+		
+		<option value="//api/name/cgmController:didConnectToCGMWithName:">- cgmController:didConnectToCGMWithName:</option>
+		
+		<option value="//api/name/cgmController:didDisconnectFromCGM:">- cgmController:didDisconnectFromCGM:</option>
+		
+		<option value="//api/name/cgmController:didDiscoverCGMWithName:services:RSSI:">- cgmController:didDiscoverCGMWithName:services:RSSI:</option>
+		
+		<option value="//api/name/cgmController:didGetAlertLevelHyper:">- cgmController:didGetAlertLevelHyper:</option>
+		
+		<option value="//api/name/cgmController:didGetAlertLevelHypo:">- cgmController:didGetAlertLevelHypo:</option>
+		
+		<option value="//api/name/cgmController:didGetAlertLevelRateDecrease:">- cgmController:didGetAlertLevelRateDecrease:</option>
+		
+		<option value="//api/name/cgmController:didGetAlertLevelRateIncrease:">- cgmController:didGetAlertLevelRateIncrease:</option>
+		
+		<option value="//api/name/cgmController:didGetCalibrationDetails:">- cgmController:didGetCalibrationDetails:</option>
+		
+		<option value="//api/name/cgmController:didGetCommunicationInterval:">- cgmController:didGetCommunicationInterval:</option>
+		
+		<option value="//api/name/cgmController:didGetNumberOfStoredRecords:">- cgmController:didGetNumberOfStoredRecords:</option>
+		
+		<option value="//api/name/cgmController:didGetPatientAlertLevelHigh:">- cgmController:didGetPatientAlertLevelHigh:</option>
+		
+		<option value="//api/name/cgmController:didGetPatientAlertLevelLow:">- cgmController:didGetPatientAlertLevelLow:</option>
+		
+		<option value="//api/name/cgmController:didReadFeatures:">- cgmController:didReadFeatures:</option>
+		
+		<option value="//api/name/cgmController:didReadSessionRunTime:">- cgmController:didReadSessionRunTime:</option>
+		
+		<option value="//api/name/cgmController:didReadSessionStartTime:">- cgmController:didReadSessionStartTime:</option>
+		
+		<option value="//api/name/cgmController:didReadStatus:">- cgmController:didReadStatus:</option>
+		
+		<option value="//api/name/cgmController:measurementDetails:">- cgmController:measurementDetails:</option>
+		
+		<option value="//api/name/cgmController:notificationCGMCP:">- cgmController:notificationCGMCP:</option>
+		
+		<option value="//api/name/cgmController:notificationMeasurement:">- cgmController:notificationMeasurement:</option>
+		
+		<option value="//api/name/cgmController:notificationRACP:">- cgmController:notificationRACP:</option>
+		
+		<option value="//api/name/cgmControllerDidGetStoredRecords:">- cgmControllerDidGetStoredRecords:</option>
+		
+		<option value="//api/name/cgmControllerDidResetDeviceSpecificAlert:">- cgmControllerDidResetDeviceSpecificAlert:</option>
+		
+		<option value="//api/name/cgmControllerDidSetAlertLevelHyper:">- cgmControllerDidSetAlertLevelHyper:</option>
+		
+		<option value="//api/name/cgmControllerDidSetAlertLevelHypo:">- cgmControllerDidSetAlertLevelHypo:</option>
+		
+		<option value="//api/name/cgmControllerDidSetAlertLevelPatientHigh:">- cgmControllerDidSetAlertLevelPatientHigh:</option>
+		
+		<option value="//api/name/cgmControllerDidSetAlertLevelPatientLow:">- cgmControllerDidSetAlertLevelPatientLow:</option>
+		
+		<option value="//api/name/cgmControllerDidSetAlertLevelRateDecrease:">- cgmControllerDidSetAlertLevelRateDecrease:</option>
+		
+		<option value="//api/name/cgmControllerDidSetAlertLevelRateIncrease:">- cgmControllerDidSetAlertLevelRateIncrease:</option>
+		
+		<option value="//api/name/cgmControllerDidSetCalibration:">- cgmControllerDidSetCalibration:</option>
+		
+		<option value="//api/name/cgmControllerDidSetCommunicationInterval:">- cgmControllerDidSetCommunicationInterval:</option>
+		
+		<option value="//api/name/cgmControllerDidStartSession:">- cgmControllerDidStartSession:</option>
+		
+		<option value="//api/name/cgmControllerDidStopSession:">- cgmControllerDidStopSession:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">UHNCGMControllerDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>UHNCGMController.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The UHNCGMControllerDelegate protocol defines the methods that a delegate of a <a href="../Classes/UHNCGMController.html">UHNCGMController</a> object must adopt. The optional methods of the protocol allow the delegate to monitor, request, or command the CGM sensor. The required methods of the protocol indicates discovery, connectivity, and reporting current glucose measurements with the CGM sensor.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/cgmController:didDiscoverCGMWithName:services:RSSI:" title="cgmController:didDiscoverCGMWithName:services:RSSI:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didDiscoverCGMWithName:services:RSSI:">&ndash;&nbsp;cgmController:didDiscoverCGMWithName:services:RSSI:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when a CGM sensor has been discovered</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didDiscoverCGMWithName:(NSString *)<em>cgmDeviceName</em> services:(NSArray *)<em>serviceUUIDs</em> RSSI:(NSNumber *)<em>RSSI</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGM sensor was discovered</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cgmDeviceName</code></th>
+						<td><p>The device name of the CGM sensor</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>serviceUUIDs</code></th>
+						<td><p>An array of <code>NSString</code> representing the UUID of the services available for the CGM sensor. This array includes all the provided required services and potentially additional services.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>RSSI</code></th>
+						<td><p>The rssi power of the CGM Sensor</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when a CGM sensor with the required services is discovered. If required services were provided during instantiation, the only CGM sensors with all of those services will be notified to the delegate. If no required services were provided, all discovered CGM sensor offering the mandatory services will be notified to the delegate.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didConnectToCGMWithName:" title="cgmController:didConnectToCGMWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didConnectToCGMWithName:">&ndash;&nbsp;cgmController:didConnectToCGMWithName:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when a CGM sensor did connect</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didConnectToCGMWithName:(NSString *)<em>cgmDeviceName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> that is managing the CGM sensor</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cgmDeviceName</code></th>
+						<td><p>The device name of the CGM sensor</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when a CGM sensor is connected</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didDisconnectFromCGM:" title="cgmController:didDisconnectFromCGM:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didDisconnectFromCGM:">&ndash;&nbsp;cgmController:didDisconnectFromCGM:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when a CGM sensor was disconnected</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didDisconnectFromCGM:(NSString *)<em>cgmDeviceName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> that was managing the CGM sensor</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cgmDeviceName</code></th>
+						<td><p>The device name of the peripheral</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when a CGM sensor is disconnected</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:measurementDetails:" title="cgmController:measurementDetails:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:measurementDetails:">&ndash;&nbsp;cgmController:measurementDetails:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when a CGM sensor has a measurement to report</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> measurementDetails:(NSDictionary *)<em>measurementDetails</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> that was managing the CGM sensor</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>measurementDetails</code></th>
+						<td><p>A <code>NSDictionary</code> including all the measurement details</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when a CGM sensor has a measurement to report. This measurement may be the most current measurement or a stored measurement as requested by a RACP get stored records procedure. The time information in the measurement details may help determine the age of the measurement.</p><p>Convenience methods for querying the contents of the measurement details dictionary are available with <code>NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didReadSessionStartTime:" title="cgmController:didReadSessionStartTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didReadSessionStartTime:">&ndash;&nbsp;cgmController:didReadSessionStartTime:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGM sensor session start time characteristic has been read</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didReadSessionStartTime:(NSDate *)<em>sessionStartTime</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the characteristic was read</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sessionStartTime</code></th>
+						<td><p>A <code>NSDate</code> representing the session start time</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGM Session Start Time Characteristic has been read successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:notificationMeasurement:" title="cgmController:notificationMeasurement:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:notificationMeasurement:">&ndash;&nbsp;cgmController:notificationMeasurement:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGM Measurement characteristic notification has been enabled or disabled</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> notificationMeasurement:(BOOL)<em>enabled</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the characteristic was read</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enabled</code></th>
+						<td><p>If <code>YES</code> indicates that the notification was enabled. <code>NO</code> indicates that the notification was disabled</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGM Measurement Characteristic notification has enabled or disabled</p><p>The CGM Measurement Characteristic needs to be enabled to received glucose measurements</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:notificationRACP:" title="cgmController:notificationRACP:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:notificationRACP:">&ndash;&nbsp;cgmController:notificationRACP:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGM RACP characteristic indication has been enabled or disabled</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> notificationRACP:(BOOL)<em>enabled</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the characteristic was read</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enabled</code></th>
+						<td><p>If <code>YES</code> indicates that the indication was enabled. <code>NO</code> indicates that the notifications were disabled</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGM RACP Characteristic indication has enabled or disabled</p><p>The CGM RACP Characteristic needs to be enabled to conduct RACP procedures. Also some RACP procedures also require CGM Measurement Characteristic notification enabled</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:notificationCGMCP:" title="cgmController:notificationCGMCP:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:notificationCGMCP:">&ndash;&nbsp;cgmController:notificationCGMCP:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGMCP characteristic indication has been enabled or disabled</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> notificationCGMCP:(BOOL)<em>enabled</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the characteristic was read</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enabled</code></th>
+						<td><p>If <code>YES</code> indicates that the indication was enabled. <code>NO</code> indicates that the notifications were disabled</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP Characteristic indication has enabled or disabled</p><p>The CGMCP Characteristic needs to be enabled to conduct CGMCP procedures.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didReadFeatures:" title="cgmController:didReadFeatures:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didReadFeatures:">&ndash;&nbsp;cgmController:didReadFeatures:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGM sensor features characteristic has been read</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didReadFeatures:(NSDictionary *)<em>features</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the characteristic was read</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>features</code></th>
+						<td><p>A <code>NSDictionary</code> including all the support features of the CGM sensor</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGM Feature Characteristic has been read successfully</p><p>Convenience methods for querying the contents of the features dictionary are available with <code>NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didReadSessionRunTime:" title="cgmController:didReadSessionRunTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didReadSessionRunTime:">&ndash;&nbsp;cgmController:didReadSessionRunTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGM sensor session run time characteristic has been read</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didReadSessionRunTime:(NSDate *)<em>sessionRunTime</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the characteristic was read</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sessionRunTime</code></th>
+						<td><p>A <code>NSDate</code> representing the session run time</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGM Session Run Time Characteristic has been read successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didReadStatus:" title="cgmController:didReadStatus:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didReadStatus:">&ndash;&nbsp;cgmController:didReadStatus:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGM sensor status characteristic has been read</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didReadStatus:(NSDictionary *)<em>status</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the characteristic was read</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>status</code></th>
+						<td><p>A <code>NSDictionary</code> including the status of the CGM sensor</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGM Status Characteristic has been read successfully</p><p>Convenience methods for querying the contents of the status dictionary are available with <code>NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:CGMCPOperationSuccessful:" title="cgmController:CGMCPOperationSuccessful:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:CGMCPOperationSuccessful:">&ndash;&nbsp;cgmController:CGMCPOperationSuccessful:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when a CGMCP operation has been completed successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> CGMCPOperationSuccessful:(CGMCPOpCode)<em>opCode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>opCode</code></th>
+						<td><p>The requested operation that was completed successfully. The CGMCP op codes are defined in <code>UHNCGMConstants.h</code></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when a CGMCP operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:CGMCPOperation:failed:" title="cgmController:CGMCPOperation:failed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:CGMCPOperation:failed:">&ndash;&nbsp;cgmController:CGMCPOperation:failed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when a CGMCP operation has failed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> CGMCPOperation:(CGMCPOpCode)<em>opCode</em> failed:(CGMCPResponseCode)<em>responseCode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>opCode</code></th>
+						<td><p>The requested operation that failed. The CGMCP op codes are defined in <code>UHNCGMConstants.h</code></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>responseCode</code></th>
+						<td><p>The value of the response code to help determine the cause of the failed CGMCP operation</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when a CGMCP operation has failed</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:CGMCPResponseOpCode:didGetValue:" title="cgmController:CGMCPResponseOpCode:didGetValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:CGMCPResponseOpCode:didGetValue:">&ndash;&nbsp;cgmController:CGMCPResponseOpCode:didGetValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when a CGMCP get operations has been completed successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> CGMCPResponseOpCode:(CGMCPOpCode)<em>responseOpCode</em> didGetValue:(NSNumber *)<em>value</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>responseOpCode</code></th>
+						<td><p>The Response Op Code related to the operation. The CGMCP op codes are defined in <code>UHNCGMConstants.h</code></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>A <code>NSNumber</code> representing the value of the CGMCP response</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when a get CGMCP operation has been completed successfully. This is used for all CGMCP get operations, except the get calibration operation</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidStartSession:" title="cgmControllerDidStartSession:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidStartSession:">&ndash;&nbsp;cgmControllerDidStartSession:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGM sensor session has been started</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidStartSession:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP start session operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidStopSession:" title="cgmControllerDidStopSession:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidStopSession:">&ndash;&nbsp;cgmControllerDidStopSession:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGM sensor session has been stopped</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidStopSession:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP stop session operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidResetDeviceSpecificAlert:" title="cgmControllerDidResetDeviceSpecificAlert:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidResetDeviceSpecificAlert:">&ndash;&nbsp;cgmControllerDidResetDeviceSpecificAlert:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGM sensor session has been stopped</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidResetDeviceSpecificAlert:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP stop session operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidSetCommunicationInterval:" title="cgmControllerDidSetCommunicationInterval:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidSetCommunicationInterval:">&ndash;&nbsp;cgmControllerDidSetCommunicationInterval:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGM sensor communication interval has been successfully updated</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidSetCommunicationInterval:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP set communication interval operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidSetCalibration:" title="cgmControllerDidSetCalibration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidSetCalibration:">&ndash;&nbsp;cgmControllerDidSetCalibration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the CGM sensor calibration was been set successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidSetCalibration:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP set calibration operation has been completed successfully</p><p>After a CGMCP response indicating calibration was set successfully, one should check the status of the calibration by a read of the most current calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidSetAlertLevelPatientHigh:" title="cgmControllerDidSetAlertLevelPatientHigh:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidSetAlertLevelPatientHigh:">&ndash;&nbsp;cgmControllerDidSetAlertLevelPatientHigh:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the patient high alert level was been set successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidSetAlertLevelPatientHigh:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP set patient high alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidSetAlertLevelPatientLow:" title="cgmControllerDidSetAlertLevelPatientLow:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidSetAlertLevelPatientLow:">&ndash;&nbsp;cgmControllerDidSetAlertLevelPatientLow:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the patient low alert level was been set successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidSetAlertLevelPatientLow:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP set patient low alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidSetAlertLevelHypo:" title="cgmControllerDidSetAlertLevelHypo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidSetAlertLevelHypo:">&ndash;&nbsp;cgmControllerDidSetAlertLevelHypo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the hypo alert level was been set successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidSetAlertLevelHypo:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP set hypo alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidSetAlertLevelHyper:" title="cgmControllerDidSetAlertLevelHyper:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidSetAlertLevelHyper:">&ndash;&nbsp;cgmControllerDidSetAlertLevelHyper:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the hyper alert level was been set successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidSetAlertLevelHyper:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP set hyper alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidSetAlertLevelRateDecrease:" title="cgmControllerDidSetAlertLevelRateDecrease:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidSetAlertLevelRateDecrease:">&ndash;&nbsp;cgmControllerDidSetAlertLevelRateDecrease:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the rate decrease alert level was been set successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidSetAlertLevelRateDecrease:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP set rate decrease alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidSetAlertLevelRateIncrease:" title="cgmControllerDidSetAlertLevelRateIncrease:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidSetAlertLevelRateIncrease:">&ndash;&nbsp;cgmControllerDidSetAlertLevelRateIncrease:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the rate increase alert level was been set successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidSetAlertLevelRateIncrease:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP set rate increase alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didGetCommunicationInterval:" title="cgmController:didGetCommunicationInterval:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didGetCommunicationInterval:">&ndash;&nbsp;cgmController:didGetCommunicationInterval:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate of the current communication interval of the CGM sensor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didGetCommunicationInterval:(NSNumber *)<em>commInterval</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commInterval</code></th>
+						<td><p>The current communication interval</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP get communication interval operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didGetCalibrationDetails:" title="cgmController:didGetCalibrationDetails:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didGetCalibrationDetails:">&ndash;&nbsp;cgmController:didGetCalibrationDetails:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when the get calibration data record CGMCP operation has been completed successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didGetCalibrationDetails:(NSDictionary *)<em>calibrationDetails</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>calibrationDetails</code></th>
+						<td><p>A <code>NSDictionary</code> including the calibration data record</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the get calibration data record CGMCP operation has been read successfully</p><p>Convenience methods for querying the contents of the calibration data record dictionary are available with <code>NSDictionary+CGMExtensions.h</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didGetPatientAlertLevelHigh:" title="cgmController:didGetPatientAlertLevelHigh:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didGetPatientAlertLevelHigh:">&ndash;&nbsp;cgmController:didGetPatientAlertLevelHigh:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate of the current patient high alert level of the CGM sensor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didGetPatientAlertLevelHigh:(NSNumber *)<em>highLevel</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>highLevel</code></th>
+						<td><p>The current patient high alert level</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP get patient high alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didGetPatientAlertLevelLow:" title="cgmController:didGetPatientAlertLevelLow:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didGetPatientAlertLevelLow:">&ndash;&nbsp;cgmController:didGetPatientAlertLevelLow:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate of the current patient low alert level of the CGM sensor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didGetPatientAlertLevelLow:(NSNumber *)<em>lowLevel</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lowLevel</code></th>
+						<td><p>The current patient low alert level</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP get patient low alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didGetAlertLevelHypo:" title="cgmController:didGetAlertLevelHypo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didGetAlertLevelHypo:">&ndash;&nbsp;cgmController:didGetAlertLevelHypo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate of the current hypo alert level of the CGM sensor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didGetAlertLevelHypo:(NSNumber *)<em>hypoLevel</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>hypoLevel</code></th>
+						<td><p>The current hypo alert level</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP get hypo alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didGetAlertLevelHyper:" title="cgmController:didGetAlertLevelHyper:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didGetAlertLevelHyper:">&ndash;&nbsp;cgmController:didGetAlertLevelHyper:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate of the current hyper alert level of the CGM sensor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didGetAlertLevelHyper:(NSNumber *)<em>hyperLevel</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>hyperLevel</code></th>
+						<td><p>The current hyper alert level</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP get hyper alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didGetAlertLevelRateDecrease:" title="cgmController:didGetAlertLevelRateDecrease:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didGetAlertLevelRateDecrease:">&ndash;&nbsp;cgmController:didGetAlertLevelRateDecrease:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate of the current rate of decrease alert level of the CGM sensor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didGetAlertLevelRateDecrease:(NSNumber *)<em>decreaseLevel</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>decreaseLevel</code></th>
+						<td><p>The current rate of decrease alert level</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP get rate of decrease alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didGetAlertLevelRateIncrease:" title="cgmController:didGetAlertLevelRateIncrease:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didGetAlertLevelRateIncrease:">&ndash;&nbsp;cgmController:didGetAlertLevelRateIncrease:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate of the current rate of increase alert level of the CGM sensor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didGetAlertLevelRateIncrease:(NSNumber *)<em>increaseLevel</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the CGMCP operation was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>increaseLevel</code></th>
+						<td><p>The current rate of increase alert level</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when the CGMCP get rate of increase alert level operation has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:RACPOperationSuccessful:" title="cgmController:RACPOperationSuccessful:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:RACPOperationSuccessful:">&ndash;&nbsp;cgmController:RACPOperationSuccessful:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when a RACP procedure has been completed successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> RACPOperationSuccessful:(RACPOpCode)<em>opCode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the RACP procedure was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>opCode</code></th>
+						<td><p>The requested procedure that was completed successfully. The RACP op codes are defined in <code>UHNRACPConstants.h</code> in the <code>UHNBLEController</code> pod</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when a RACP procedure has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:RACPOperation:failed:" title="cgmController:RACPOperation:failed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:RACPOperation:failed:">&ndash;&nbsp;cgmController:RACPOperation:failed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate when a RAACP procedure has failed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> RACPOperation:(RACPOpCode)<em>opCode</em> failed:(RACPResponseCode)<em>responseCode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the RACP procedure was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>opCode</code></th>
+						<td><p>The requested procedure that failed. The RACP op codes are defined in <code>UHNRACPConstants.h</code> in the <code>UHNBLEController</code> pod</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>responseCode</code></th>
+						<td><p>The value of the response code to help determine the cause of the failed RACP procedure</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when a RACP procedure has failed</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmControllerDidGetStoredRecords:" title="cgmControllerDidGetStoredRecords:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmControllerDidGetStoredRecords:">&ndash;&nbsp;cgmControllerDidGetStoredRecords:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that the requested get of stored records has been completed successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmControllerDidGetStoredRecords:(UHNCGMController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the RACP procedure was executed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when any of the RACP get stored records procedures has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cgmController:didGetNumberOfStoredRecords:" title="cgmController:didGetNumberOfStoredRecords:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cgmController:didGetNumberOfStoredRecords:">&ndash;&nbsp;cgmController:didGetNumberOfStoredRecords:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that the requested get number of stored records has been completed successfully</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cgmController:(UHNCGMController *)<em>controller</em> didGetNumberOfStoredRecords:(NSNumber *)<em>numOfRecords</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/UHNCGMController.html"><code>UHNCGMController</code></a> which with the RACP procedure was executed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>numOfRecords</code></th>
+						<td><p>The number of stored records</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked when any of the RACP get number of stored records procedures has been completed successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Centre for Global eHealth Innovation. All rights reserved. Updated: 2015-02-20</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

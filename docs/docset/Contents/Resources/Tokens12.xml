@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/CGMStatusWarningOption.html">
+	<File path="Constants/CGMStatusStatusOptions.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/CGMStatusWarningOption</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/CGMStatusStatusOptions</TokenIdentifier>
+			<Abstract type="html">All possible CGM sensor status flags with their assigned bit position</Abstract>
 			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultLowerThanPatientLow</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusWarningResultLowerThanPatientLow</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusSessionStopped</TokenIdentifier>
+            <Abstract type="html">Flag indicating that the session has stopped</Abstract>
+            <Declaration>CGMStatusStatusSessionStopped</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultHigherThanPatientHigh</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusWarningResultHigherThanPatientHigh</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusDeviceBatteryLow</TokenIdentifier>
+            <Abstract type="html">Flag indicating that the device battery is low</Abstract>
+            <Declaration>CGMStatusStatusDeviceBatteryLow</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultLowerThanHypo</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusWarningResultLowerThanHypo</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusSensorTypeIncorrect</TokenIdentifier>
+            <Abstract type="html">Flag indicating that the sensor type is incorrect</Abstract>
+            <Declaration>CGMStatusStatusSensorTypeIncorrect</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultHigherThanHyper</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusWarningResultHigherThanHyper</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusSensorMalfunction</TokenIdentifier>
+            <Abstract type="html">Flag indicating that the sensor has malfunctioned</Abstract>
+            <Declaration>CGMStatusStatusSensorMalfunction</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -54,9 +54,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultExceedRateDecrease</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusWarningResultExceedRateDecrease</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusDeviceSpecificAlert</TokenIdentifier>
+            <Abstract type="html">Flag indicating that the device had a specific alert</Abstract>
+            <Declaration>CGMStatusStatusDeviceSpecificAlert</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -64,29 +64,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningResultExceedRateIncrease</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusWarningResultExceedRateIncrease</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
-            <NodeRef refid="12"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningSensorResultTooLow</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusWarningSensorResultTooLow</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
-            <NodeRef refid="12"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMStatusWarningSensorResultTooHigh</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMStatusWarningSensorResultTooHigh</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMStatusStatusGeneralDeviceFault</TokenIdentifier>
+            <Abstract type="html">Flag indicating that the device had a general fault</Abstract>
+            <Declaration>CGMStatusStatusGeneralDeviceFault</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             

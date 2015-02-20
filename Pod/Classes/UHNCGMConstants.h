@@ -25,6 +25,7 @@
 //
 // CGMS UUIDs can be found here: https://developer.bluetooth.org/gatt/services/Pages/ServiceViewer.aspx?u=org.bluetooth.service.cgm.xml
 
+#import "UHNBLETypes.h"
 
 ///----------------
 /// @name RACP Keys
@@ -159,6 +160,13 @@
  E2E-CRC - uint16 (Field exists if the CGM Feature characterist bi 12 is set to 1)
  **********************************************/
 
+
+///------------------------------------------------------------
+/// @name CGM Measurement Characteristic Field Ranges and Sizes
+///------------------------------------------------------------
+/**
+ CGM measurement characteristic field ranges and sizes. Note that the ranges are type casted to make easy use in code
+ */
 #define kCGMMeasurementFieldRangeSize                   (NSRange){0,1}
 #define kCGMMeasurementFieldRangeFlags                  (NSRange){1,1}
 #define kCGMMeasurementFieldRangeGlucoseConcentration   (NSRange){2,2}
@@ -167,6 +175,10 @@
 #define kCGMMeasurementFieldSizeQuality                 2
 #define kCGMMeasurementFieldSizeCRC                     2
 
+
+///--------------------------------------------------
+/// @name CGM Measurement Characteristic Enumerations
+///--------------------------------------------------
 /**
  All possible CGM measurement flags with their assigned bit position
  */
@@ -183,6 +195,10 @@ typedef NS_ENUM (uint8_t, CGMMeasurementFlagOption) {
     CGMMeasurementFlagsWarningOctetPresent      = (1 << 7),
 };
 
+
+///---------------------------------
+/// @name CGM Feature Characteristic
+///---------------------------------
 #pragma mark - CGM Feature
 /**********  CGM Feature Format (Mandatory) ***************
  Feature - 24 bit (Mandatory)
@@ -224,6 +240,7 @@ typedef NS_ENUM (uint8_t, CGMMeasurementFlagOption) {
     - value 9: Interstitial Fluid (ISF)
     - value 10: Control Solution
     - value 11-15: RESERVED FOR FUTURE USE
+ * field values are defined in UHNBLEController pod (UHNBLETypes.h)
  
  Sample Location - nibble/4 bit (Mandatory)
     - value 0: RESERVED FOR FUTURE USE
@@ -234,59 +251,71 @@ typedef NS_ENUM (uint8_t, CGMMeasurementFlagOption) {
     - value 5: Subcutaneous tissue
     - value 15: Sample Location value not available
     - value 6-14: RESERVED FOR FUTURE USE
+ * field values are defined in UHNBLEController pod (UHNBLETypes.h)
  
  E2E-CRC - uint16 (Mandatory)
     - If E2E-CRC support is not indicated in the CGM Feature characteristic (bit 12), this field's value is 0xFFFF
  **********************************************/
 
+
+///----------------------------------------------
+/// @name CGM Feature Characteristic Field Ranges
+///----------------------------------------------
+/**
+ CGM feature characteristic field ranges. Note that they are type casted to make easy use in code
+ */
 #define kCGMFeatureFieldRangeFeatures               (NSRange){0,3}
 #define kCGMFeatureFieldRangeTypeLocation           (NSRange){3,1}
 #define kCGMFeatureFieldRangeCRC                    (NSRange){4,2}
 
+
+///----------------------------------------------
+/// @name CGM Feature Characteristic Enumerations
+///----------------------------------------------
+/**
+ All possible CGM feature flags with their assigned bit position
+ */
 typedef NS_ENUM (uint32_t, CGMFeatureOption) {
+    /** Flag indicating that calibration is supported by the CGM sensor */
     CGMFeatureSupportedCalibration                     = (1 << 0),
+    /** Flag indicating that the patient low and high alert levels are supported by the CGM sensor */
     CGMFeatureSupportedAlertLowHighPatient             = (1 << 1),
+    /** Flag indicating that the hypo alert level is supported by the CGM sensor */
     CGMFeatureSupportedAlertHypo                       = (1 << 2),
+    /** Flag indicating that the hyper alert level is supported by the CGM sensor */
     CGMFeatureSupportedAlertHyper                      = (1 << 3),
+    /** Flag indicating that the rate of increase and decrease alert levels are supported by the CGM sensor */
     CGMFeatureSupportedAlertIncreaseDecreaseRate       = (1 << 4),
+    /** Flag indicating that the device specific alert is supported by the CGM sensor */
     CGMFeatureSupportedAlertDeviceSpecific             = (1 << 5),
+    /** Flag indicating that the detection of sensor malfunctions is supported by the CGM sensor */
     CGMFeatureSupportedSensorDetectionMalfunction      = (1 << 6),
+    /** Flag indicating that the detection of sensor temperature too low and too high for accurate measurement results is supported by the CGM sensor */
     CGMFeatureSupportedSensorDetectionLowHighTemp      = (1 << 7),
+    /** Flag indicating that the detection of results outside of the sensor lower and upper limits is supported by the CGM sensor */
     CGMFeatureSupportedSensorDetectionLowHighResult    = (1 << 8),
+    /** Flag indicating that low battery alert is supported by the CGM sensor */
     CGMFeatureSupportedLowBattery                      = (1 << 9),
+    /** Flag indicating that the detection of incorrect sensor type is supported by the CGM sensor */
     CGMFeatureSupportedSensorDetectionTypeError        = (1 << 10),
+    /** Flag indicating that general device fault alert is supported by the CGM sensor */
     CGMFeatureSupportedGeneralDeviceFault              = (1 << 11),
+    /** Flag indicating that end-to-end CRC is supported by the CGM sensor */
     CGMFeatureSupportedE2ECRC                          = (1 << 12),
+    /** Flag indicating that multiple bonds is supported by the CGM sensor */
     CGMFeatureSupportedMultipleBond                    = (1 << 13),
+    /** Flag indicating that multiple sessions is supported by the CGM sensor */
     CGMFeatureSupportedMultipleSession                 = (1 << 14),
+    /** Flag indicating that measurement trend is supported by the CGM sensor */
     CGMFeatureSupportedCGMTrend                        = (1 << 15),
+    /** Flag indicating that measurement quality is supported by the CGM sensor */
     CGMFeatureSupportedCGMQuality                      = (1 << 16),
 };
 
-typedef NS_ENUM (uint8_t, CGMTypeOption) {
-    CGMTypeWholeBloodCapillary = 1,
-    CGMTypePlasmaCapillary,
-    CGMTypeWholeBloodVenous,
-    CGMTypePlasmaVenous,
-    CGMTypeWholeBloodArterial,
-    CGMTypePlasmaArterial,
-    CGMTypeWholeBloodUndetermined,
-    CGMTypePlasmaUndetermined,
-    CGMTypeISF,
-    CGMTypeControlSolution,
-};
 
-
-typedef NS_ENUM (uint8_t, CGMLocationOption) {
-    CGMSampleLocationFinger                = 1,
-    CGMSampleLocationAlternativeSiteTest   = 2,
-    CGMSampleLocationEarlobe               = 3,
-    CGMSampleLocationControlSolution       = 4,
-    CGMSampleLocationSubcutaneousTissue    = 5,
-    CGMSampleLocationNotAvailable          = 15,
-};
-
-
+///--------------------------------
+/// @name CGM Status Characteristic
+///--------------------------------
 #pragma mark - CGM Status
 /**********  CGM Status Format (Mandatory) ***************
  Time Offset - uint16 (Mandatory)
@@ -326,41 +355,83 @@ typedef NS_ENUM (uint8_t, CGMLocationOption) {
  E2E-CRC - uint16 (Field exists if the CGM Feature characterist bi 12 is set to 1)
  **********************************************/
 
+
+///------------------------------------------------------------
+/// @name CGM Status Characteristic Field Ranges and Sizes
+///------------------------------------------------------------
+/**
+ CGM status characteristic field ranges and sizes. Note that the ranges are type casted to make easy use in code
+ */
 #define kCGMStatusFieldRangeTimeOffset              (NSRange){0,2}
 #define kCGMStatusFieldRangeStatus                  (NSRange){2,3}
 #define kCGMStatusFieldRangeCRC                     (NSRange){5,2}
 #define kCGMStatusFieldSizeOctet                    1
 
+
+///---------------------------------------------
+/// @name CGM Sensor Status Characteristic Enumerations
+///---------------------------------------------
+/**
+ All possible CGM sensor status flags with their assigned bit position
+ */
 typedef NS_ENUM (uint8_t, CGMStatusStatusOptions) {
+    /** Flag indicating that the session has stopped */
     CGMStatusStatusSessionStopped                = (1 << 0),
+    /** Flag indicating that the device battery is low */
     CGMStatusStatusDeviceBatteryLow              = (1 << 1),
+    /** Flag indicating that the sensor type is incorrect */
     CGMStatusStatusSensorTypeIncorrect           = (1 << 2),
+    /** Flag indicating that the sensor has malfunctioned */
     CGMStatusStatusSensorMalfunction             = (1 << 3),
+    /** Flag indicating that the device had a specific alert */
     CGMStatusStatusDeviceSpecificAlert           = (1 << 4),
+    /** Flag indicating that the device had a general fault */
     CGMStatusStatusGeneralDeviceFault            = (1 << 5),
 };
 
+/**
+ All possible CGM sessor status calibration and temperature flags with their assigned bit position
+ */
 typedef NS_ENUM (uint8_t, CGMStatusCalTempOption) {
+    /** Flag indicating that time synchronization between the sensor and collector is required */
     CGMStatusCalTempTimeSynchronizationRequired   = (1 << 0),
+    /** Flag indicating that calibration is not allowed */
     CGMStatusCalTempCalibrationNotAllowed         = (1 << 1),
+    /** Flag indicating that calibration is recommended */
     CGMStatusCalTempCalibrationRecommended        = (1 << 2),
+    /** Flag indicating that calibration is required */
     CGMStatusCalTempCalibrationRequired           = (1 << 3),
+    /** Flag indicating that sensor temperature is too high for accurate measurement results */
     CGMStatusCalTempSensorTempTooHigh             = (1 << 4),
+    /** Flag indicating that sensor temperature is too low for accurate measurement results */
     CGMStatusCalTempSensorTempTooLow              = (1 << 5),
 };
 
+/**
+ All possible CGM sessor status warning flags with their assigned bit position
+ */
 typedef NS_ENUM (uint8_t, CGMStatusWarningOption) {
+    /** Flag indicating that glucose measurement exceeded the patient low alert level */
     CGMStatusWarningResultLowerThanPatientLow     = (1 << 0),
+    /** Flag indicating that glucose measurement exceeded the patient high alert level */
     CGMStatusWarningResultHigherThanPatientHigh   = (1 << 1),
+    /** Flag indicating that glucose measurement exceeded the hypo alert level */
     CGMStatusWarningResultLowerThanHypo           = (1 << 2),
+    /** Flag indicating that glucose measurement exceeded the hyper alert level */
     CGMStatusWarningResultHigherThanHyper         = (1 << 3),
+    /** Flag indicating that glucose measurement exceeded the rate of decrease alert level */
     CGMStatusWarningResultExceedRateDecrease      = (1 << 4),
+    /** Flag indicating that glucose measurement exceeded the rate of increase alert level */
     CGMStatusWarningResultExceedRateIncrease      = (1 << 5),
+    /** Flag indicating that glucose measurement exceeded the sensor lower limit */
     CGMStatusWarningSensorResultTooLow            = (1 << 6),
+    /** Flag indicating that glucose measurement exceeded the sensor upper limit */
     CGMStatusWarningSensorResultTooHigh           = (1 << 7),
 };
 
-
+///--------------------------------------------
+/// @name CGM Session Start Time Characteristic
+///--------------------------------------------
 #pragma mark - CGM Session Start Time
 /**********  CGM Session Start Time Format (Mandatory) ***************
  Session Start Time - org.bluetooth.characteristic.date_time (Mandatory)
@@ -405,6 +476,13 @@ typedef NS_ENUM (uint8_t, CGMStatusWarningOption) {
  E2E-CRC - uint16 (Field exists if the CGM Feature characterist bi 12 is set to 1)
  **********************************************/
 
+
+///----------------------------------------------------------------------------
+/// @name CGM Session Start Time Characteristic Field Ranges and Defined Values
+///----------------------------------------------------------------------------
+/**
+ CGM session start time characteristic field ranges and defined values. Note that the ranges are type casted to make easy use in code
+ */
 #define kCGMSessionStartTimeFieldRangeYear          (NSRange){0,2}
 #define kCGMSessionStartTimeFieldRangeMonth         (NSRange){2,1}
 #define kCGMSessionStartTimeFieldRangeDay           (NSRange){3,1}
@@ -422,14 +500,28 @@ typedef NS_ENUM (uint8_t, CGMStatusWarningOption) {
 #define kCGMTimeZoneStepSizeMin30                   2.
 #define kCGMTimeZoneStepSizeMin60                   4.
 
+///---------------------------------------------------------
+/// @name CGM Session Start Time Characteristic Enumerations
+///---------------------------------------------------------
+/**
+ All possible CGM session start time DST options with their assigned value
+ */
 typedef NS_ENUM (uint8_t, DSTOffsetOption) {
+    /** DST option indicating standard time (no offset) */
     DSTStandardTime   = 0,
+    /** DST option indicating standard time plus half hour offset */
     DSTPlusHourHalf   = 2,
+    /** DST option indicating standard time plus hour offset */
     DSTPlusHourOne    = 4,
+    /** DST option indicating standard time plus two hours offset */
     DSTPlusHoursTwo   = 8,
+    /** DST option indicating the offset is unknown */
     DSTUnknown        = 255,
 };
 
+///--------------------------------------------
+/// @name CGM Session Run Time Characteristic
+///--------------------------------------------
 #pragma mark - CGM Session Run Time
 /**********  CGM Session Run Time Format (Mandatory) ***************
  Session Run Time - uint16 (Mandatory)
@@ -439,10 +531,27 @@ typedef NS_ENUM (uint8_t, DSTOffsetOption) {
  E2E-CRC - uint16 (Field exists if the CGM Feature characterist bi 12 is set to 1)
  **********************************************/
 
+///-------------------------------------------------------
+/// @name CGM Session Run Time Characteristic Field Ranges
+///-------------------------------------------------------
+/**
+ CGM session run time characteristic field ranges. Note that they are type casted to make easy use in code
+ */
 #define kCGMSessionRunTimeFieldRangeRunTime                 (NSRange){0,2}
 #define kCGMSessionRunTimeFieldRangeCRC                     (NSRange){2,2}
 
+///------------------------------------------------------------
+/// @name CGM Specific Ops Control Point (CMGCP) Characteristic
+///------------------------------------------------------------
 #pragma mark - CGM Specific Ops Control Point
+
+
+///----------------------------------------
+/// @name CGMCP Characteristic Field Ranges
+///----------------------------------------
+/**
+ CGMCP characteristic field ranges. Note that they are type casted to make easy use in code
+ */
 #define kCGMCPFieldRangeOpCode                              (NSRange){0,1}
 #define kCGMCPFieldRangeResponseRequestOpCode               (NSRange){1,1}
 #define kCGMCPFieldRangeResponseCodeValue                   (NSRange){2,1}
@@ -455,48 +564,99 @@ typedef NS_ENUM (uint8_t, DSTOffsetOption) {
 #define kCGMCPFieldRangeCalibrationRecordNumber             (NSRange){8,2}
 #define kCGMCPFieldRangeCalibrationStatus                   (NSRange){10,1}
 
+
+///---------------------------------------------------------
+/// @name CGMCP Characteristic Enumerations
+///---------------------------------------------------------
+/**
+ All possible CGMCP Op Codes with their assigned value
+ */
 typedef NS_ENUM (uint8_t, CGMCPOpCode) {
+    /** CGMCP op code indicating a set communication interval request */
     CGMCPOpCodeCommIntervalSet = 1,
+    /** CGMCP op code indicating a get communication interval request */
     CGMCPOpCodeCommIntervalGet,
+    /** CGMCP op code indicating a get communication interval response */
     CGMCPOpCodeCommIntervalResponse,
+    /** CGMCP op code indicating a set calibration value request */
     CGMCPOpCodeCalibrationValueSet,
+    /** CGMCP op code indicating a get calibration value request */
     CGMCPOpCodeCalibrationValueGet,
+    /** CGMCP op code indicating a get calibration value response */
     CGMCPOpCodeCalibrationValueResponse,
+    /** CGMCP op code indicating a set patient high alert level request */
     CGMCPOpCodeAlertLevelPatientHighSet,
+    /** CGMCP op code indicating a get patient high alert level request */
     CGMCPOpCodeAlertLevelPatientHighGet,
+    /** CGMCP op code indicating a get patient high alert level response */
     CGMCPOpCodeAlertLevelPatientHighResponse,
+    /** CGMCP op code indicating a set patient low alert level request */
     CGMCPOpCodeAlertLevelPatientLowSet,
+    /** CGMCP op code indicating a get patient low alert level request */
     CGMCPOpCodeAlertLevelPatientLowGet,
+    /** CGMCP op code indicating a get patient low alert level response */
     CGMCPOpCodeAlertLevelPatientLowResponse,
+    /** CGMCP op code indicating a set hypo alert level request */
     CGMCPOpCodeAlertLevelHypoSet,
+    /** CGMCP op code indicating a get hypo alert level request */
     CGMCPOpCodeAlertLevelHypoGet,
+    /** CGMCP op code indicating a get hypo alert level response */
     CGMCPOpCodeAlertLevelHypoReponse,
+    /** CGMCP op code indicating a set hyper alert level request */
     CGMCPOpCodeAlertLevelHyperSet,
+    /** CGMCP op code indicating a get hyper alert level request */
     CGMCPOpCodeAlertLevelHyperGet,
+    /** CGMCP op code indicating a get hyper alert level response */
     CGMCPOpCodeAlertLevelHyperReponse,
+    /** CGMCP op code indicating a set rate of decrease alert level request */
     CGMCPOpCodeAlertLevelRateDecreaseSet,
+    /** CGMCP op code indicating a get rate of decrease alert level request */
     CGMCPOpCodeAlertLevelRateDecreaseGet,
+    /** CGMCP op code indicating a get rate of decrease alert level response */
     CGMCPOpCodeAlertLevelRateDecreaseResponse,
+    /** CGMCP op code indicating a set rate of increase alert level request */
     CGMCPOpCodeAlertLevelRateIncreaseSet,
+    /** CGMCP op code indicating a get rate of increase alert level request */
     CGMCPOpCodeAlertLevelRateIncreaseGet,
+    /** CGMCP op code indicating a get rate of increase alert level response */
     CGMCPOpCodeAlertLevelRateIncreaseResponse,
+    /** CGMCP op code indicating a device specific alert reset request */
     CGMCPOpCodeAlertDeviceSpecificReset,
+    /** CGMCP op code indicating a start session request */
     CGMCPOpCodeSessionStart,
+    /** CGMCP op code indicating a stop session request */
     CGMCPOpCodeSessionStop,
+    /** CGMCP op code indicating a general response */
     CGMCPOpCodeResponse,
 };
 
+/**
+ All possible CGMCP Response Codes for a general response with their assigned value
+ */
 typedef NS_ENUM (uint8_t, CGMCPResponseCode) {
+    /** CGMCP response code indicating the request was successful */
     CGMCPSuccess = 1,
+    /** CGMCP response code indicating the requested op code is not supported */
     CGMCPOpCodeNotSupported,
+    /** CGMCP response code indicating the requested operand is invalid */
     CGMCPInvalidOperand,
+    /** CGMCP response code indicating the requested procedure was not completed */
     CGMCPProcedureNotCompleted,
+    /** CGMCP response code indicating the parameter sent with the request is out of the supported range of the sensor */
     CGMCPParameterOutOfRange,
 };
 
+/**
+ All possible CGMCP Calibration Status options
+ 
+ @discussion If none of the options are true, then the calibration data record was valid and accepted
+ */
 typedef NS_ENUM (uint8_t, CGMCPCalibrationStatusOption) {
+    /** Calibration status indicating that the calibration data was rejected */
     CGMCPCalibrationStatusDataRejected = 0,
+    /** Calibration status indicating that the calibration data was out-of-range */
     CGMCPCalibrationStatusDataOutOfRange,
+    /** Calibration status indicating that the calibration process is still pending */
     CGMCPCalibrationStatusProcessPending,
 };
 

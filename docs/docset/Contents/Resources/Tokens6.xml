@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/CGMCPResponseCode.html">
+	<File path="Constants/CGMCPCalibrationStatusOption.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/CGMCPResponseCode</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/CGMCPCalibrationStatusOption</TokenIdentifier>
+			<Abstract type="html">All possible CGMCP Calibration Status options</Abstract>
 			<DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPSuccess</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPSuccess</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPCalibrationStatusDataRejected</TokenIdentifier>
+            <Abstract type="html">Calibration status indicating that the calibration data was rejected</Abstract>
+            <Declaration>CGMCPCalibrationStatusDataRejected</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPOpCodeNotSupported</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPOpCodeNotSupported</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPCalibrationStatusDataOutOfRange</TokenIdentifier>
+            <Abstract type="html">Calibration status indicating that the calibration data was out-of-range</Abstract>
+            <Declaration>CGMCPCalibrationStatusDataOutOfRange</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -34,29 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPInvalidOperand</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPInvalidOperand</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPProcedureNotCompleted</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPProcedureNotCompleted</Declaration>
-            
-            <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMCPParameterOutOfRange</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>CGMCPParameterOutOfRange</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMCPCalibrationStatusProcessPending</TokenIdentifier>
+            <Abstract type="html">Calibration status indicating that the calibration process is still pending</Abstract>
+            <Declaration>CGMCPCalibrationStatusProcessPending</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             

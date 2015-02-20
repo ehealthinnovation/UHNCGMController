@@ -32,7 +32,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   UHNBLEController:
-    :commit: cea4e651f232f1fc892f85be388fb526678def8a
+    :commit: 1e4bac1c3c49d154c4bcf21c4695d0be241e5cd2
     :git: git@github.ehealthinnovation.org:JDRF/UHNBLEController.git
 
 SPEC CHECKSUMS:

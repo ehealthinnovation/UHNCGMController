@@ -567,7 +567,7 @@
  @return The calibration fluid type, as defined in `UHNCGMConstants.h`
  
  */
-- (CGMTypeOption)calibrationFluidType;
+- (GlucoseFluidTypeOption)calibrationFluidType;
 
 /**
  Checks the calibration details for the calibration sample location
@@ -575,7 +575,7 @@
  @return The calibration sample location, as defined in `UHNCGMConstants.h`
  
  */
-- (CGMLocationOption)calibrationSampleLocation;
+- (GlucoseSampleLocationOption)calibrationSampleLocation;
 
 /**
  Checks the calibration details for the next calibration date and time
@@ -610,7 +610,7 @@
  
  @return `YES` if the calibration was successful, otherwise `NO`
  
- @discussion After a CGMCP general response indicating calibration was set successfully, the Collector should check the status of the calibration by a read of the last calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.
+ @discussion After a CGMCP general response indicating calibration was set successfully, one should check the status of the calibration by a read of the most current calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.
  
  */
 - (BOOL)wasCalibrationSuccessful;
@@ -620,7 +620,7 @@
  
  @return `YES` if the calibration data was rejected, otherwise `NO`
  
- @discussion After a CGMCP general response indicating calibration was set successfully, the Collector should check the status of the calibration by a read of the last calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.
+ @discussion After a CGMCP general response indicating calibration was set successfully, one should check the status of the calibration by a read of the most current calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.
  
  */
 - (BOOL)wasCalibrationDataRejected;
@@ -630,7 +630,7 @@
  
  @return `YES` if the calibration data was out-of-range, otherwise `NO`
  
- @discussion After a CGMCP general response indicating calibration was set successfully, the Collector should check the status of the calibration by a read of the last calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.
+ @discussion After a CGMCP general response indicating calibration was set successfully, one should check the status of the calibration by a read of the most current calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.
  
  */
 - (BOOL)wasCalibrationDataOutOfRange;
@@ -640,7 +640,7 @@
  
  @return `YES` if the calibration process is pending, otherwise `NO`
  
- @discussion After a CGMCP general response indicating calibration was set successfully, the Collector should check the status of the calibration by a read of the last calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.
+ @discussion After a CGMCP general response indicating calibration was set successfully, one should check the status of the calibration by a read of the most current calibration data record. If the calibration data was rejected or was out-of-range, there may be the need for a new calibration.
  
  */
 - (BOOL)isCalibrationProcessPending;

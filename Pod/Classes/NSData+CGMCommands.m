@@ -48,8 +48,8 @@
     return cgmCurrentTimeValue;
 }
 
-+ (NSData*)joinFluidType:(CGMTypeOption)type
-          sampleLocation:(CGMLocationOption)location;
++ (NSData*)joinFluidType:(GlucoseFluidTypeOption)type
+          sampleLocation:(GlucoseSampleLocationOption)location;
 {
     uint8_t typeLocation = type | (location << 4);
     return [NSData dataWithBytes:&typeLocation length:sizeof(uint8_t)];

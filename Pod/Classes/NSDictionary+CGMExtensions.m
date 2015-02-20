@@ -370,7 +370,7 @@
     }
 }
 
-- (CGMTypeOption)calibrationFluidType;
+- (GlucoseFluidTypeOption)calibrationFluidType;
 {
     if ([self isCalibrationReponse]) {
         return [[self calibrationDetails][kCGMCalibrationKeyFluidType] integerValue];
@@ -378,7 +378,7 @@
         return 0;
     }
 }
-- (CGMLocationOption)calibrationSampleLocation;
+- (GlucoseSampleLocationOption)calibrationSampleLocation;
 {
     if ([self isCalibrationReponse]) {
         return [[self calibrationDetails][kCGMCalibrationKeySampleLocation] integerValue];
