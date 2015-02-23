@@ -10,12 +10,13 @@
 Pod::Spec.new do |s|
   s.name             = "UHNCGMController"
   s.version          = "0.1.0"
-  s.summary          = "A short description of UHNCGMController."
+  s.summary          = "A central continuous glucose monitor controller."
   s.description      = <<-DESC
-                       An optional longer description of UHNCGMController
+                       The central CGM controller is built upon the UHNBLEControlelr, a general central BLE controller. The CGM controller provides a delegate based interface to interacting with CGM service as defined by BT-SIG.
 
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       * Read/Write/Notification interact with CGM characterisitics
+                       * Procedures via record access control point
+                       * Operartions via the specific ops control point
                        DESC
   s.homepage         = "https://github.com/uhnmdi/UHNCGMController"
   s.license          = 'MIT'
@@ -31,7 +32,7 @@ Pod::Spec.new do |s|
     'UHNCGMController' => ['Pod/Assets/*.png']
   }
 
-  s.frameworks = 'UIKit', 'CoreBluetooth'
+  s.frameworks = 'CoreBluetooth'
   s.dependency 'UHNDebug'
   s.dependency 'UHNBLEController'
 

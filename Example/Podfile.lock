@@ -32,7 +32,7 @@ SPEC CHECKSUMS:
   OCMockito: 991936bb775cc4c27f063d38f5e17b9161fbd21c
   Specta: 698a58ffa5ec948327d3b92eab50ca58d7f4fbe8
   UHNBLEController: d2b40042f022575c8a0c608a7aedd18354a8735e
-  UHNCGMController: e5bdb684efdedf9bbd1d20f7cc3317ca62ecb1e3
+  UHNCGMController: f0a77c01cec9680cd85b87d14ecf8f30b7adafbd
   UHNDebug: 6bc973e06a88c1b14017040d0bcd1ff9adc9127b
   UHNTimeSeriesPlotView: 18d3d3528eaef692e6694434cc24093bdf28fdab
 
