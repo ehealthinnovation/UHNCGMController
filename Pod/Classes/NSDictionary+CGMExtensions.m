@@ -561,7 +561,7 @@
                 ([[self calibrationDetails][kCGMCalibrationKeyStatus] integerValue] & CGMCPCalibrationStatusDataOutOfRange) == NO &&
                 ([[self calibrationDetails][kCGMCalibrationKeyStatus] integerValue] & CGMCPCalibrationStatusProcessPending) == NO);
     } else {
-        return nil;
+        return NO;
     }
 }
 - (BOOL)wasCalibrationDataRejected;
@@ -569,7 +569,7 @@
     if ([self isCalibrationReponse]) {
         return ([[self calibrationDetails][kCGMCalibrationKeyStatus] integerValue] & CGMCPCalibrationStatusDataRejected);
     } else {
-        return nil;
+        return NO;
     }
 }
 
@@ -578,7 +578,7 @@
     if ([self isCalibrationReponse]) {
         return ([[self calibrationDetails][kCGMCalibrationKeyStatus] integerValue] & CGMCPCalibrationStatusDataOutOfRange);
     } else {
-        return nil;
+        return NO;
     }
 }
 
@@ -587,7 +587,7 @@
     if ([self isCalibrationReponse]) {
         return ([[self calibrationDetails][kCGMCalibrationKeyStatus] integerValue] & CGMCPCalibrationStatusProcessPending);
     } else {
-        return nil;
+        return NO;
     }
 }
 
