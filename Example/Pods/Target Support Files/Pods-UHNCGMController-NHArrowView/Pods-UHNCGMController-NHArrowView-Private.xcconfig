@@ -1,5 +1,5 @@
 #include "Pods-UHNCGMController-NHArrowView.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/NHArrowView" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Expecta" "${PODS_ROOT}/Headers/Public/Expecta+Snapshots" "${PODS_ROOT}/Headers/Public/FBSnapshotTestCase" "${PODS_ROOT}/Headers/Public/NHArrowView" "${PODS_ROOT}/Headers/Public/Specta" "${PODS_ROOT}/Headers/Public/UHNBLEController" "${PODS_ROOT}/Headers/Public/UHNCGMController" "${PODS_ROOT}/Headers/Public/UHNDebug" "${PODS_ROOT}/Headers/Public/UHNTimeSeriesPlotView"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/NHArrowView" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Expecta" "${PODS_ROOT}/Headers/Public/NHArrowView" "${PODS_ROOT}/Headers/Public/OCHamcrest" "${PODS_ROOT}/Headers/Public/OCMockito" "${PODS_ROOT}/Headers/Public/Specta" "${PODS_ROOT}/Headers/Public/UHNBLEController" "${PODS_ROOT}/Headers/Public/UHNCGMController" "${PODS_ROOT}/Headers/Public/UHNDebug" "${PODS_ROOT}/Headers/Public/UHNTimeSeriesPlotView"
 OTHER_LDFLAGS = ${PODS_UHNCGMCONTROLLER_NHARROWVIEW_OTHER_LDFLAGS} -ObjC
 PODS_ROOT = ${SRCROOT}

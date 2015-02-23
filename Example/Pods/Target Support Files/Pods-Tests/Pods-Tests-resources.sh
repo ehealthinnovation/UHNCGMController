@@ -47,10 +47,8 @@ install_resource()
       ;;
   esac
 }
-          install_resource "${BUILT_PRODUCTS_DIR}/NHArrowView.bundle"
-                    install_resource "${BUILT_PRODUCTS_DIR}/UHNBLEController.bundle"
+          install_resource "${BUILT_PRODUCTS_DIR}/UHNBLEController.bundle"
                     install_resource "${BUILT_PRODUCTS_DIR}/UHNCGMController.bundle"
-                    install_resource "${BUILT_PRODUCTS_DIR}/UHNTimeSeriesPlotView.bundle"
           
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then

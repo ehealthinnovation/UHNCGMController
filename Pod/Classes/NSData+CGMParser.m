@@ -28,7 +28,7 @@
     // TODO add CRC checking
     BOOL crcFailed = NO;
     
-    NSUInteger charSize = [self parseMeasurementCharacteristicSize];
+//    NSUInteger charSize = [self parseMeasurementCharacteristicSize];
     NSUInteger flags = [self parseMeasurementCharacteristicFlags];
     NSNumber *glucoseConcentration = [self parseGlucoseConcentration];
     NSUInteger timeOffset = [self parseMeasurementTimeOffest];

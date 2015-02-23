@@ -33,8 +33,6 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit', 'CoreBluetooth'
   s.dependency 'UHNDebug'
-  s.dependency 'UHNTimeSeriesPlotView'
-  s.dependency 'NHArrowView'
   s.dependency 'UHNBLEController'
 
 end

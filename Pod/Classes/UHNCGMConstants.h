@@ -28,7 +28,7 @@
 #import "UHNBLETypes.h"
 
 ///----------------
-/// @name RACP Keys
+/// @name CGM Keys
 ///----------------
 #pragma mark - Keys
 
@@ -187,12 +187,12 @@ typedef NS_ENUM (uint8_t, CGMMeasurementFlagOption) {
     CGMMeasurementFlagsTrendInformationPresent  = (1 << 0),
     /** Flag indicating that glucose quality information is present in the measurement */
     CGMMeasurementFlagsQualityPresent           = (1 << 1),
-    /** Flag indicating that the sensor status status details is present in the measurement */
-    CGMMeasurementFlagsStatusOctetPresent       = (1 << 5),
+    /** Flag indicating that the sensor status warning details is present in the measurement */
+    CGMMeasurementFlagsWarningOctetPresent      = (1 << 5),
     /** Flag indicating that the sensor status calibration and temperature details is present in the measurement */
     CGMMeasurementFlagsCalTempOctetPresent      = (1 << 6),
-    /** Flag indicating that the sensor status warning details is present in the measurement */
-    CGMMeasurementFlagsWarningOctetPresent      = (1 << 7),
+    /** Flag indicating that the sensor status status details is present in the measurement */
+    CGMMeasurementFlagsStatusOctetPresent       = (1 << 7)
 };
 
 

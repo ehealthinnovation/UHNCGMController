@@ -425,6 +425,22 @@
  */
 - (BOOL)supportsCGMQuality;
 
+/**
+ Checks the feature characteristic details for the glucose fluid type of the CGM sensor
+ 
+ @return The fluid type with which the glucose measurements are made. The fluid types are defined in `UHNBLETypes.h`
+ 
+ */
+- (GlucoseFluidTypeOption)glucoseFluidType;
+
+/**
+ Checks the feature characteristic details for the glucose sample location of the CGM sensor
+ 
+ @return The sample location from which the glucose measurements are made. The sample locations are defined in `UHNBLETypes.h`
+ 
+ */
+- (GlucoseSampleLocationOption)glucoseSampleLocation;
+
 ///-------------------------------------
 /// @name CGM Specific Ops Control Point
 ///-------------------------------------
@@ -434,7 +450,95 @@
  @return `YES` if the response was a general response, otherwise `NO`
  
  */
-- (BOOL)isGeneralResponse;
+- (BOOL)isCGMCPGeneralResponse;
+
+/**
+ Checks a CGMCP general response to see if it is a successful reset device specific alert
+ 
+ @return `YES` if the response was a successful reset device specific alert, otherwise `NO`
+ 
+ */
+- (BOOL)isSuccessfulAlertDeviceSpecificReset;
+
+/**
+ Checks a CGMCP general response to see if it is a successful start session
+ 
+ @return `YES` if the response was a successful start session, otherwise `NO`
+ 
+ */
+- (BOOL)isSuccessfulSessionStart;
+
+/**
+ Checks a CGMCP general response to see if it is a successful stop session
+ 
+ @return `YES` if the response was a successful stop session, otherwise `NO`
+ 
+ */
+- (BOOL)isSuccessfulSessionStop;
+
+/**
+ Checks a CGMCP general response to see if it is a successful set communication interval
+ 
+ @return `YES` if the response was a successful set communication interval, otherwise `NO`
+ 
+ */
+- (BOOL)isSuccessfulSetCommunicationInterval;
+
+/**
+ Checks a CGMCP general response to see if it is a successful set calibration value
+ 
+ @return `YES` if the response was a successful set calibration value, otherwise `NO`
+ 
+ */
+- (BOOL)isSuccessfulSetCalibrationValue;
+
+/**
+ Checks a CGMCP general response to see if it is a successful set patient high alert level
+ 
+ @return `YES` if the response was a successful set patient high alert level, otherwise `NO`
+ 
+ */
+- (BOOL)isSuccessfulSetAlertLevelPatientHigh;
+
+/**
+ Checks a CGMCP general response to see if it is a successful set patient low alert level
+ 
+ @return `YES` if the response was a successful set patient low alert level, otherwise `NO`
+ 
+ */
+- (BOOL)isSuccessfulSetAlertLevelPatientLow;
+
+/**
+ Checks a CGMCP general response to see if it is a successful set hypo alert level
+ 
+ @return `YES` if the response was a successful set hypo alert level, otherwise `NO`
+ 
+ */
+- (BOOL)isSuccessfulSetAlertLevelHypo;
+
+/**
+ Checks a CGMCP general response to see if it is a successful set hyper alert level
+ 
+ @return `YES` if the response was a successful set hyper alert level, otherwise `NO`
+ 
+ */
+- (BOOL)isSuccessfulSetAlertLevelHyper;
+
+/**
+ Checks a CGMCP general response to see if it is a successful set rate decrease alert level
+ 
+ @return `YES` if the response was a successful set rate decrease alert level, otherwise `NO`
+ 
+ */
+- (BOOL)isSuccessfulSetAlertLevelRateDecrease;
+
+/**
+ Checks a CGMCP general response to see if it is a successful set rate increase alert level
+ 
+ @return `YES` if the response was a successful set rate increase alert level, otherwise `NO`
+ 
+ */
+- (BOOL)isSuccessfulSetAlertLevelRateIncrease;
 
 /**
  Checks the CGMCP characteristic details that the response is a communication interval response
@@ -500,7 +604,7 @@
  @discussion If a value of 0 is returned, no response code valuex was found
  
  */
-- (CGMCPResponseCode)responseCode;
+- (CGMCPResponseCode)CGMCPResponseCode;
 
 /**
  Get the CGMCP request op code from a CGMCP general response
@@ -510,10 +614,10 @@
  @discussion If a value of 0 is returned, no request op code was found
  
  */
-- (CGMCPOpCode)requestOpCode;
+- (CGMCPOpCode)CGMCPRequestOpCode;
 
 /**
- Get the CGMCP response value
+ Get the CGMCP response value (operand)
  
  @return A `NSNumber` with the response value. Values will either be integers or floats, depending on the CGMCP request
  
@@ -528,7 +632,7 @@
     CGMCPOpCodeAlertLevelRateIncreaseResponse   (float)
  
  */
-- (NSNumber*)responseValue;
+- (NSNumber*)CGMCPResponseValue;
 
 ///---------------------------------------------------
 /// @name CGM Specific Ops Control Point - Calibration
@@ -540,6 +644,14 @@
  
  */
 - (BOOL)isCalibrationReponse;
+
+/**
+ Checks the calibration details for the calibration glucose value
+ 
+ @return The calibration glucose value. Units is mg/dl
+ 
+ */
+- (NSNumber*)calibrationGlucoseValue;
 
 /**
  Checks the calibration details for the calibration date and time
@@ -585,7 +697,7 @@
  @discussion The next calibration date and time is only available if the CGM controller knows the session start time.
  
  */
-- (NSDate*)nextCalibrationDateTime;
+- (NSDate*)calibrationDateTimeNext;
 
 /**
  Checks the calibration details for the next calibration time offset
@@ -595,7 +707,7 @@
  @discussion The next calibration time offset indicates the time of the next calibration as minutes from the session start time.
  
  */
-- (NSNumber*)nextCalibrationTimeOffset;
+- (NSNumber*)calibrationTimeOffsetNext;
 
 /**
  Checks the calibration details for the calibration record number

@@ -270,72 +270,203 @@
     return ([self featureFlags] & CGMFeatureSupportedCGMQuality);
 }
 
+- (GlucoseFluidTypeOption)glucoseFluidType;
+{
+    return [self[kCGMFeatureKeyFluidType] integerValue];
+}
+
+- (GlucoseSampleLocationOption)glucoseSampleLocation;
+{
+    return [self[kCGMFeatureKeySampleLocation] integerValue];
+}
+
 #pragma mark - CGM Specific Ops Control Point
 
-- (CGMCPOpCode)responseOpCode;
+- (CGMCPOpCode)CGMCPResponseOpCode;
 {
     return [self[kCGMCPKeyOpCode] integerValue];
 }
 
-- (BOOL)isGeneralResponse;
+- (BOOL)isCGMCPGeneralResponse;
 {
-    return ([self responseOpCode] & CGMCPOpCodeResponse);
+    return ([self CGMCPResponseOpCode] & CGMCPOpCodeResponse);
+}
+
+- (BOOL)isSuccessfulAlertDeviceSpecificReset;
+{
+    if ([self isCGMCPGeneralResponse]) {
+        if ([self CGMCPRequestOpCode] == CGMCPOpCodeAlertDeviceSpecificReset && [self CGMCPResponseCode] == CGMCPSuccess) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (BOOL)isSuccessfulSessionStart;
+{
+    if ([self isCGMCPGeneralResponse]) {
+        if ([self CGMCPRequestOpCode] == CGMCPOpCodeSessionStart && [self CGMCPResponseCode] == CGMCPSuccess) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (BOOL)isSuccessfulSessionStop;
+{
+    if ([self isCGMCPGeneralResponse]) {
+        if ([self CGMCPRequestOpCode] == CGMCPOpCodeSessionStop && [self CGMCPResponseCode] == CGMCPSuccess) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (BOOL)isSuccessfulSetCommunicationInterval;
+{
+    if ([self isCGMCPGeneralResponse]) {
+        if ([self CGMCPRequestOpCode] == CGMCPOpCodeCommIntervalSet && [self CGMCPResponseCode] == CGMCPSuccess) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (BOOL)isSuccessfulSetCalibrationValue;
+{
+    if ([self isCGMCPGeneralResponse]) {
+        if ([self CGMCPRequestOpCode] == CGMCPOpCodeCalibrationValueSet && [self CGMCPResponseCode] == CGMCPSuccess) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (BOOL)isSuccessfulSetAlertLevelPatientHigh;
+{
+    if ([self isCGMCPGeneralResponse]) {
+        if ([self CGMCPRequestOpCode] == CGMCPOpCodeAlertLevelPatientHighSet && [self CGMCPResponseCode] == CGMCPSuccess) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (BOOL)isSuccessfulSetAlertLevelPatientLow;
+{
+    if ([self isCGMCPGeneralResponse]) {
+        if ([self CGMCPRequestOpCode] == CGMCPOpCodeAlertLevelPatientLowSet && [self CGMCPResponseCode] == CGMCPSuccess) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (BOOL)isSuccessfulSetAlertLevelHypo;
+{
+    if ([self isCGMCPGeneralResponse]) {
+        if ([self CGMCPRequestOpCode] == CGMCPOpCodeAlertLevelHypoSet && [self CGMCPResponseCode] == CGMCPSuccess) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (BOOL)isSuccessfulSetAlertLevelHyper;
+{
+    if ([self isCGMCPGeneralResponse]) {
+        if ([self CGMCPRequestOpCode] == CGMCPOpCodeAlertLevelHyperSet && [self CGMCPResponseCode] == CGMCPSuccess) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (BOOL)isSuccessfulSetAlertLevelRateDecrease;
+{
+    if ([self isCGMCPGeneralResponse]) {
+        if ([self CGMCPRequestOpCode] == CGMCPOpCodeAlertLevelRateDecreaseSet && [self CGMCPResponseCode] == CGMCPSuccess) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (BOOL)isSuccessfulSetAlertLevelRateIncrease;
+{
+    if ([self isCGMCPGeneralResponse]) {
+        if ([self CGMCPRequestOpCode] == CGMCPOpCodeAlertLevelRateIncreaseSet && [self CGMCPResponseCode] == CGMCPSuccess) {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 - (BOOL)isCommunicationIntervalResponse;
 {
-    return ([self responseOpCode] & CGMCPOpCodeCommIntervalResponse);
+    return ([self CGMCPResponseOpCode] & CGMCPOpCodeCommIntervalResponse);
 }
 
 - (BOOL)isAlertLevelPatientHighResponse;
 {
-    return ([self responseOpCode] & CGMCPOpCodeAlertLevelPatientHighResponse);
+    return ([self CGMCPResponseOpCode] & CGMCPOpCodeAlertLevelPatientHighResponse);
 }
 
 - (BOOL)isAlertLevelPatientLowResponse;
 {
-    return ([self responseOpCode] & CGMCPOpCodeAlertLevelPatientLowResponse);
+    return ([self CGMCPResponseOpCode] & CGMCPOpCodeAlertLevelPatientLowResponse);
 }
 
 - (BOOL)isAlertLevelHypoReponse;
 {
-    return ([self responseOpCode] & CGMCPOpCodeAlertLevelHypoReponse);
+    return ([self CGMCPResponseOpCode] & CGMCPOpCodeAlertLevelHypoReponse);
 }
 
 - (BOOL)isAlertLevelHyperReponse;
 {
-    return ([self responseOpCode] & CGMCPOpCodeAlertLevelHyperReponse);
+    return ([self CGMCPResponseOpCode] & CGMCPOpCodeAlertLevelHyperReponse);
 }
 
 - (BOOL)isAlertLevelRateDecreasedReponse;
 {
-    return ([self responseOpCode] & CGMCPOpCodeAlertLevelRateDecreaseResponse);
+    return ([self CGMCPResponseOpCode] & CGMCPOpCodeAlertLevelRateDecreaseResponse);
 }
 
 - (BOOL)isAlertLevelRateIncreasedReponse;
 {
-    return ([self responseOpCode] & CGMCPOpCodeAlertLevelRateIncreaseResponse);
+    return ([self CGMCPResponseOpCode] & CGMCPOpCodeAlertLevelRateIncreaseResponse);
 }
 
-- (CGMCPResponseCode)responseCode;
+- (CGMCPResponseCode)CGMCPResponseCode;
 {
-    if ([self isGeneralResponse]) {
+    if ([self isCGMCPGeneralResponse]) {
         return [self[kCGMCPKeyResponseDetails][kCGMCPKeyResponseCodeValue] integerValue];
     } else {
         return 0;
     }
 }
 
-- (CGMCPOpCode)requestOpCode;
+- (CGMCPOpCode)CGMCPRequestOpCode;
 {
-    if ([self isGeneralResponse]) {
+    if ([self isCGMCPGeneralResponse]) {
         return [self[kCGMCPKeyResponseDetails][kCGMCPKeyResponseRequestOpCode] integerValue];
     } else {
         return 0;
     }
 }
 
-- (NSNumber*)responseValue;
+- (NSNumber*)CGMCPResponseValue;
 {
     return self[kCGMCPKeyOperand];
 }
@@ -344,12 +475,21 @@
 
 - (BOOL)isCalibrationReponse;
 {
-    return ([self responseOpCode] & CGMCPOpCodeCalibrationValueResponse);
+    return ([self CGMCPResponseOpCode] & CGMCPOpCodeCalibrationValueResponse);
 }
 
 - (NSDictionary*)calibrationDetails
 {
     return self[kCGMCPKeyResponseCalibration];
+}
+
+- (NSNumber*)calibrationGlucoseValue;
+{
+    if ([self isCalibrationReponse]) {
+        return [self calibrationDetails][kCGMCalibrationKeyValue];
+    } else {
+        return nil;
+    }
 }
 
 - (NSDate*)calibrationDateTime;
@@ -387,7 +527,7 @@
     }
 }
 
-- (NSDate*)nextCalibrationDateTime;
+- (NSDate*)calibrationDateTimeNext;
 {
     if ([self isCalibrationReponse]) {
         return [self calibrationDetails][kCGMKeyDateTimeNext];
@@ -396,7 +536,7 @@
     }
 }
 
-- (NSNumber*)nextCalibrationTimeOffset;
+- (NSNumber*)calibrationTimeOffsetNext;
 {
     if ([self isCalibrationReponse]) {
         return [self calibrationDetails][kCGMKeyTimeOffsetNext];

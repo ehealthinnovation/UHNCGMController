@@ -35,7 +35,6 @@ describe(@"CGM command formatting", ^{
         uint8_t timeZoneValue = hourFromGMT * kCGMTimeZoneStepSizeMin60;
         
         NSTimeInterval daylightOffset = [localTimeZone daylightSavingTimeOffset];
-        NSUInteger secInHour = kSecondsInHour;
         
         expect([testCommand unsignedIntegerAtRange:(NSRange){0,2}]).to.equal(year);
         expect([testCommand unsignedIntegerAtRange:(NSRange){2,1}]).to.equal(month);
@@ -44,7 +43,7 @@ describe(@"CGM command formatting", ^{
         expect([testCommand unsignedIntegerAtRange:(NSRange){5,1}]).to.equal(minute);
         expect([testCommand unsignedIntegerAtRange:(NSRange){6,1}]).to.equal(second);
         expect([testCommand unsignedIntegerAtRange:(NSRange){7,1}]).to.equal(timeZoneValue);
-        expect([testCommand unsignedIntegerAtRange:(NSRange){8,1}]*secInHour).to.equal(daylightOffset);
+        expect([testCommand unsignedIntegerAtRange:(NSRange){8,1}]*kSecondsInHour).to.equal(daylightOffset);
     });
     
     it(@"should join glucose fluid type and sample location", ^{

@@ -1,27 +1,25 @@
 PODS:
   - Expecta (0.3.2)
-  - Expecta+Snapshots (1.3.1):
-    - Expecta
-    - FBSnapshotTestCase
-  - FBSnapshotTestCase (1.5)
   - NHArrowView (0.1.0)
+  - OCHamcrest (4.1.1)
+  - OCMockito (1.4.0):
+    - OCHamcrest (~> 4.0)
   - Specta (0.3.2)
   - UHNBLEController (0.1.0):
     - UHNDebug
   - UHNCGMController (0.1.0):
-    - NHArrowView
     - UHNBLEController
     - UHNDebug
-    - UHNTimeSeriesPlotView
   - UHNDebug (0.1.0)
   - UHNTimeSeriesPlotView (0.1.0)
 
 DEPENDENCIES:
   - Expecta
-  - Expecta+Snapshots
-  - FBSnapshotTestCase
+  - NHArrowView
+  - OCMockito
   - Specta
   - UHNCGMController (from `../`)
+  - UHNTimeSeriesPlotView
 
 EXTERNAL SOURCES:
   UHNCGMController:
@@ -29,12 +27,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: ee641011fe10aa1855d487b40e4976dac50ec342
-  Expecta+Snapshots: 4a56b9411c6ed156987072e52c39de67d864015a
-  FBSnapshotTestCase: e2914fbaabccea1dcc773d6a16b1c24540642488
   NHArrowView: 80f0648086eb8b906bcd21b077abf64a70a71314
+  OCHamcrest: af1c7c5ea345de69ea6c9c2958f65f3044e5c420
+  OCMockito: 991936bb775cc4c27f063d38f5e17b9161fbd21c
   Specta: 698a58ffa5ec948327d3b92eab50ca58d7f4fbe8
   UHNBLEController: d2b40042f022575c8a0c608a7aedd18354a8735e
-  UHNCGMController: 7e862d077a2c41a91835f8c2ee7b6e8a671887cd
+  UHNCGMController: e5bdb684efdedf9bbd1d20f7cc3317ca62ecb1e3
   UHNDebug: 6bc973e06a88c1b14017040d0bcd1ff9adc9127b
   UHNTimeSeriesPlotView: 18d3d3528eaef692e6694434cc24093bdf28fdab
 
