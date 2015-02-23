@@ -2,8 +2,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'UHNCGMController', :exclusive => true do
   pod "UHNCGMController", :path => "../"
-  pod "NHArrowView"
-  pod "UHNTimeSeriesPlotView"
+  pod 'NHArrowView'
+  pod 'UHNTimeSeriesPlotView'
 end
 
 target 'Tests', :exclusive => true do
