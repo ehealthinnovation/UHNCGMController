@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMMeasurementFlagsStatusOctetPresent</TokenIdentifier>
-            <Abstract type="html">Flag indicating that the sensor status status details is present in the measurement</Abstract>
-            <Declaration>CGMMeasurementFlagsStatusOctetPresent</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMMeasurementFlagsWarningOctetPresent</TokenIdentifier>
+            <Abstract type="html">Flag indicating that the sensor status warning details is present in the measurement</Abstract>
+            <Declaration>CGMMeasurementFlagsWarningOctetPresent</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             
@@ -54,9 +54,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CGMMeasurementFlagsWarningOctetPresent</TokenIdentifier>
-            <Abstract type="html">Flag indicating that the sensor status warning details is present in the measurement</Abstract>
-            <Declaration>CGMMeasurementFlagsWarningOctetPresent</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/CGMMeasurementFlagsStatusOctetPresent</TokenIdentifier>
+            <Abstract type="html">Flag indicating that the sensor status status details is present in the measurement</Abstract>
+            <Declaration>CGMMeasurementFlagsStatusOctetPresent</Declaration>
             
             <DeclaredIn>UHNCGMConstants.h</DeclaredIn>
             

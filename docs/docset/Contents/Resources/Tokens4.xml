@@ -553,14 +553,170 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isGeneralResponse</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/glucoseFluidType</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for the glucose fluid type of the CGM sensor</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (GlucoseFluidTypeOption)glucoseFluidType</Declaration>
+			
+			<ReturnValue><Abstract type="html">The fluid type with which the glucose measurements are made. The fluid types are defined in UHNBLETypes.h</Abstract></ReturnValue>
+			<Anchor>//api/name/glucoseFluidType</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/glucoseSampleLocation</TokenIdentifier>
+			<Abstract type="html">Checks the feature characteristic details for the glucose sample location of the CGM sensor</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (GlucoseSampleLocationOption)glucoseSampleLocation</Declaration>
+			
+			<ReturnValue><Abstract type="html">The sample location from which the glucose measurements are made. The sample locations are defined in UHNBLETypes.h</Abstract></ReturnValue>
+			<Anchor>//api/name/glucoseSampleLocation</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isCGMCPGeneralResponse</TokenIdentifier>
 			<Abstract type="html">Checks the CGMCP characteristic details that the response is a general response</Abstract>
 			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)isGeneralResponse</Declaration>
+			<Declaration>- (BOOL)isCGMCPGeneralResponse</Declaration>
 			
 			<ReturnValue><Abstract type="html">YES if the response was a general response, otherwise NO</Abstract></ReturnValue>
-			<Anchor>//api/name/isGeneralResponse</Anchor>
+			<Anchor>//api/name/isCGMCPGeneralResponse</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSuccessfulAlertDeviceSpecificReset</TokenIdentifier>
+			<Abstract type="html">Checks a CGMCP general response to see if it is a successful reset device specific alert</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSuccessfulAlertDeviceSpecificReset</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a successful reset device specific alert, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSuccessfulAlertDeviceSpecificReset</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSuccessfulSessionStart</TokenIdentifier>
+			<Abstract type="html">Checks a CGMCP general response to see if it is a successful start session</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSuccessfulSessionStart</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a successful start session, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSuccessfulSessionStart</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSuccessfulSessionStop</TokenIdentifier>
+			<Abstract type="html">Checks a CGMCP general response to see if it is a successful stop session</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSuccessfulSessionStop</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a successful stop session, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSuccessfulSessionStop</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSuccessfulSetCommunicationInterval</TokenIdentifier>
+			<Abstract type="html">Checks a CGMCP general response to see if it is a successful set communication interval</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSuccessfulSetCommunicationInterval</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a successful set communication interval, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSuccessfulSetCommunicationInterval</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSuccessfulSetCalibrationValue</TokenIdentifier>
+			<Abstract type="html">Checks a CGMCP general response to see if it is a successful set calibration value</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSuccessfulSetCalibrationValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a successful set calibration value, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSuccessfulSetCalibrationValue</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSuccessfulSetAlertLevelPatientHigh</TokenIdentifier>
+			<Abstract type="html">Checks a CGMCP general response to see if it is a successful set patient high alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSuccessfulSetAlertLevelPatientHigh</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a successful set patient high alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSuccessfulSetAlertLevelPatientHigh</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSuccessfulSetAlertLevelPatientLow</TokenIdentifier>
+			<Abstract type="html">Checks a CGMCP general response to see if it is a successful set patient low alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSuccessfulSetAlertLevelPatientLow</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a successful set patient low alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSuccessfulSetAlertLevelPatientLow</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSuccessfulSetAlertLevelHypo</TokenIdentifier>
+			<Abstract type="html">Checks a CGMCP general response to see if it is a successful set hypo alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSuccessfulSetAlertLevelHypo</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a successful set hypo alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSuccessfulSetAlertLevelHypo</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSuccessfulSetAlertLevelHyper</TokenIdentifier>
+			<Abstract type="html">Checks a CGMCP general response to see if it is a successful set hyper alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSuccessfulSetAlertLevelHyper</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a successful set hyper alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSuccessfulSetAlertLevelHyper</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSuccessfulSetAlertLevelRateDecrease</TokenIdentifier>
+			<Abstract type="html">Checks a CGMCP general response to see if it is a successful set rate decrease alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSuccessfulSetAlertLevelRateDecrease</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a successful set rate decrease alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSuccessfulSetAlertLevelRateDecrease</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/isSuccessfulSetAlertLevelRateIncrease</TokenIdentifier>
+			<Abstract type="html">Checks a CGMCP general response to see if it is a successful set rate increase alert level</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSuccessfulSetAlertLevelRateIncrease</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the response was a successful set rate increase alert level, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/isSuccessfulSetAlertLevelRateIncrease</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
@@ -649,38 +805,38 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/responseCode</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/CGMCPResponseCode</TokenIdentifier>
 			<Abstract type="html">Get the CGMCP response code from a CGMCP general response</Abstract>
 			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
 			
-			<Declaration>- (CGMCPResponseCode)responseCode</Declaration>
+			<Declaration>- (CGMCPResponseCode)CGMCPResponseCode</Declaration>
 			
 			<ReturnValue><Abstract type="html">The response code, as defined in UHNCGMConstants.h</Abstract></ReturnValue>
-			<Anchor>//api/name/responseCode</Anchor>
+			<Anchor>//api/name/CGMCPResponseCode</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/requestOpCode</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/CGMCPRequestOpCode</TokenIdentifier>
 			<Abstract type="html">Get the CGMCP request op code from a CGMCP general response</Abstract>
 			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
 			
-			<Declaration>- (CGMCPOpCode)requestOpCode</Declaration>
+			<Declaration>- (CGMCPOpCode)CGMCPRequestOpCode</Declaration>
 			
 			<ReturnValue><Abstract type="html">The request op code is the operation just completed by the CGMCP and for which these response details are related to. The values are defined in UHNCGMConstants.h</Abstract></ReturnValue>
-			<Anchor>//api/name/requestOpCode</Anchor>
+			<Anchor>//api/name/CGMCPRequestOpCode</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/responseValue</TokenIdentifier>
-			<Abstract type="html">Get the CGMCP response value</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/CGMCPResponseValue</TokenIdentifier>
+			<Abstract type="html">Get the CGMCP response value (operand)</Abstract>
 			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
 			
-			<Declaration>- (NSNumber *)responseValue</Declaration>
+			<Declaration>- (NSNumber *)CGMCPResponseValue</Declaration>
 			
 			<ReturnValue><Abstract type="html">A NSNumber with the response value. Values will either be integers or floats, depending on the CGMCP request</Abstract></ReturnValue>
-			<Anchor>//api/name/responseValue</Anchor>
+			<Anchor>//api/name/CGMCPResponseValue</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
@@ -693,6 +849,18 @@
 			
 			<ReturnValue><Abstract type="html">YES if the response was a rate increased alert level response, otherwise NO</Abstract></ReturnValue>
 			<Anchor>//api/name/isCalibrationReponse</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/calibrationGlucoseValue</TokenIdentifier>
+			<Abstract type="html">Checks the calibration details for the calibration glucose value</Abstract>
+			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)calibrationGlucoseValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The calibration glucose value. Units is mg/dl</Abstract></ReturnValue>
+			<Anchor>//api/name/calibrationGlucoseValue</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
@@ -745,26 +913,26 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/nextCalibrationDateTime</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/calibrationDateTimeNext</TokenIdentifier>
 			<Abstract type="html">Checks the calibration details for the next calibration date and time</Abstract>
 			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
 			
-			<Declaration>- (NSDate *)nextCalibrationDateTime</Declaration>
+			<Declaration>- (NSDate *)calibrationDateTimeNext</Declaration>
 			
 			<ReturnValue><Abstract type="html">The date and time of the next calibration as calculated using the next calibration time offset and session start time. If the date and time cannot be calculated, nil is returned.</Abstract></ReturnValue>
-			<Anchor>//api/name/nextCalibrationDateTime</Anchor>
+			<Anchor>//api/name/calibrationDateTimeNext</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/nextCalibrationTimeOffset</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/calibrationTimeOffsetNext</TokenIdentifier>
 			<Abstract type="html">Checks the calibration details for the next calibration time offset</Abstract>
 			<DeclaredIn>NSDictionary+CGMExtensions.h</DeclaredIn>
 			
-			<Declaration>- (NSNumber *)nextCalibrationTimeOffset</Declaration>
+			<Declaration>- (NSNumber *)calibrationTimeOffsetNext</Declaration>
 			
 			<ReturnValue><Abstract type="html">The next calibration time offset. Units is minutes</Abstract></ReturnValue>
-			<Anchor>//api/name/nextCalibrationTimeOffset</Anchor>
+			<Anchor>//api/name/calibrationTimeOffsetNext</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
