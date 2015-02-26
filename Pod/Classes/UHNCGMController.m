@@ -57,10 +57,10 @@
         }
     }
     if (didFindCGMS == NO) {
-        [requiredServices addObject:kDEVICE_INFO_SERVICE_UUID];
+        [requiredServices addObject:kCGMServiceUUID];
     }
     if (!didFindDIS == NO) {
-        [requiredServices addObject:kCGMServiceUUID];
+        [requiredServices addObject:kDEVICE_INFO_SERVICE_UUID];
     }
     
     if ((self = [super init])) {
