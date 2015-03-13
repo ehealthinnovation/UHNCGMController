@@ -59,7 +59,7 @@
     if (didFindCGMS == NO) {
         [requiredServices addObject:kCGMServiceUUID];
     }
-    if (!didFindDIS == NO) {
+    if (didFindDIS == NO) {
         [requiredServices addObject:kDEVICE_INFO_SERVICE_UUID];
     }
     
