@@ -262,7 +262,7 @@
 {
     DLog(@"%s", __PRETTY_FUNCTION__);
     NSData *operand = [NSData dataWithBytes:&intervalInMinutes length:sizeof(uint8_t)];
-    [self sendCGMCPOpCode:CGMCPOpCodeCalibrationValueGet operandData:operand];
+    [self sendCGMCPOpCode:CGMCPOpCodeCommIntervalSet operandData:operand];
 }
 
 - (void)disablePeriodicCommunication;
