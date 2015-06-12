@@ -41,7 +41,6 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* CGMCommandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* CGMCommandTests.m */; };
 		9AE7F664CF25E2E58B33900B /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C59295540BA75AEDE64110EF /* libPods-Tests.a */; };
-		A280D23DC47BE731C5F828DC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23301E6F0E3083021B1BF8CE /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +99,6 @@
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
 				1206D53B0A4D98BDB16AC515 /* libPods-UHNCGMController.a in Frameworks */,
-				A280D23DC47BE731C5F828DC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
