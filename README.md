@@ -1,5 +1,8 @@
 # UHNCGMController
 
+_This is a pre-alpha release and as such some functionality is not finalized. The purpose of making this code available as a pre-alpha was to allow others to conduct feasibility assessments. As always, if you discover an issue or have a suggestion, please fork and submit a pull request._
+
+
 ## Description
 
 A central continuous glucose monitor (CGM) controller that provides a delegate based interface to a CGM service peripheral as defined by the BT-SIG
