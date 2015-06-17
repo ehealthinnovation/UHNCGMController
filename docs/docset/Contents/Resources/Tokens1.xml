@@ -13,6 +13,42 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate for the CGM controller. This can be used to make changes to the delegation.</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;UHNCGMControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate for the CGM controller. This can be used to make changes to the delegation.</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;UHNCGMControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UHNCGMController/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate for the CGM controller. This can be used to make changes to the delegation.</Abstract>
+			<DeclaredIn>UHNCGMController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;UHNCGMControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/UHNCGMController/initWithDelegate:</TokenIdentifier>
 			<Abstract type="html">UHNCGMController is initialized with a delegate and optional required services. If only the CGM profile mandatory services are required, initialize using initWithDelegate:. Mandatory services include CGMS and DIS.</Abstract>
 			<DeclaredIn>UHNCGMController.h</DeclaredIn>

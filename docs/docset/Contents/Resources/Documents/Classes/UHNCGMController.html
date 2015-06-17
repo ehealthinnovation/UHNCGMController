@@ -54,6 +54,12 @@
 
 	
 	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+	</optgroup>
+	
 
 	
 
@@ -174,7 +180,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The UHNCGMController provides an interface to a BLE peripheral that implements the Continuous Glucose Monitoring and Device Information services. Other optional services that may be supported include Bond Management, Battery, and Current Time services. Through the inteface and delegate protocol, one should be able to easily make requests of a CGM sensor.</p><div class="warning"><p><strong>Warning:</strong> Support for Device Information, Bond Management, Battery, and Current Time services will be included in a future release.</p></div>
+						<p>The UHNCGMController provides an interface to a BLE peripheral that implements the Continuous Glucose Monitoring and Device Information services. Other optional services that may be supported include Bond Management, Battery, and Current Time services. Through the inteface and <a href="#//api/name/delegate">delegate</a> protocol, one should be able to easily make requests of a CGM sensor.</p><div class="warning"><p><strong>Warning:</strong> Support for Device Information, Bond Management, Battery, and Current Time services will be included in a future release.</p></div>
 					</div>
 					
 					
@@ -190,6 +196,47 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The delegate for the CGM controller. This can be used to make changes to the delegation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;UHNCGMControllerDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UHNCGMController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/initWithDelegate:" title="initWithDelegate:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/initWithDelegate:">&ndash;&nbsp;initWithDelegate:</a></code>
 </h3>
@@ -201,7 +248,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>UHNCGMController is initialized with a delegate and optional required services. If only the CGM profile mandatory services are required, initialize using <code>initWithDelegate:</code>. Mandatory services include CGMS and DIS.</p>
+				<p>UHNCGMController is initialized with a <a href="#//api/name/delegate">delegate</a> and optional required services. If only the CGM profile mandatory services are required, initialize using <code>initWithDelegate:</code>. Mandatory services include CGMS and DIS.</p>
 			</div>
 			
 		    
@@ -216,7 +263,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The delegate object that will received discovery, connectivity, and read/write events. This parameter is mandatory.</p></td>
+						<td><p>The <a href="#//api/name/delegate">delegate</a> object that will received discovery, connectivity, and read/write events. This parameter is mandatory.</p></td>
 					</tr>
 				
 				</table>
@@ -259,7 +306,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>UHNCGMController is initialized with a delegate and optional required services.</p>
+				<p>UHNCGMController is initialized with a <a href="#//api/name/delegate">delegate</a> and optional required services.</p>
 			</div>
 			
 		    
@@ -274,12 +321,12 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The delegate object that will received discovery, connectivity, and read/write events. This parameter is mandatory.</p></td>
+						<td><p>The <a href="#//api/name/delegate">delegate</a> object that will received discovery, connectivity, and read/write events. This parameter is mandatory.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>serviceUUIDs</code></th>
-						<td><p>The required services used to filter eligibility of discovered peripherals. Only peripherals that advertist all the required services will be deemed eligible and reported to the delegate. If <code>services</code> is <code>nil</code>, only the peripherals discovered with the mandatory CGM profile services will be reported to the delegate. Mandatory services include CGMS and DIS.</p></td>
+						<td><p>The required services used to filter eligibility of discovered peripherals. Only peripherals that advertist all the required services will be deemed eligible and reported to the <a href="#//api/name/delegate">delegate</a>. If <code>services</code> is <code>nil</code>, only the peripherals discovered with the mandatory CGM profile services will be reported to the <a href="#//api/name/delegate">delegate</a>. Mandatory services include CGMS and DIS.</p></td>
 					</tr>
 				
 				</table>
@@ -628,7 +675,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>This command is required at least once after a new session is started</p><div class="warning"><p><strong>Warning:</strong> When <code>sendCurrentTime</code> is completed successfully, it triggers a read of the session start time to see if it was updated after sending the current time. The delegate should wait for the <code>cgmController:didReadSessionStartTime:</code> invocation before proceeding</p></div>
+				<p>This command is required at least once after a new session is started</p><div class="warning"><p><strong>Warning:</strong> When <code>sendCurrentTime</code> is completed successfully, it triggers a read of the session start time to see if it was updated after sending the current time. The <a href="#//api/name/delegate">delegate</a> should wait for the <code>cgmController:didReadSessionStartTime:</code> invocation before proceeding</p></div>
 			</div>
 			
 
@@ -948,7 +995,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>startSession</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidStartSession:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;startSession<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification</p>
+				<p>If <code>startSession</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidStartSession:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;startSession<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification</p>
 			</div>
 			
 
@@ -994,7 +1041,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>stopSession</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidStopSession:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;stopSession<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification</p>
+				<p>If <code>stopSession</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidStopSession:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;stopSession<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification</p>
 			</div>
 			
 
@@ -1040,7 +1087,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>resetDeviceSpecificAlert</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidResetDeviceSpecificAlert:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;resetDeviceSpecificAlert<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>resetDeviceSpecificAlert</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidResetDeviceSpecificAlert:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;resetDeviceSpecificAlert<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1086,7 +1133,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getCommunicationInterval</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetCommunicationInterval:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getCommunicationInterval<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>getCommunicationInterval</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetCommunicationInterval:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getCommunicationInterval<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1132,7 +1179,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getMostCurrentCalibrationValue</code> is completed successfully, the delegete will receive the <code>cgmController:didGetCalibrationDetails:</code>.</p><p>If &lsquo;getMostCurrentCalibrationValue<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>getMostCurrentCalibrationValue</code> is completed successfully, the delegete will receive the <code>cgmController:didGetCalibrationDetails:</code>.</p><p>If &lsquo;getMostCurrentCalibrationValue<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1190,7 +1237,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getCalibrationDataRecord:</code> is completed successfully, the delegete will receive the <code>cgmController:didGetCalibrationDetails:</code>.</p><p>If &lsquo;getCalibrationDataRecord:<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>getCalibrationDataRecord:</code> is completed successfully, the delegete will receive the <code>cgmController:didGetCalibrationDetails:</code>.</p><p>If &lsquo;getCalibrationDataRecord:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1236,7 +1283,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getPatientAlertLevelHigh</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetPatientAlertLevelHigh:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getPatientAlertLevelHigh<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>getPatientAlertLevelHigh</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetPatientAlertLevelHigh:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getPatientAlertLevelHigh<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1282,7 +1329,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getPatientAlertLevelLow</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetPatientAlertLevelLow:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getPatientAlertLevelLow<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>getPatientAlertLevelLow</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetPatientAlertLevelLow:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getPatientAlertLevelLow<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1328,7 +1375,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getAlertLevelHypo</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetAlertLevelHypo:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getAlertLevelHypo<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>getAlertLevelHypo</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetAlertLevelHypo:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getAlertLevelHypo<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1374,7 +1421,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getAlertLevelHyper</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetAlertLevelHyper:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getAlertLevelHyper<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>getAlertLevelHyper</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetAlertLevelHyper:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getAlertLevelHyper<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1420,7 +1467,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getAlertLevelRateDecrease</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetAlertLevelRateDecrease:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getAlertLevelRateDecrease<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>getAlertLevelRateDecrease</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetAlertLevelRateDecrease:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getAlertLevelRateDecrease<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1466,7 +1513,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getAlertLevelRateIncrease</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetAlertLevelRateIncrease:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getAlertLevelRateIncrease<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>getAlertLevelRateIncrease</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPResponseOpCode:didGetValue:</code> and/or <code>cgmController:didGetAlertLevelRateIncrease:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getAlertLevelRateIncrease<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1524,7 +1571,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>setCommunicationInterval:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetCommunicationInterval:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setCommunicationInterval:<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>setCommunicationInterval:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetCommunicationInterval:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setCommunicationInterval:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1570,7 +1617,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>disablePeriodicCommunication:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetCommunicationInterval:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;disablePeriodicCommunication:<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>disablePeriodicCommunication:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetCommunicationInterval:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;disablePeriodicCommunication:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1616,7 +1663,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>setFastestCommunicationInterval:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetCommunicationInterval:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setFastestCommunicationInterval:<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>setFastestCommunicationInterval:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetCommunicationInterval:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setFastestCommunicationInterval:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1689,7 +1736,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>setCalibrationValue:fluidType:sampleLocation:date:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetCalibration:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setCalibrationValue:fluidType:sampleLocation:date:<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>setCalibrationValue:fluidType:sampleLocation:date:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetCalibration:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setCalibrationValue:fluidType:sampleLocation:date:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1747,7 +1794,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>setPatientHighLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelPatientHigh:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setPatientHighLevel:<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>setPatientHighLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelPatientHigh:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setPatientHighLevel:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1805,7 +1852,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>setPatientLowLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelPatientLow:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setPatientLowLevel:<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>setPatientLowLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelPatientLow:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setPatientLowLevel:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1863,7 +1910,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>setHypoLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelHypo:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setHypoLevel:<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>setHypoLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelHypo:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setHypoLevel:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1921,7 +1968,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>setHyperLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelHyper:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setHyperLevel:<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>setHyperLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelHyper:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setHyperLevel:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -1979,7 +2026,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>setRateDecreaseLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelRateDecrease:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setRateDecreaseLevel:<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>setRateDecreaseLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelRateDecrease:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setRateDecreaseLevel:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -2037,7 +2084,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>setRateIncreaseLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelRateIncrease:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setRateIncreaseLevel:<code>is unsuccessful, the delegate will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
+				<p>If <code>setRateIncreaseLevel:</code> is completed successfully, the delegete will receive the <code>cgmController:CGMCPOperationSuccessful:</code> and/or <code>cgmControllerDidSetAlertLevelRateIncrease:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;setRateIncreaseLevel:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:CGMCPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -2091,7 +2138,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getAllStoredRecords</code> is completed successfully, the delegete will receive the <code>cgmController:RACPOperationSuccessful:</code> and/or <code>cgmControllerDidGetStoredRecords:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getAllStoredRecords<code>is unsuccessful, the delegate will receive the</code>cgmController:RACPOperation:failed:` notification.</p>
+				<p>If <code>getAllStoredRecords</code> is completed successfully, the delegete will receive the <code>cgmController:RACPOperationSuccessful:</code> and/or <code>cgmControllerDidGetStoredRecords:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getAllStoredRecords<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:RACPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -2149,7 +2196,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getStoredRecordsGreatThanEqualTo:</code> is completed successfully, the delegete will receive the <code>cgmController:RACPOperationSuccessful:</code> and/or <code>cgmControllerDidGetStoredRecords:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getStoredRecordsGreatThanEqualTo:<code>is unsuccessful, the delegate will receive the</code>cgmController:RACPOperation:failed:` notification.</p>
+				<p>If <code>getStoredRecordsGreatThanEqualTo:</code> is completed successfully, the delegete will receive the <code>cgmController:RACPOperationSuccessful:</code> and/or <code>cgmControllerDidGetStoredRecords:</code> notification (depending on which protocol methods are used). This is left up to the implementation.</p><p>If &lsquo;getStoredRecordsGreatThanEqualTo:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:RACPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -2195,7 +2242,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getNumberOfStoredRecords</code> is completed successfully, the delegete will receive the <code>cgmController:didGetNumberOfStoredRecords:</code> notification</p><p>If &lsquo;getNumberOfStoredRecords<code>is unsuccessful, the delegate will receive the</code>cgmController:RACPOperation:failed:` notification.</p>
+				<p>If <code>getNumberOfStoredRecords</code> is completed successfully, the delegete will receive the <code>cgmController:didGetNumberOfStoredRecords:</code> notification</p><p>If &lsquo;getNumberOfStoredRecords<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:RACPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -2253,7 +2300,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If <code>getNumberOfStoredRecordsGreatThanEqualTo:</code> is completed successfully, the delegete will receive the <code>cgmController:didGetNumberOfStoredRecords:</code> notification</p><p>If &lsquo;getNumberOfStoredRecordsGreatThanEqualTo:<code>is unsuccessful, the delegate will receive the</code>cgmController:RACPOperation:failed:` notification.</p>
+				<p>If <code>getNumberOfStoredRecordsGreatThanEqualTo:</code> is completed successfully, the delegete will receive the <code>cgmController:didGetNumberOfStoredRecords:</code> notification</p><p>If &lsquo;getNumberOfStoredRecordsGreatThanEqualTo:<code>is unsuccessful, the </code>delegate<code> will receive the</code>cgmController:RACPOperation:failed:` notification.</p>
 			</div>
 			
 
@@ -2283,7 +2330,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Centre for Global eHealth Innovation. All rights reserved. Updated: 2015-02-25</p>
+						<p class="copyright">Copyright &copy; 2015 Centre for Global eHealth Innovation. All rights reserved. Updated: 2015-06-17</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
