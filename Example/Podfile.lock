@@ -7,7 +7,7 @@ PODS:
   - Specta (1.0.2)
   - UHNBLEController (0.1.0):
     - UHNDebug
-  - UHNCGMController (0.1.1):
+  - UHNCGMController (0.1.2):
     - UHNBLEController
     - UHNDebug
   - UHNDebug (0.1.0)
@@ -32,7 +32,7 @@ SPEC CHECKSUMS:
   OCMockito: 4981140c9a9ec06c31af40f636e3c0f25f27e6b2
   Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
   UHNBLEController: 7f56ef421d91f1b8221b405b8ba49b3f0bb7a419
-  UHNCGMController: d320483e599b99eede598aa11a927e58ea1781cf
+  UHNCGMController: d22be090fabe0b3f28da65f5dc8024358738794e
   UHNDebug: 09eb4d23b4c465e4a997d8ea225c29743c06bec8
   UHNTimeSeriesPlotView: bc38f7093e4086c162190e23dd175b61ae1890dd
 
