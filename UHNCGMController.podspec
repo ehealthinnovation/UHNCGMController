@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "UHNCGMController"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "A central continuous glucose monitor controller."
   s.description      = <<-DESC
                        The central CGM controller is built upon the UHNBLEControlelr, a general central BLE controller. The CGM controller provides a delegate based interface to interacting with CGM service as defined by BT-SIG.
