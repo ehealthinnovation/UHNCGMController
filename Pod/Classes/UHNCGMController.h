@@ -42,6 +42,12 @@
 /// @name Initialization of UHNCGMController
 ///-----------------------------------------
 
+
+/**
+The delegate for the CGM controller. This can be used to make changes to the delegation.
+*/
+@property(nonatomic,weak) id <UHNCGMControllerDelegate> delegate;
+
 /**
  UHNCGMController is initialized with a delegate and optional required services. If only the CGM profile mandatory services are required, initialize using `initWithDelegate:`. Mandatory services include CGMS and DIS.
 

@@ -21,7 +21,6 @@
 @property(nonatomic,strong) NSString *cgmDeviceName;
 @property(nonatomic,assign) BOOL shouldBlockReconnect;
 @property(nonatomic,assign) BOOL crcPresent;
-@property(nonatomic,weak) id <UHNCGMControllerDelegate> delegate;
 @end
 
 @implementation UHNCGMController
